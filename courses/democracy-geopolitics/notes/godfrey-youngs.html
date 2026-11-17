@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strengthening Democracy Support in Regimes With Dominant Parties | Democracy &amp; Geopolitics</title>
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+  <link rel="stylesheet" href="../../../style.css">
+  <style>
+    .reading-page {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 36px 22px 80px;
+      color: #26332f;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: #668477;
+      text-decoration: none;
+      font-size: .9rem;
+    }
+    .eyebrow {
+      color: #71867c;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .72rem;
+      font-weight: 700;
+    }
+    .reading-page h1 {
+      font-size: clamp(2rem, 5vw, 3.1rem);
+      line-height: 1.08;
+      letter-spacing: -.045em;
+      margin: 10px 0 12px;
+    }
+    .author {
+      color: #718078;
+      margin: 0 0 28px;
+    }
+    .intro {
+      background: #edf3ef;
+      border: 1px solid #dce8df;
+      border-radius: 22px;
+      padding: 24px 26px;
+      font-size: 1.06rem;
+      line-height: 1.7;
+      width: 100%;
+      max-width: none;
+    }
+    .section { margin-top: 38px; }
+    .section h2 {
+      font-size: 1.45rem;
+      letter-spacing: -.025em;
+      margin: 0 0 16px;
+    }
+    .section h3 {
+      font-size: 1.05rem;
+      margin: 0 0 9px;
+    }
+    .section p, .section li {
+      line-height: 1.72;
+      color: #4e5d56;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e5eae6;
+      border-radius: 18px;
+      padding: 19px;
+      box-shadow: 0 5px 18px rgba(31,50,40,.045);
+    }
+    .card h3 { margin: 0 0 8px; }
+    .card p { margin: 0; font-size: .94rem; }
+    .tag {
+      display: inline-block;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 5px 9px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    .sage { background: #e5efe8; color: #52735e; }
+    .blue { background: #e7eef8; color: #557092; }
+    .peach { background: #f8ece3; color: #9a6c4c; }
+    .lavender { background: #efebf8; color: #74658f; }
+
+    .distinction {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px;
+      margin-top: 18px;
+    }
+    .distinction-card {
+      border-radius: 19px;
+      padding: 21px;
+    }
+    .distinction-card h3 { margin: 0 0 9px; }
+    .distinction-card p { margin: 0; font-size: .93rem; }
+    .capacity { background: #eaf0f8; border: 1px solid #dce5f0; }
+    .competition { background: #e7f0e9; border: 1px solid #d8e6dc; }
+
+    .regime-model {
+      background: #f6f7f5;
+      border: 1px solid #e5eae5;
+      border-radius: 22px;
+      padding: 22px;
+      margin-top: 18px;
+    }
+    .model-flow {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: 10px;
+      align-items: center;
+      margin-top: 16px;
+    }
+    .model-step {
+      border-radius: 15px;
+      padding: 17px 13px;
+      text-align: center;
+      background: white;
+      border: 1px solid #e3e9e3;
+    }
+    .model-step strong {
+      display: block;
+      font-size: .92rem;
+      margin-bottom: 6px;
+    }
+    .model-step span {
+      font-size: .81rem;
+      line-height: 1.45;
+      color: #65746b;
+    }
+    .model-arrow { color: #91a096; font-size: 1.2rem; }
+
+    .warning-panel {
+      background: #f8eee8;
+      border: 1px solid #eddfd5;
+      border-radius: 19px;
+      padding: 21px;
+      margin-top: 18px;
+    }
+    .warning-panel h3 { margin: 0 0 8px; }
+    .warning-panel p { margin: 0; }
+
+    .priority-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .priority {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 16px;
+      background: #fff;
+      border: 1px solid #e5eae6;
+      border-radius: 19px;
+      padding: 20px;
+      box-shadow: 0 5px 18px rgba(31,50,40,.035);
+    }
+    .priority-number {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 750;
+      font-size: 1.15rem;
+      color: #52735e;
+      background: #e5efe8;
+    }
+    .priority:nth-child(2) .priority-number {
+      background: #e7eef8;
+      color: #557092;
+    }
+    .priority:nth-child(3) .priority-number {
+      background: #f8ece3;
+      color: #9a6c4c;
+    }
+    .priority h3 { margin: 0 0 7px; }
+    .priority p { margin: 0; font-size: .93rem; }
+
+    .case-timeline {
+      position: relative;
+      margin: 18px 0 0 9px;
+      padding-left: 25px;
+      border-left: 2px solid #dce6df;
+    }
+    .timeline-item {
+      position: relative;
+      padding: 0 0 22px;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -32px;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #8aa894;
+      border: 3px solid #edf3ef;
+    }
+    .timeline-item h3 { margin: 0 0 6px; }
+    .timeline-item p { margin: 0; font-size: .93rem; }
+
+    .country-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 17px;
+    }
+    .country {
+      border-radius: 17px;
+      padding: 18px;
+      background: #f2f5f2;
+      border: 1px solid #e4eae4;
+    }
+    .country h3 { margin: 0 0 7px; }
+    .country p { margin: 0; font-size: .9rem; }
+
+    .takeaway {
+      background: #263d34;
+      color: #f5f8f5;
+      border-radius: 22px;
+      padding: 25px 27px;
+      margin-top: 38px;
+    }
+    .takeaway h2 {
+      color: #fff;
+      margin: 0 0 10px;
+      font-size: 1.25rem;
+    }
+    .takeaway p {
+      color: #e0e9e2;
+      margin: 0;
+      line-height: 1.7;
+    }
+    .source-note {
+      color: #87938c;
+      font-size: .82rem;
+      margin-top: 28px;
+    }
+    @media (max-width: 680px) {
+      .grid, .distinction, .country-grid { grid-template-columns: 1fr; }
+      .model-flow {
+        grid-template-columns: 1fr;
+      }
+      .model-arrow {
+        transform: rotate(90deg);
+        text-align: center;
+      }
+      .priority { grid-template-columns: 46px 1fr; gap: 12px; }
+      .reading-page { padding: 25px 16px 60px; }
+      .intro { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+<main class="reading-page">
+
+  <a class="back-link" href="../notes.html">← Back to Notes library</a>
+
+  <div class="eyebrow">Geopolitical contestation · Democracy support</div>
+  <h1>Strengthening Democracy Support in Regimes With Dominant Parties</h1>
+  <p class="author">Godfrey &amp; Youngs (2021) · Carnegie Endowment for International Peace</p>
+
+  <div class="intro">
+    Godfrey and Youngs examine the growing challenge dominant-party regimes pose to international democracy promotion. Drawing on Georgia, Mozambique, Nicaragua and Zimbabwe, they argue that conventional democracy assistance can inadvertently strengthen incumbent parties when those parties capture state institutions and external resources. Democracy support must therefore move beyond institutional capacity-building and focus more directly on political competition, opposition parties, elections and civic activism.
+  </div>
+
+  <section class="section">
+    <h2>Core concepts</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="tag sage">Regime structure</span>
+        <h3>Dominant-party regime</h3>
+        <p>A political system in which one party maintains prolonged electoral and institutional dominance, restricting the opposition's ability to compete on equal terms.</p>
+      </article>
+      <article class="card">
+        <span class="tag peach">Institutional control</span>
+        <h3>Party capture</h3>
+        <p>The process through which a dominant political party appropriates state institutions and ostensibly independent organisations to reinforce its own political position.</p>
+      </article>
+      <article class="card">
+        <span class="tag lavender">Regime change</span>
+        <h3>Creeping autocratization</h3>
+        <p>The gradual erosion of democratic competition and institutional independence without necessarily eliminating elections or multiparty politics.</p>
+      </article>
+      <article class="card">
+        <span class="tag blue">Electoral conditions</span>
+        <h3>Political playing field</h3>
+        <p>The institutional and electoral conditions determining whether competing political parties can participate in elections and political processes on relatively equal terms.</p>
+      </article>
+      <article class="card">
+        <span class="tag sage">External engagement</span>
+        <h3>Democracy support</h3>
+        <p>International assistance aimed at strengthening democratic institutions, electoral competition, political participation and civil society.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Understanding dominant-party regimes</h2>
+    <p>Dominant-party regimes differ from outright dictatorships because they retain electoral competition and some degree of political pluralism. Elections remain meaningful, but they are manifestly unfair.</p>
+
+    <div class="regime-model">
+      <span class="tag sage">How dominance is sustained</span>
+      <div class="model-flow">
+        <div class="model-step">
+          <strong>Institutional proximity</strong>
+          <span>Close relationships between the dominant party and executive institutions</span>
+        </div>
+        <div class="model-arrow">→</div>
+        <div class="model-step">
+          <strong>Unequal resources</strong>
+          <span>Clientelist networks and disproportionate financial and institutional advantages</span>
+        </div>
+        <div class="model-arrow">→</div>
+        <div class="model-step">
+          <strong>Unequal competition</strong>
+          <span>Opposition parties remain legal but cannot compete on equal terms</span>
+        </div>
+      </div>
+    </div>
+
+    <p>Dominant parties can effectively transform state institutions into extensions of their own political power. Their opponents may formally participate in elections, but the incumbent's institutional and financial advantages make competition structurally unequal.</p>
+
+    <div class="warning-panel">
+      <h3>Georgia as an illustration</h3>
+      <p>The authors describe Georgian Dream's consolidation during its decade in power. They highlight its control over significant financial resources, clientelist networks, the justice system and electoral arrangements.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Why conventional democracy support fails</h2>
+    <p>Traditional democracy assistance often focuses on strengthening state institutions, electoral commissions, civil society and administrative capacity. The problem is that dominant parties can capture or exploit these initiatives.</p>
+
+    <div class="grid">
+      <article class="card">
+        <span class="tag peach">Institutional capture</span>
+        <h3>Supporting captured institutions</h3>
+        <p>Funding courts, parliaments and electoral authorities can inadvertently strengthen institutions already controlled by the incumbent.</p>
+      </article>
+      <article class="card">
+        <span class="tag lavender">Civil society limitations</span>
+        <h3>Generic NGO support</h3>
+        <p>Supporting NGOs does not necessarily produce an equal political playing field when the government retains control over significant political and economic resources.</p>
+      </article>
+      <article class="card">
+        <span class="tag blue">Electoral assistance</span>
+        <h3>Technical improvements alone</h3>
+        <p>Improving the professionalism of electoral commissions has limited impact when dominant parties retain control over political patronage and electoral arrangements.</p>
+      </article>
+      <article class="card">
+        <span class="tag sage">Underlying distinction</span>
+        <h3>Capacity versus competition</h3>
+        <p>Institutional capacity-building does not automatically strengthen democratic competition. The political conditions in which institutions operate matter.</p>
+      </article>
+    </div>
+
+    <div class="distinction">
+      <article class="distinction-card capacity">
+        <span class="tag blue">Conventional focus</span>
+        <h3>Institutional capacity</h3>
+        <p>Improving the technical functioning and administrative capabilities of public institutions.</p>
+      </article>
+      <article class="distinction-card competition">
+        <span class="tag sage">Authors' priority</span>
+        <h3>Democratic competition</h3>
+        <p>Changing the political conditions that determine whether opposition parties and civic actors can meaningfully challenge incumbent power.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Three policy priorities for democracy support</h2>
+    <p>The authors identify three interconnected areas requiring greater attention from international donors.</p>
+
+    <div class="priority-list">
+      <article class="priority">
+        <div class="priority-number">01</div>
+        <div>
+          <span class="tag sage">Political parties and dialogue</span>
+          <h3>Strengthen the capacity to compete</h3>
+          <p>Donors should strengthen opposition parties, support multiparty dialogue, facilitate negotiations between incumbents and opposition forces, and protect threatened political activists. Dialogue alone is insufficient and must be complemented by direct party support.</p>
+        </div>
+      </article>
+
+      <article class="priority">
+        <div class="priority-number">02</div>
+        <div>
+          <span class="tag blue">Electoral reform</span>
+          <h3>Address structural disadvantages</h3>
+          <p>International actors should address disproportionate representation, electoral commission appointments and unequal campaign conditions. Assistance should begin immediately after elections rather than concentrating exclusively on election periods.</p>
+        </div>
+      </article>
+
+      <article class="priority">
+        <div class="priority-number">03</div>
+        <div>
+          <span class="tag peach">Civic mobilisation</span>
+          <h3>Support direct activism</h3>
+          <p>Donors should support grassroots mobilisation, protest movements, nontraditional organisations and local civic networks. Protests can become crucial avenues for democratic resistance when institutional channels are restricted.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>The Georgian case</h2>
+    <p>Georgia demonstrates that dominant-party dynamics can emerge even within relatively open political systems. The authors examine how electoral advantages, opposition mobilisation and external engagement interact.</p>
+
+    <div class="case-timeline">
+      <div class="timeline-item">
+        <h3>Georgian Dream consolidates power</h3>
+        <p>The party's dominance is supported by significant financial resources, clientelist networks, influence over the justice system and electoral arrangements.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Opposition challenges incumbent advantages</h3>
+        <p>Opposition mobilisation and EU-mediated negotiations challenge the government's electoral and political advantages.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Incomplete implementation</h3>
+        <p>The resulting agreement is only partially implemented, illustrating the limitations of dialogue when political commitments are not fully translated into practice.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Protest as democratic resistance</h3>
+        <p>Protests periodically prevent a deeper authoritarian turn, demonstrating the importance of mobilisation beyond formal institutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Comparative scope</h2>
+    <p>The article draws on four country cases to examine the challenges posed by dominant-party regimes to international democracy promotion.</p>
+
+    <div class="country-grid">
+      <article class="country">
+        <h3>Georgia</h3>
+        <p>Illustrates dominant-party consolidation within a relatively open political environment, alongside opposition mobilisation and EU engagement.</p>
+      </article>
+      <article class="country">
+        <h3>Mozambique</h3>
+        <p>One of the comparative cases used to examine how dominant-party systems complicate external democracy support.</p>
+      </article>
+      <article class="country">
+        <h3>Nicaragua</h3>
+        <p>One of the comparative cases used to examine the relationship between incumbent dominance and international assistance.</p>
+      </article>
+      <article class="country">
+        <h3>Zimbabwe</h3>
+        <p>One of the comparative cases used to examine the constraints dominant-party regimes place on democratic competition.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="takeaway">
+    <h2>Core takeaway</h2>
+    <p>Supporting democratic institutions is not necessarily equivalent to supporting democracy. In dominant-party regimes, ostensibly neutral institutional assistance can reinforce authoritarian tendencies when institutions are captured by incumbents. Democracy support must therefore become more politically sensitive and context-specific, prioritising genuine party competition, electoral reform and civic activism, alongside stronger diplomatic engagement and a greater willingness to take political risks.</p>
+  </div>
+
+  <p class="source-note">Based on Godfrey &amp; Youngs (2021), “Strengthening Democracy Support in Regimes With Dominant Parties”, Carnegie Endowment for International Peace.</p>
+
+</main>
+</body>
+</html>
