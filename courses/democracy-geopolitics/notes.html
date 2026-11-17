@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Notes | Democracy & Geopolitics</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .page-intro { margin:42px 0 30px; }
+    .page-intro h1 { font-size:clamp(32px,5vw,44px); }
+    .page-intro p { color:var(--muted); margin-top:12px; max-width:650px; }
+    .notes-layout { display:grid; grid-template-columns:220px 1fr; gap:28px; align-items:start; }
+    .notes-sidebar { background:white; border:1px solid var(--border); border-radius:20px; padding:20px; position:sticky; top:20px; }
+    .notes-sidebar p { font-size:10px; color:var(--muted); letter-spacing:1px; font-weight:700; margin-bottom:12px; }
+    .notes-sidebar a { display:block; color:#687382; font-size:13px; padding:9px 10px; border-radius:10px; margin:3px 0; }
+    .notes-sidebar a:hover { background:#edf3ef; color:#587562; }
+    .week-section { margin-bottom:32px; scroll-margin-top:25px; }
+    .week-heading { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; gap:10px; }
+    .week-heading h2 { font-size:21px; }
+    .week-label { color:var(--muted); font-size:11px; }
+    .reading-card { display:flex; justify-content:space-between; align-items:center; gap:15px; background:white; border:1px solid var(--border); border-radius:17px; padding:19px 21px; margin:10px 0; }
+    .reading-card h3 { font-size:15px; margin-bottom:4px; }
+    .reading-card p { color:var(--muted); font-size:12px; }
+    .reading-arrow { color:#64816e; font-size:19px; }
+    .reading-card:hover { border-color:#cbdacf; transform:translateY(-2px); }
+    .reading-card { transition:transform .2s,border-color .2s; }
+    .note-count { background:#edf3ef; color:#587562; border-radius:20px; padding:5px 10px; font-size:10px; white-space:nowrap; }
+    .library-note { background:#e8effa; border-radius:18px; padding:20px; margin-bottom:30px; }
+    .library-note p { color:#60718b; font-size:13px; }
+    @media(max-width:750px) {
+      .notes-layout { grid-template-columns:1fr; }
+      .notes-sidebar { position:static; }
+      .notes-sidebar nav { display:flex; flex-wrap:wrap; gap:4px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../../index.html">
+      <span class="brand-icon">✳</span>
+      <span>my notebook</span>
+    </a>
+    <nav class="navigation">
+      <a href="../../index.html">Home</a>
+      <a href="index.html">Course</a>
+      <a class="active" href="notes.html">Notes</a>
+      <a href="syllabus.html">Syllabus</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="page-intro">
+      <p class="eyebrow">DEMOCRACY & GEOPOLITICS / KNOWLEDGE LIBRARY</p>
+      <h1>My notes</h1>
+      <p>A structured collection of reading notes, concepts and arguments on democracy and geopolitics in Eastern Europe.</p>
+    </div>
+
+    <div class="library-note">
+      <p><strong>Reading library</strong> · Notes are organised by the course's thematic progression, from theoretical foundations to country cases. Select a reading to open its dedicated notes page.</p>
+    </div>
+
+    <div class="notes-layout">
+      <aside class="notes-sidebar">
+        <p>JUMP TO SECTION</p>
+        <nav>
+          <a href="#foundations">Foundations</a>
+          <a href="#historical">Historical legacies</a>
+          <a href="#divides">Political divides</a>
+          <a href="#europeanisation">Europeanisation</a>
+          <a href="#geopolitics">Geopolitical contestation</a>
+          <a href="#georgia">Georgia</a>
+          <a href="#moldova">Moldova</a>
+          <a href="#ukraine">Ukraine</a>
+        </nav>
+      </aside>
+
+      <div>
+        <section class="week-section" id="foundations">
+          <div class="week-heading"><h2>Foundations</h2><span class="week-label">Sessions 1–2</span></div>
+          <a class="reading-card" href="#">
+            <div><h3>Levitsky & Way (2006)</h3><p>Linkage, leverage and regime change</p></div><span class="reading-arrow">↗</span>
+          </a>
+          <a class="reading-card" href="#">
+            <div><h3>Mead (2014)</h3><p>The return of geopolitics and revisionist powers</p></div><span class="reading-arrow">↗</span>
+          </a>
+        </section>
+
+        <section class="week-section" id="historical">
+          <div class="week-heading"><h2>Historical legacies</h2><span class="week-label">Session 3</span></div>
+          <a class="reading-card" href="#">
+            <div><h3>Hale (2015)</h3><p>Patronal politics and the power of expectations</p></div><span class="reading-arrow">↗</span>
+          </a>
+          <a class="reading-card" href="#">
+            <div><h3>Minbaeva et al. (2022)</h3><p>The persistence of informal institutions and networks</p></div><span class="reading-arrow">↗</span>
+          </a>
+        </section>
+
+        <section class="week-section" id="divides">
+          <div class="week-heading"><h2>Societal and political divides</h2><span class="week-label">Session 4</span></div>
+          <a class="reading-card" href="#">
+            <div><h3>Enyedi (2005)</h3><p>The role of agency in cleavage formation</p></div><span class="reading-arrow">↗</span>
+          </a>
+          <a class="reading-card" href="#">
+            <div><h3>Redžić & Everett (2020)</h3><p>Cleavages in post-Communist Europe</p></div><span class="reading-arrow">↗</span>
+          </a>
+          <a class="reading-card" href="#">
+            <div><h3>Knott (2025)</h3><p>Mapping plurality in Moldova</p></div><span class="reading-arrow">↗</span>
+          </a>
+        </section>
+
+        <section class="week-section" id="europeanisation">
+          <div class="week-heading"><h2>Europeanisation and democratisation</h2><span class="week-label">Session 5</span></div>
+          <a class="reading-card" href="#">
+            <div><h3>Schimmelfennig & Scholtz (2010)</h3><p>EU political conditionality and democracy promotion</p></div><span class="reading-arrow">↗</span>
+          </a>
+          <a class="reading-card" href="#">
+            <div><h3>Poppe et al. (2019)</h3><p>Negotiation in democracy promotion</p></div><span class="reading-arrow">↗</span>
+          </a>
+          <a class="reading-card" href="#">
+            <div><h3>Schedler (2013)</h3><p>Shaping the authoritarian arena</p></div><span class="reading-arrow">↗</span>
+          </a>
+        </section>
+
+        <section class="week-section" id="geopolitics">
+          <div class="week-heading"><h2>Geopolitical contestation</h2><span class="week-label">Session 6</span></div>
+          <a class="reading-card" href="#">
+            <div><h3>Tyushka & German (2025)</h3><p>Geostrategic inbetweenness</p></div><span class="reading-arrow">↗</span>
+          </a>
+          <a class="reading-card" href="#">
+            <div><h3>Noutcheva (2018)</h3><p>The EU and Russia in contest for the Eastern Neighbourhood</p></div><span class="reading-arrow">↗</span>
+          </a>
+        </section>
+
+        <section class="week-section" id="georgia">
+          <div class="week-heading"><h2>Georgia</h2><span class="week-label">Sessions 7–8</span></div>
+          <a class="reading-card" href="#">
+            <div><h3>Burkadze (2022)</h3><p>Autocracy and democracy in Georgia</p></div><span class="reading-arrow">↗</span>
+          </a>
+          <a class="reading-card" href="#">
+            <div><h3>Wheatley (2020)</h3><p>Culture, identity and political cleavage in Georgia</p></div><span class="reading-arrow">↗</span>
+          </a>
+          <a class="reading-card" href="#">
+            <div><h3>Godfrey & Youngs (2021)</h3><p>Democracy support in regimes with dominant parties</p></div><span class="reading-arrow">↗</span>
+          </a>
+        </section>
+
+        <section class="week-section" id="moldova">
+          <div class="week-heading"><h2>Moldova</h2><span class="week-label">Sessions 9–10</span></div>
+          <a class="reading-card" href="#">
+            <div><h3>Knott (2018)</h3><p>Post-Soviet hybrid regimes and democratic backsliding</p></div><span class="reading-arrow">↗</span>
+          </a>
+          <a class="reading-card" href="#">
+            <div><h3>Marandici (2021)</h3><p>Oligarchs, democratisation and state capture</p></div><span class="reading-arrow">↗</span>
+          </a>
+          <a class="reading-card" href="#">
+            <div><h3>Baltag & Eaglestone (2025)</h3><p>Moldova's alternating alignments and dis/integration</p></div><span class="reading-arrow">↗</span>
+          </a>
+        </section>
+
+        <section class="week-section" id="ukraine">
+          <div class="week-heading"><h2>Ukraine</h2><span class="week-label">Sessions 11–12</span></div>
+          <a class="reading-card" href="#">
+            <div><h3>Moisio (2022)</h3><p>Geopolitics and Russia's invasion of Ukraine</p></div><span class="reading-arrow">↗</span>
+          </a>
+          <a class="reading-card" href="#">
+            <div><h3>Kapitonenko (2025)</h3><p>Ukraine's geostrategic responses to inbetweenness</p></div><span class="reading-arrow">↗</span>
+          </a>
+        </section>
+      </div>
+    </div>
+
+    <footer>
+      <a href="index.html">← Back to course</a>
+      <span>DEMOCRACY & GEOPOLITICS</span>
+    </footer>
+  </main>
+</body>
+</html>
