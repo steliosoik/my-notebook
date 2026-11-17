@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hale (2015) | My Notebook</title>
+  <link rel="stylesheet" href="../../../style.css">
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+  <style>
+    .reading-page { max-width:920px; margin:42px auto 70px; }
+    .back-link { display:inline-block; color:#64816e; font-size:13px; margin-bottom:28px; }
+    .reading-meta { color:#64816e; font-size:11px; font-weight:700; letter-spacing:1.2px; }
+    .reading-title { font-size:clamp(32px,5vw,48px); line-height:1.12; letter-spacing:-1.5px; margin:13px 0 10px; max-width:760px; }
+    .reading-subtitle { color:var(--muted); font-size:15px; margin-bottom:25px; }
+    .reading-tags { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:35px; }
+    .reading-tags span { background:#edf3ef; color:#587562; padding:7px 12px; border-radius:20px; font-size:11px; }
+    .reading-section { margin:35px 0; }
+    .section-heading { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+    .section-number { display:grid; place-items:center; width:30px; height:30px; flex-shrink:0; border-radius:10px; background:#edf3ef; color:#587562; font-size:12px; font-weight:700; }
+    .section-heading h2 { font-size:21px; letter-spacing:-.4px; }
+    .reading-card { background:white; border:1px solid var(--border); border-radius:20px; padding:25px; margin:14px 0; }
+    .reading-card p { color:#586371; font-size:14px; line-height:1.85; margin:9px 0; }
+    .reading-card h3 { font-size:15px; margin:20px 0 6px; }
+    .reading-card h3:first-child { margin-top:0; }
+    .concept-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .concept-card { background:white; border:1px solid var(--border); border-radius:17px; padding:19px; }
+    .concept-card strong { display:block; color:#354b3d; font-size:14px; margin-bottom:7px; }
+    .concept-card p { color:#586371; font-size:13px; line-height:1.75; }
+    .concept-card.wide { grid-column:1/-1; }
+    .diagram-card { background:white; border:1px solid var(--border); border-radius:20px; padding:25px; margin:14px 0; }
+    .diagram-title { font-size:13px; font-weight:700; margin-bottom:20px; color:#354b3d; }
+    .network { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; align-items:center; text-align:center; }
+    .network-column { display:grid; gap:12px; }
+    .network-node { border-radius:14px; padding:15px 8px; font-size:12px; font-weight:700; }
+    .network-node.patron { background:#eaf0fa; color:#4c6183; }
+    .network-node.client { background:#edf3ef; color:#4d7058; }
+    .network-node.other { background:#f7eee4; color:#846b4e; }
+    .network-middle { display:grid; gap:9px; color:#718092; font-size:11px; }
+    .network-middle span { background:#f4f6f7; border-radius:10px; padding:10px 5px; }
+    .diagram-caption { color:var(--muted); font-size:11px; line-height:1.7; margin-top:17px; }
+    .loop { display:grid; grid-template-columns:1fr 36px 1fr 36px 1fr; align-items:center; gap:7px; }
+    .loop-node { min-height:115px; border-radius:16px; padding:16px 12px; display:flex; flex-direction:column; justify-content:center; background:#edf3ef; color:#4d7058; text-align:center; }
+    .loop-node strong { font-size:13px; margin-bottom:7px; }
+    .loop-node span { font-size:11px; line-height:1.6; }
+    .loop-arrow { color:#81958a; font-size:22px; text-align:center; }
+    .loop-return { text-align:center; margin-top:16px; color:#64816e; font-size:12px; font-weight:700; }
+    .sequence { display:grid; gap:10px; }
+    .sequence-step { display:grid; grid-template-columns:38px 1fr; gap:13px; align-items:start; background:white; border:1px solid var(--border); border-radius:16px; padding:17px; }
+    .sequence-step .number { width:30px; height:30px; display:grid; place-items:center; border-radius:10px; background:#edf3ef; color:#587562; font-size:12px; font-weight:700; }
+    .sequence-step strong { font-size:13px; display:block; margin-bottom:5px; }
+    .sequence-step p { color:#586371; font-size:13px; line-height:1.75; }
+    .contrast-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .contrast-card { border-radius:17px; padding:20px; }
+    .contrast-card h3 { font-size:14px; margin-bottom:9px; }
+    .contrast-card p { font-size:13px; line-height:1.8; }
+    .contrast-card.one { background:#edf3ef; color:#4d7058; }
+    .contrast-card.two { background:#f1eff6; color:#695d7d; }
+    .insight { background:#eaf2ec; border-radius:20px; padding:24px; margin:14px 0; }
+    .insight-label { color:#587562; font-size:10px; font-weight:700; letter-spacing:1px; margin-bottom:9px; }
+    .insight p { color:#405f49; font-size:15px; line-height:1.8; }
+    .reading-footer { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px; margin-top:45px; padding-top:22px; border-top:1px solid var(--border); }
+    .reading-footer a { color:#64816e; font-size:13px; }
+    @media(max-width:700px) {
+      .concept-grid,.contrast-grid { grid-template-columns:1fr; }
+      .concept-card.wide { grid-column:auto; }
+      .loop { grid-template-columns:1fr; }
+      .loop-arrow { transform:rotate(90deg); }
+      .network { grid-template-columns:1fr; }
+      .network-middle { grid-template-columns:1fr 1fr; }
+      .reading-card,.diagram-card { padding:19px; }
+      .reading-title { letter-spacing:-.8px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../../../index.html">
+      <span class="brand-icon">✳</span>
+      <span>my notebook</span>
+    </a>
+    <nav class="navigation">
+      <a href="../../../index.html">Home</a>
+      <a href="../index.html">Course</a>
+      <a class="active" href="../notes.html">Notes</a>
+      <a href="../syllabus.html">Syllabus</a>
+    </nav>
+  </header>
+
+  <main class="container reading-page">
+    <a class="back-link" href="../notes.html">← Back to notes library</a>
+
+    <p class="reading-meta">HISTORICAL LEGACIES · SESSION 3 · 2015</p>
+    <h1 class="reading-title">Patronal Politics and the Power of Expectations</h1>
+    <p class="reading-subtitle">Henry E. Hale · The central role of expectations in sustaining political power</p>
+
+    <div class="reading-tags">
+      <span>Patronalism</span>
+      <span>Informal institutions</span>
+      <span>Political networks</span>
+      <span>Collective action</span>
+    </div>
+
+    <section class="reading-section">
+      <div class="section-heading">
+        <span class="section-number">01</span>
+        <h2>Central argument</h2>
+      </div>
+      <div class="reading-card">
+        <p>Hale argues that political power in patronalistic societies is sustained through personal networks and, crucially, people's expectations about whether others will remain loyal. Formal institutions, ideology and material resources matter, but they cannot independently explain how political power is maintained or lost.</p>
+        <p>The central question is not simply what resources a leader controls. It is whether the people within their network believe that others will continue to obey them. Political power is therefore a social equilibrium, reproduced through mutually reinforcing expectations.</p>
+      </div>
+    </section>
+
+    <section class="reading-section">
+      <div class="section-heading">
+        <span class="section-number">02</span>
+        <h2>Core concepts</h2>
+      </div>
+      <div class="concept-grid">
+        <div class="concept-card">
+          <strong>Patronalism</strong>
+          <p>A social equilibrium in which individuals organise political and economic activities primarily through personal relationships and exchanges of concrete rewards and punishments.</p>
+        </div>
+        <div class="concept-card">
+          <strong>Patron-client relationship</strong>
+          <p>An unequal relationship in which a patron provides resources, protection or opportunities in exchange for a client's loyalty and support.</p>
+        </div>
+        <div class="concept-card">
+          <strong>Patronal network</strong>
+          <p>A network of personal relationships connecting patrons, clients and other individuals. These networks are often hierarchical but can extend across different political and economic institutions.</p>
+        </div>
+        <div class="concept-card">
+          <strong>Social equilibrium</strong>
+          <p>A stable pattern of behaviour that persists because individuals expect others to behave in the same way.</p>
+        </div>
+        <div class="concept-card">
+          <strong>Self-fulfilling prophecy</strong>
+          <p>An expectation that helps produce the outcome it predicts. People support a leader because they expect others to support them, thereby making that leader stronger.</p>
+        </div>
+        <div class="concept-card">
+          <strong>Coordination dilemma</strong>
+          <p>A situation in which an individual's best decision depends on what others decide to do, making collective expectations essential.</p>
+        </div>
+        <div class="concept-card wide">
+          <strong>Network investment</strong>
+          <p>The time, resources, trust and personal obligations accumulated through participation in a network. These investments make leaving an established network costly.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="reading-section">
+      <div class="section-heading">
+        <span class="section-number">03</span>
+        <h2>How patronal networks operate</h2>
+      </div>
+      <div class="diagram-card">
+        <div class="diagram-title">THE STRUCTURE OF A PATRONAL NETWORK</div>
+        <div class="network">
+          <div class="network-column">
+            <div class="network-node patron">Patron</div>
+          </div>
+          <div class="network-middle">
+            <span>Resources</span>
+            <span>Protection</span>
+            <span>Rewards</span>
+            <span>Opportunities</span>
+          </div>
+          <div class="network-column">
+            <div class="network-node client">Client A</div>
+            <div class="network-node client">Client B</div>
+            <div class="network-node client">Client C</div>
+          </div>
+        </div>
+        <p class="diagram-caption">Simplified representation of the patron-client relationship. Clients provide loyalty and assistance in return for access to resources, protection and opportunities. Networks can extend across political and economic institutions.</p>
+      </div>
+      <div class="reading-card">
+        <h3>Patronalism is not simply corruption</h3>
+        <p>Hale distinguishes patronalism from corruption, clientelism and weak rule of law. These phenomena may accompany patronalism, but they are narrower concepts. Patronalism describes the underlying social equilibrium organised around personalised relationships.</p>
+        <p>For example, favouring relatives or using personal connections may be legal in one context and illegal in another. What matters analytically is the personalised nature of the relationship, not necessarily its legal status.</p>
+      </div>
+    </section>
+
+    <section class="reading-section">
+      <div class="section-heading">
+        <span class="section-number">04</span>
+        <h2>The power of expectations</h2>
+      </div>
+      <div class="reading-card">
+        <p>Existing explanations of patronal networks often emphasise the patron's resources, capacity to monitor clients and ability to punish disloyalty. Hale argues that these factors are insufficient.</p>
+        <p>A patron may possess enormous resources and organisational power but still lose control if clients stop believing that others will obey. Expectations determine whether resources can actually be mobilised to exercise power.</p>
+      </div>
+      <div class="diagram-card">
+        <div class="diagram-title">THE SELF-REINFORCING LOYALTY LOOP</div>
+        <div class="loop">
+          <div class="loop-node">
+            <strong>Expected loyalty</strong>
+            <span>Individuals believe others will remain loyal to the patron.</span>
+          </div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-node">
+            <strong>Individual loyalty</strong>
+            <span>They choose to remain within the network and obey.</span>
+          </div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-node">
+            <strong>Political power</strong>
+            <span>Coordinated loyalty reinforces the patron's authority.</span>
+          </div>
+        </div>
+        <div class="loop-return">↺ Reinforced power sustains expectations of future loyalty</div>
+        <p class="diagram-caption">The diagram represents Hale's central mechanism: expectations coordinate behaviour, and coordinated behaviour reproduces the very power that individuals expect to persist.</p>
+      </div>
+    </section>
+
+    <section class="reading-section">
+      <div class="section-heading">
+        <span class="section-number">05</span>
+        <h2>The collapse of communist regimes in 1989</h2>
+      </div>
+      <div class="reading-card">
+        <p>Hale draws on Mancur Olson's explanation of the collapse of communist regimes in Eastern Europe. These regimes possessed extensive control over resources, surveillance and coercion. If resources and organisational capacity alone determined political stability, they should have survived.</p>
+        <p>Instead, changing expectations among officials and clients undermined the willingness to defend the regimes. Hale describes this dynamic as a kind of <strong>bank run on the state</strong>.</p>
+      </div>
+      <div class="sequence">
+        <div class="sequence-step">
+          <div class="number">1</div>
+          <div>
+            <strong>Changing political signals</strong>
+            <p>Gorbachev's reforms and his refusal to intervene to preserve other socialist regimes changed how officials assessed the regime's future.</p>
+          </div>
+        </div>
+        <div class="sequence-step">
+          <div class="number">2</div>
+          <div>
+            <strong>Declining expectations of survival</strong>
+            <p>Political elites, police officers and other officials increasingly believed their governments might collapse.</p>
+          </div>
+        </div>
+        <div class="sequence-step">
+          <div class="number">3</div>
+          <div>
+            <strong>Withdrawal of loyalty</strong>
+            <p>Officials became less willing to obey orders or punish opposition, weakening the regime's capacity to maintain control.</p>
+          </div>
+        </div>
+        <div class="sequence-step">
+          <div class="number">4</div>
+          <div>
+            <strong>Self-reinforcing collapse</strong>
+            <p>As more people expected the regime to fall, fewer were willing to defend it. The expectation of collapse helped produce the collapse itself.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reading-section">
+      <div class="section-heading">
+        <span class="section-number">06</span>
+        <h2>Why networks are difficult to abandon</h2>
+      </div>
+      <div class="reading-card">
+        <p>If expectations determine which networks are powerful, individuals should theoretically switch networks whenever another becomes more promising. Hale explains why this does not happen easily: networks are relatively sticky.</p>
+        <p>Individuals accumulate trust, reputation, influence, favours and personal obligations through long-term participation. Leaving means potentially losing these investments and entering another network without the same established relationships.</p>
+      </div>
+      <div class="contrast-grid">
+        <div class="contrast-card one">
+          <h3>Why people remain</h3>
+          <p>Established trust, reputation, reciprocal obligations, influence and accumulated personal relationships make existing networks valuable.</p>
+        </div>
+        <div class="contrast-card two">
+          <h3>Why people defect</h3>
+          <p>When expectations about the future of a network change, the value of remaining can decline and individuals may begin to leave.</p>
+        </div>
+      </div>
+      <div class="reading-card">
+        <p>Hale does not treat ethnicity or kinship as inherently decisive. They matter because they can represent substantial investments in existing relationships. Even these networks can experience defections when expectations change.</p>
+      </div>
+    </section>
+
+    <section class="reading-section">
+      <div class="section-heading">
+        <span class="section-number">07</span>
+        <h2>Formal institutions and informal networks</h2>
+      </div>
+      <div class="reading-card">
+        <p>Patronal networks frequently extend beyond the boundaries of individual institutions. A person may hold little formal authority but exercise considerable political influence through personal connections.</p>
+        <p>Elections, constitutions and government structures therefore do not necessarily determine how power operates in practice. Their effects depend partly on the expectations and relationships of the actors operating within them.</p>
+      </div>
+    </section>
+
+    <section class="reading-section">
+      <div class="section-heading">
+        <span class="section-number">08</span>
+        <h2>Methodology and theoretical contribution</h2>
+      </div>
+      <div class="reading-card">
+        <p>The chapter develops a theoretical, ideal-type framework drawing on collective action theory, coordination dilemmas and self-fulfilling expectations.</p>
+        <p>It uses historical illustrations, particularly the collapse of communist regimes in 1989, to demonstrate how expectations can coordinate loyalty and undermine political authority.</p>
+      </div>
+    </section>
+
+    <section class="reading-section">
+      <div class="section-heading">
+        <span class="section-number">09</span>
+        <h2>Overall takeaway</h2>
+      </div>
+      <div class="insight">
+        <div class="insight-label">THE CENTRAL INSIGHT</div>
+        <p><strong>Political power depends not simply on what a leader controls, but on whether others believe that the leader will continue to control it.</strong> Expectations coordinate loyalty, and coordinated loyalty produces power.</p>
+      </div>
+    </section>
+
+    <div class="reading-footer">
+      <a href="../notes.html">← Back to notes library</a>
+      <a href="mead.html">Previous reading: Mead (2014) →</a>
+    </div>
+  </main>
+</body>
+</html>
