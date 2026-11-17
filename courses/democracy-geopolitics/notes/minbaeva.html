@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minbaeva et al. (2022) | My Notes</title>
+  <link rel="stylesheet" href="../../../style.css">
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+
+  <style>
+    .reading-page { max-width:1050px; margin:0 auto; padding:38px 0 70px; }
+    .back-link { display:inline-block; color:var(--muted); font-size:13px; margin-bottom:30px; }
+    .reading-header { margin-bottom:30px; }
+    .eyebrow { color:#718a79; font-size:10px; font-weight:700; letter-spacing:1.3px; margin-bottom:12px; }
+    .reading-header h1 { font-size:clamp(29px,5vw,43px); line-height:1.15; max-width:800px; }
+    .subtitle { color:var(--muted); margin-top:12px; font-size:15px; }
+    .author-line { color:var(--muted); font-size:12px; margin-top:15px; }
+    .central-argument { background:#edf3ef; border:1px solid #dce8df; border-radius:22px; padding:25px 27px; margin-bottom:35px; }
+    .central-argument .eyebrow { margin-bottom:9px; }
+    .central-argument p { color:#405b49; font-size:16px; line-height:1.7; }
+    .section { margin:36px 0; }
+    .section-heading { font-size:22px; margin-bottom:15px; }
+    .section-intro { color:var(--muted); font-size:13px; line-height:1.7; max-width:780px; margin-bottom:19px; }
+    .concept-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .concept-card { background:white; border:1px solid var(--border); border-radius:17px; padding:18px; }
+    .concept-card h3 { font-size:14px; margin-bottom:7px; }
+    .concept-card p { color:var(--muted); font-size:12px; line-height:1.65; }
+    .concept-card .concept-tag { font-size:9px; font-weight:700; letter-spacing:.8px; color:#78917e; margin-bottom:8px; }
+    .symbiosis { display:grid; grid-template-columns:1fr 48px 1fr; gap:10px; align-items:center; }
+    .sym-card { border-radius:19px; padding:23px; min-height:145px; }
+    .sym-card.formal { background:#eaf0fa; border:1px solid #dce5f5; }
+    .sym-card.informal { background:#f5eee5; border:1px solid #eee2d2; }
+    .sym-card h3 { font-size:16px; margin-bottom:8px; }
+    .sym-card p { color:#667181; font-size:12px; line-height:1.65; }
+    .sym-arrow { text-align:center; color:#82918a; font-size:24px; }
+    .sym-result { margin-top:12px; background:#f0f3f7; border-radius:14px; padding:14px 17px; text-align:center; }
+    .sym-result strong { font-size:13px; }
+    .sym-result p { color:var(--muted); font-size:11px; margin-top:4px; }
+    .dual-grid { display:grid; grid-template-columns:1fr 1fr; gap:13px; }
+    .dual-card { border-radius:18px; padding:22px; }
+    .dual-card.pipes { background:#eaf0fa; }
+    .dual-card.prisms { background:#f4edf8; }
+    .dual-card h3 { font-size:17px; margin-bottom:8px; }
+    .dual-card p { color:#657083; font-size:12px; line-height:1.7; }
+    .dual-card .visual-word { font-size:30px; margin-bottom:10px; }
+    .network-matrix { display:grid; grid-template-columns:95px 1fr 1fr; gap:7px; }
+    .matrix-cell { border-radius:13px; padding:15px 13px; min-height:115px; }
+    .matrix-head { background:#edf0f3; color:#697583; display:flex; align-items:center; justify-content:center; text-align:center; font-size:10px; font-weight:700; letter-spacing:.5px; }
+    .matrix-axis { background:#edf0f3; display:flex; align-items:center; justify-content:center; text-align:center; color:#697583; font-size:10px; font-weight:700; letter-spacing:.5px; }
+    .matrix-cell h3 { font-size:14px; margin-bottom:6px; }
+    .matrix-cell p { color:#5f6d7c; font-size:11px; line-height:1.55; }
+    .solidarity { background:#e6f0e8; }
+    .domination { background:#f5eae7; }
+    .redistribution { background:#e9eef8; }
+    .market { background:#f6f0e3; }
+    .persistence-note { background:#f7f8f7; border:1px solid var(--border); border-radius:17px; padding:19px; margin-top:14px; }
+    .persistence-note strong { font-size:13px; }
+    .persistence-note p { color:var(--muted); font-size:12px; line-height:1.65; margin-top:5px; }
+    .case-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .case-card { background:white; border:1px solid var(--border); border-radius:17px; overflow:hidden; }
+    .case-top { padding:15px 17px; }
+    .case-top h3 { font-size:15px; }
+    .case-top span { color:var(--muted); font-size:10px; }
+    .case-body { padding:0 17px 17px; }
+    .case-body p { color:var(--muted); font-size:12px; line-height:1.65; }
+    .case-label { display:inline-block; font-size:9px; font-weight:700; letter-spacing:.7px; color:#718a79; margin-bottom:7px; }
+    .propositions { display:grid; grid-template-columns:1fr 1fr; gap:13px; }
+    .proposition { background:#f1f3f7; border-radius:17px; padding:20px; }
+    .proposition .number { color:#8290a1; font-size:10px; font-weight:700; letter-spacing:1px; }
+    .proposition h3 { font-size:14px; margin:8px 0; }
+    .proposition p { color:var(--muted); font-size:12px; line-height:1.65; }
+    .method-card { background:#f7f5f1; border-radius:17px; padding:20px; }
+    .method-card p { color:#66717d; font-size:12px; line-height:1.7; }
+    .takeaway { background:#e9eff9; border-radius:21px; padding:24px 26px; margin-top:35px; }
+    .takeaway h2 { font-size:19px; margin-bottom:9px; }
+    .takeaway p { color:#52647d; font-size:14px; line-height:1.7; }
+    .reading-footer { display:flex; justify-content:space-between; gap:15px; border-top:1px solid var(--border); padding-top:20px; margin-top:35px; }
+    .reading-footer a { color:#64816e; font-size:12px; }
+    @media(max-width:700px) {
+      .concept-grid,.case-grid { grid-template-columns:1fr; }
+      .symbiosis { grid-template-columns:1fr; }
+      .sym-arrow { transform:rotate(90deg); }
+      .dual-grid,.propositions { grid-template-columns:1fr; }
+      .network-matrix { grid-template-columns:68px 1fr 1fr; }
+      .matrix-cell { padding:11px 9px; min-height:130px; }
+      .matrix-cell h3 { font-size:12px; }
+      .matrix-cell p { font-size:10px; }
+      .reading-footer { flex-direction:column; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href="../../../index.html">
+      <span class="brand-icon">✳</span>
+      <span>my notebook</span>
+    </a>
+    <nav class="navigation">
+      <a href="../../../index.html">Home</a>
+      <a href="../index.html">Course</a>
+      <a class="active" href="../notes.html">Notes</a>
+      <a href="../syllabus.html">Syllabus</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <article class="reading-page">
+
+      <a class="back-link" href="../notes.html">← Back to reading library</a>
+
+      <header class="reading-header">
+        <p class="eyebrow">DEMOCRACY & GEOPOLITICS / SESSION 3</p>
+        <h1>Explaining the Persistence of Informal Institutions</h1>
+        <p class="subtitle">The role of informal networks</p>
+        <p class="author-line">Dana Minbaeva, Alena Ledeneva, Maral Muratbekova-Touron & Sven Horak (2022)</p>
+      </header>
+
+      <section class="central-argument">
+        <p class="eyebrow">CENTRAL ARGUMENT</p>
+        <p>Informal institutions persist because informal networks simultaneously reproduce established practices and adapt them to changing formal institutions. Their persistence depends not only on what networks do, but also on how they are structured and the relationships connecting their members.</p>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">Core concepts</h2>
+        <div class="concept-grid">
+          <div class="concept-card">
+            <p class="concept-tag">INSTITUTIONS</p>
+            <h3>Formal institutions</h3>
+            <p>Official rules and structures, including laws, regulations and established organisational procedures.</p>
+          </div>
+          <div class="concept-card">
+            <p class="concept-tag">INSTITUTIONS</p>
+            <h3>Informal institutions</h3>
+            <p>Unwritten rules, norms and practices guiding behaviour outside or alongside formal regulations.</p>
+          </div>
+          <div class="concept-card">
+            <p class="concept-tag">MECHANISM</p>
+            <h3>Informal networks</h3>
+            <p>Personal relationships through which individuals exchange information, resources, favours, support and opportunities.</p>
+          </div>
+          <div class="concept-card">
+            <p class="concept-tag">RELATIONSHIP</p>
+            <h3>Mutualistic symbiosis</h3>
+            <p>Formal and informal institutions coexist and influence one another, rather than simply competing.</p>
+          </div>
+          <div class="concept-card">
+            <p class="concept-tag">FUNCTION</p>
+            <h3>Dual functionality</h3>
+            <p>Networks transmit existing practices while transforming them to accommodate new circumstances.</p>
+          </div>
+          <div class="concept-card">
+            <p class="concept-tag">PROCESS</p>
+            <h3>Autocatalysis</h3>
+            <p>A self-reinforcing process through which interactions within a network reproduce and sustain the network itself.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">1. Beyond the formal versus informal distinction</h2>
+        <p class="section-intro">The authors challenge the assumption that informal institutions are simply substitutes for weak formal ones. They identify three ways of understanding the relationship between formal and informal institutions.</p>
+
+        <div class="concept-grid">
+          <div class="concept-card">
+            <p class="concept-tag">PERSPECTIVE 1</p>
+            <h3>Parasitic symbiosis</h3>
+            <p>Informal practices benefit from weaknesses in formal institutions. As formal institutions improve, informal practices should theoretically decline.</p>
+          </div>
+          <div class="concept-card">
+            <p class="concept-tag">PERSPECTIVE 2</p>
+            <h3>Commensalistic symbiosis</h3>
+            <p>Informal practices emerge before formal rules and can become formalised. Formal institutions develop without necessarily eliminating existing informal practices.</p>
+          </div>
+          <div class="concept-card">
+            <p class="concept-tag">THE AUTHORS' PROPOSAL</p>
+            <h3>Mutualistic symbiosis</h3>
+            <p>Formal and informal institutions coexist and influence one another. Institutional change can reshape informality without replacing it.</p>
+          </div>
+        </div>
+
+        <div class="section" style="margin-top:23px;">
+          <div class="symbiosis">
+            <div class="sym-card formal">
+              <h3>Formal institutions</h3>
+              <p>Official rules, regulations, organisational procedures and institutional reforms.</p>
+            </div>
+            <div class="sym-arrow">⇄</div>
+            <div class="sym-card informal">
+              <h3>Informal institutions</h3>
+              <p>Personal relationships, unwritten norms, conventions and established practices.</p>
+            </div>
+          </div>
+          <div class="sym-result">
+            <strong>Mutualistic symbiosis</strong>
+            <p>Both institutional forms coexist, interact and adapt to one another.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">2. Networks as both pipes and prisms</h2>
+        <p class="section-intro">Informal networks are the mechanism through which informal institutions survive. Their two interconnected functions explain how practices can remain recognisable while adapting to new conditions.</p>
+
+        <div class="dual-grid">
+          <div class="dual-card pipes">
+            <div class="visual-word">↗</div>
+            <h3>Pipes · Transmission</h3>
+            <p>Networks channel resources, favours, information and opportunities between individuals. They transmit norms, conventions and behaviours, reproducing established informal institutions.</p>
+          </div>
+          <div class="dual-card prisms">
+            <div class="visual-word">◇</div>
+            <h3>Prisms · Transformation</h3>
+            <p>Networks shape how individuals interpret and respond to institutional changes. They allow existing practices to adjust to new formal and social conditions.</p>
+          </div>
+        </div>
+
+        <div class="persistence-note">
+          <strong>Autocatalysis: why the process reinforces itself</strong>
+          <p>Repeated interactions and feedback loops allow networks to reproduce themselves. These interactions sustain relationships and practices while also facilitating adaptation. Transmission and transformation therefore operate together.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">3. What makes networks persistent?</h2>
+        <p class="section-intro">The authors distinguish networks along two dimensions: how open or closed their membership is, and whether their relationships are primarily affective or instrumental.</p>
+
+        <div class="network-matrix">
+          <div class="matrix-cell matrix-head"></div>
+          <div class="matrix-cell matrix-head">AFFECTIVE<br>Trust, identity, attachment</div>
+          <div class="matrix-cell matrix-head">INSTRUMENTAL<br>Practical interests, objectives</div>
+
+          <div class="matrix-cell matrix-axis">CLOSED<br>Restricted membership</div>
+          <div class="matrix-cell solidarity">
+            <h3>Solidarity</h3>
+            <p>Kinship, belonging and strong mutual obligations. Particularly resistant to change.</p>
+          </div>
+          <div class="matrix-cell domination">
+            <h3>Domination</h3>
+            <p>Restricted access, elite connections and the pursuit of influence or advantage.</p>
+          </div>
+
+          <div class="matrix-cell matrix-axis">OPEN<br>Wider membership</div>
+          <div class="matrix-cell redistribution">
+            <h3>Redistribution</h3>
+            <p>Wider relationships through which individuals exchange support and assistance.</p>
+          </div>
+          <div class="matrix-cell market">
+            <h3>Market exchange</h3>
+            <p>Practical connections and the exchange of opportunities or resources.</p>
+          </div>
+        </div>
+
+        <div class="persistence-note">
+          <strong>The key theoretical distinction</strong>
+          <p>Closed networks restrict access and reinforce existing obligations. Affective relationships create trust, identity and reciprocal responsibilities. Together, these characteristics make informal practices particularly durable. Open, instrumental networks are generally more adaptable and less resistant to change.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">4. Illustrative cases</h2>
+        <p class="section-intro">The authors use examples from different contexts to demonstrate how informal practices can survive institutional transformation.</p>
+
+        <div class="case-grid">
+          <div class="case-card">
+            <div class="case-top" style="background:#e9eff8;">
+              <h3>South Korea</h3>
+              <span>Yongo networks</span>
+            </div>
+            <div class="case-body">
+              <span class="case-label">REPRODUCTION</span>
+              <p>Networks based on kinship, seniority and Confucian values reproduce established relationships. Even with formal gender-equality legislation, male-dominated networks can preserve traditional expectations in recruitment and promotion.</p>
+            </div>
+          </div>
+
+          <div class="case-card">
+            <div class="case-top" style="background:#f5eee5;">
+              <h3>Russia</h3>
+              <span>Blat → Svyazi</span>
+            </div>
+            <div class="case-body">
+              <span class="case-label">ADAPTATION</span>
+              <p>Following the collapse of the Soviet Union, networks associated with blat adapted to the new institutional environment through newer forms of useful personal connections, commonly described as svyazi.</p>
+            </div>
+          </div>
+
+          <div class="case-card">
+            <div class="case-top" style="background:#e9f1e9;">
+              <h3>Kazakhstan</h3>
+              <span>Rushyldyq</span>
+            </div>
+            <div class="case-body">
+              <span class="case-label">CONTINUITY</span>
+              <p>Clan-based loyalty survived Soviet attempts to suppress it by becoming less visible, while continuing to influence access to economic, social and political opportunities.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">5. The two propositions</h2>
+        <div class="propositions">
+          <div class="proposition">
+            <p class="number">PROPOSITION 01</p>
+            <h3>Persistence through dual functionality</h3>
+            <p>Informal institutions persist because networks simultaneously adapt to changes introduced by formal institutions and preserve existing informal practices.</p>
+          </div>
+          <div class="proposition">
+            <p class="number">PROPOSITION 02</p>
+            <h3>Persistence through network structure</h3>
+            <p>Persistence is stronger when informal institutions are enacted through relatively closed and affective networks rather than relatively open and instrumental ones.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">Methodology</h2>
+        <div class="method-card">
+          <p>The paper is theoretical, combining an interdisciplinary literature review, a conceptual framework and qualitative illustrations. Its examples draw heavily on the Global Encyclopedia of Informality, a collaborative project involving approximately 250 researchers, covering 66 countries and documenting almost 200 examples of informal practices.</p>
+        </div>
+      </section>
+
+      <section class="takeaway">
+        <h2>Overall takeaway</h2>
+        <p>Informal institutions do not necessarily disappear when formal institutions improve. Personal networks allow informal practices to survive by transmitting established norms while adapting them to changing circumstances. Their persistence is strongest when relationships are closed, affective and embedded in reciprocal obligations.</p>
+      </section>
+
+      <footer class="reading-footer">
+        <a href="hale.html">← Previous reading: Hale</a>
+        <a href="../notes.html">Back to reading library ↑</a>
+      </footer>
+
+    </article>
+  </main>
+</body>
+</html>
