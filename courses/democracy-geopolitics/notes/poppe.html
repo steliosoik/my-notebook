@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beyond Contestation | Democracy & Geopolitics</title>
+  <link rel="stylesheet" href="../../../style.css">
+  <style>
+    .reading-page { max-width: 1050px; margin: 0 auto; padding: 32px 22px 70px; color: var(--text, #26332e); }
+    .back-link { display: inline-block; margin-bottom: 28px; color: #71877b; text-decoration: none; font-size: .9rem; }
+    .eyebrow { color: #82978b; font-size: .76rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.08; letter-spacing: -.045em; margin: 12px 0; }
+    .subtitle { color: #78847e; font-size: 1.05rem; line-height: 1.6; max-width: 780px; }
+    .author { color: #87928c; font-size: .9rem; margin-top: 18px; }
+    .section { margin-top: 38px; }
+    .section h2 { font-size: 1.35rem; letter-spacing: -.025em; margin: 0 0 16px; }
+    .section > p { line-height: 1.75; color: #53615a; }
+    .argument { background: #edf3ee; border: 1px solid #dce8df; border-radius: 22px; padding: 25px; margin-top: 28px; }
+    .tag { color: #718d7b; font-size: .72rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+    .argument p { color: #34463b; font-size: 1.08rem; line-height: 1.7; margin-bottom: 0; }
+    .concept-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+    .concept { background: #fff; border: 1px solid #e8ece9; border-radius: 16px; padding: 17px; }
+    .concept strong { display: block; color: #394c40; margin-bottom: 7px; }
+    .concept span { color: #69766f; font-size: .91rem; line-height: 1.6; display: block; }
+    .negotiation-note { padding: 17px 19px; border-radius: 16px; background: #f4f1fa; color: #5f5878; line-height: 1.65; margin-top: 14px; font-size: .92rem; }
+    .depth-list { display: grid; gap: 10px; counter-reset: depth; }
+    .depth-item { display: grid; grid-template-columns: 48px 1fr; gap: 14px; align-items: start; background: #fff; border: 1px solid #e8ece9; border-radius: 17px; padding: 16px; }
+    .depth-num { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 12px; background: #edf2ee; color: #65806d; font-weight: 750; }
+    .depth-item h3 { margin: 2px 0 5px; font-size: 1rem; color: #405448; }
+    .depth-item p { margin: 0; color: #69766f; font-size: .9rem; line-height: 1.55; }
+    .depth-item .level { color: #8b9290; font-size: .72rem; font-weight: 750; text-transform: uppercase; letter-spacing: .08em; margin-top: 7px; display: inline-block; }
+    .depth-item:last-child { background: #f0edf9; border-color: #e5def4; }
+    .depth-item:last-child .depth-num { background: #e3ddf2; color: #6d628c; }
+    .actor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+    .actor-card { border-radius: 17px; padding: 19px; background: #f5f6f4; }
+    .actor-card h3 { font-size: 1rem; margin: 0 0 8px; color: #45574b; }
+    .actor-card p { font-size: .9rem; color: #69766f; line-height: 1.6; margin: 0; }
+    .curve-card { margin-top: 16px; background: #fff; border: 1px solid #e8ece9; border-radius: 18px; padding: 20px; }
+    .curve-card h3 { margin: 0 0 8px; font-size: 1rem; color: #45574b; }
+    .curve-card p { font-size: .9rem; color: #69766f; line-height: 1.6; margin: 0; }
+    .curve-visual { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 15px; align-items: end; }
+    .curve-col { text-align: center; }
+    .curve-bar { border-radius: 10px 10px 4px 4px; background: #dce8df; margin: 0 auto 8px; width: 100%; max-width: 110px; }
+    .curve-col:nth-child(1) .curve-bar { height: 35px; }
+    .curve-col:nth-child(2) .curve-bar { height: 88px; background: #9fbaa5; }
+    .curve-col:nth-child(3) .curve-bar { height: 35px; }
+    .curve-col strong { font-size: .77rem; color: #53635a; display: block; }
+    .curve-col span { font-size: .7rem; color: #87918b; display: block; margin-top: 4px; }
+    .context-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 11px; }
+    .context-card { background: #fff; border: 1px solid #e8ece9; border-radius: 16px; padding: 17px; }
+    .context-card strong { display: block; color: #46564c; margin-bottom: 7px; }
+    .context-card p { margin: 0; font-size: .88rem; color: #69766f; line-height: 1.6; }
+    .process { display: grid; grid-template-columns: 1fr 34px 1fr; gap: 10px; align-items: center; }
+    .process-card { border-radius: 18px; padding: 21px; min-height: 145px; }
+    .process-card h3 { margin: 0 0 8px; font-size: 1.05rem; }
+    .process-card p { margin: 0; font-size: .9rem; line-height: 1.6; }
+    .output { background: #eaf1fb; color: #4c6280; }
+    .outcome { background: #f5edf8; color: #6c587c; }
+    .process-arrow { text-align: center; color: #9aa49d; font-size: 1.4rem; }
+    .continuity { margin-top: 13px; background: #f2f5f1; border-radius: 15px; padding: 15px 18px; color: #617268; font-size: .9rem; line-height: 1.6; text-align: center; }
+    .takeaway { margin-top: 38px; padding: 25px; border-radius: 22px; background: #eef1fa; }
+    .takeaway .tag { color: #7c82a6; }
+    .takeaway p { color: #414967; font-size: 1.05rem; line-height: 1.7; margin-bottom: 0; }
+    .footer { border-top: 1px solid #e8ece9; margin-top: 42px; padding-top: 18px; color: #929b95; font-size: .8rem; }
+    @media (max-width: 560px) {
+      .reading-page { padding: 22px 16px 50px; }
+      .argument { padding: 20px; }
+      .process { grid-template-columns: 1fr; }
+      .process-arrow { transform: rotate(90deg); }
+    }
+  </style>
+</head>
+<body>
+  <main class="reading-page">
+    <a class="back-link" href="../notes.html">← Back to Notes</a>
+    <div class="eyebrow">Democracy &amp; Geopolitics · Europeanisation</div>
+    <h1>Beyond Contestation</h1>
+    <p class="subtitle">Conceptualizing Negotiation in Democracy Promotion</p>
+    <div class="author">Annika Elena Poppe, Julia Leininger &amp; Jonas Wolff · 2019 · <em>Democratization</em>, 26(5), pp. 777–795</div>
+
+    <section class="argument">
+      <div class="tag">Central argument</div>
+      <p>Democracy promotion should be understood as an interactive and ongoing process of negotiation between external promoters and local actors, rather than the unilateral transfer of democratic norms and institutions. Recipient actors possess agency to contest, reinterpret and reshape externally promoted policies.</p>
+    </section>
+
+    <section class="section">
+      <h2>Core concepts</h2>
+      <div class="concept-grid">
+        <div class="concept"><strong>Democracy promotion</strong><span>External efforts aimed at supporting liberalisation of authoritarian regimes and the establishment, deepening or stabilisation of democratic regimes.</span></div>
+        <div class="concept"><strong>Democracy promotion negotiation</strong><span>Communicative interaction between external democracy promoters and local actors involving the exchange of demands, arguments and proposals in pursuit of agreement.</span></div>
+        <div class="concept"><strong>Local agency</strong><span>The capacity of recipient-country actors to actively shape, challenge, reinterpret or reject externally promoted democratic policies.</span></div>
+        <div class="concept"><strong>Norm contestation</strong><span>The process through which actors challenge the meaning, legitimacy or applicability of established international norms.</span></div>
+        <div class="concept"><strong>Norm localisation</strong><span>The adaptation and reinterpretation of international norms to fit local political, cultural and institutional contexts.</span></div>
+        <div class="concept"><strong>Official and unofficial negotiations</strong><span>Official negotiations occur in formal institutional settings and seek explicit agreements. Unofficial exchanges are less formal and may produce tacit understandings.</span></div>
+        <div class="concept"><strong>Negotiation output</strong><span>The immediate results of negotiations, particularly whether an agreement is reached, its form, scope and substance.</span></div>
+        <div class="concept"><strong>Negotiation outcome</strong><span>The subsequent consequences of agreements or disagreements for democracy promotion practices and the recipient country's political regime.</span></div>
+      </div>
+      <div class="negotiation-note">The authors combine International Relations scholarship on norm contestation, appropriation and localisation with democratisation research that challenges linear understandings of political transitions. Negotiation relies on communication and involves at least some implicit exchange, except under conditions of pure coercion or passive acceptance.</div>
+    </section>
+
+    <section class="section">
+      <h2>What is being negotiated? Five issues</h2>
+      <p>The authors arrange potentially contentious issues according to increasing depth. Negotiation can concern practical arrangements or reach the fundamental principles underlying democracy promotion.</p>
+      <div class="depth-list">
+        <div class="depth-item">
+          <div class="depth-num">01</div>
+          <div><h3>Resources</h3><p>Distribution of financial assistance, incentives and sanctions.</p><span class="level">Practical / operational</span></div>
+        </div>
+        <div class="depth-item">
+          <div class="depth-num">02</div>
+          <div><h3>Implementation</h3><p>How already agreed democracy promotion activities are carried out.</p><span class="level">Practical / operational</span></div>
+        </div>
+        <div class="depth-item">
+          <div class="depth-num">03</div>
+          <div><h3>Policy formulation</h3><p>Strategies, priorities, objectives, programmes and partners.</p><span class="level">Strategic choices</span></div>
+        </div>
+        <div class="depth-item">
+          <div class="depth-num">04</div>
+          <div><h3>Problem definition</h3><p>How the political situation and the problems requiring intervention are interpreted.</p><span class="level">Interpretation of the situation</span></div>
+        </div>
+        <div class="depth-item">
+          <div class="depth-num">05</div>
+          <div><h3>Normative premises</h3><p>Fundamental understandings of democracy, legitimate external interference and the principles underlying democracy promotion.</p><span class="level">Fundamental norms and principles</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What shapes negotiations?</h2>
+      <p>The framework distinguishes characteristics of the actors involved from the wider context in which they interact.</p>
+      <div class="actor-grid">
+        <div class="actor-card">
+          <h3>Recipient regime type</h3>
+          <p>Expected to have a curvilinear relationship with negotiation depth. Highly authoritarian regimes may view meaningful negotiation as threatening to regime survival, while highly democratic regimes may have little substantive disagreement with promoters. Intermediate regimes offer greater potential for substantive negotiations.</p>
+        </div>
+        <div class="actor-card">
+          <h3>Domestic strength of recipient governments</h3>
+          <p>Also expected to have a curvilinear relationship. Governments that are neither overwhelmingly strong nor too weak are more likely to negotiate meaningfully: they can resist external demands while remaining susceptible to external pressure.</p>
+        </div>
+        <div class="actor-card">
+          <h3>Promoter commitment</h3>
+          <p>The importance and institutional centralisation of democracy promotion in the external actor's foreign policy increase the likelihood of substantive negotiations.</p>
+        </div>
+      </div>
+      <div class="curve-card">
+        <h3>Two curvilinear relationships</h3>
+        <p>For recipient regime type and domestic government strength, the authors expect the potential for deeper negotiations to be greatest at intermediate levels, rather than at either extreme.</p>
+        <div class="curve-visual">
+          <div class="curve-col"><div class="curve-bar"></div><strong>Low</strong><span>Lower potential</span></div>
+          <div class="curve-col"><div class="curve-bar"></div><strong>Intermediate</strong><span>Higher potential</span></div>
+          <div class="curve-col"><div class="curve-bar"></div><strong>High</strong><span>Lower potential</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Contextual conditions</h2>
+      <div class="context-grid">
+        <div class="context-card"><strong>Power asymmetries</strong><p>External actors possess material and political leverage, but negotiations can empower weaker recipients because reaching an agreement requires their participation. The authors expect greater asymmetries to increase the likelihood of in-depth negotiations.</p></div>
+        <div class="context-card"><strong>Normative setting</strong><p>Existing international commitments to sovereignty and non-interference strengthen recipients. Established human rights and democracy obligations strengthen promoters. Strong, previously agreed democratic norms reduce the need for deeper negotiations.</p></div>
+        <div class="context-card"><strong>Normative convergence and divergence</strong><p>Greater differences in cultural understandings, political values and conceptions of democracy increase the likelihood that fundamental normative issues become contested.</p></div>
+        <div class="context-card"><strong>Historical relationship</strong><p>The history of interaction between the parties, including colonial legacies and previous relationships, shapes the negotiation context.</p></div>
+        <div class="context-card"><strong>Regional and global environment</strong><p>The wider international context matters, including the influence of alternative powers such as China and Russia.</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Negotiation results: output versus outcome</h2>
+      <p>An agreement is not the same thing as its consequences. The authors distinguish the immediate results of negotiations from what subsequently happens to democracy promotion and the recipient regime.</p>
+      <div class="process">
+        <div class="process-card output">
+          <h3>Negotiation output</h3>
+          <p>Was an agreement reached? Was it official or informal, explicit or tacit, full or partial? Whose demands shaped its substance?</p>
+        </div>
+        <div class="process-arrow">→</div>
+        <div class="process-card outcome">
+          <h3>Negotiation outcome</h3>
+          <p>What consequences did the agreement or disagreement have for democracy promotion policies and practices, and for the recipient country's political regime?</p>
+        </div>
+      </div>
+      <div class="continuity"><strong>An unresolved question:</strong> Do deeper negotiations and greater local ownership improve democratic effectiveness, or can they instead produce compromises that dilute democracy promotion?</div>
+      <p>Negotiation is not a linear process with a definitive endpoint. It is continuous and overlaps with the implementation and adjustment of democracy promotion itself.</p>
+    </section>
+
+    <section class="takeaway">
+      <div class="tag">Core takeaway</div>
+      <p>Democracy promotion is not simply something external actors do to recipient countries. It emerges through ongoing negotiation between actors with different interests, power resources and understandings of democracy. Understanding its effectiveness therefore requires examining what is negotiated, what shapes the process and what consequences negotiations produce.</p>
+    </section>
+
+    <div class="footer">Reading notes · Poppe, Leininger &amp; Wolff (2019) · Democracy &amp; Geopolitics</div>
+  </main>
+</body>
+</html>
