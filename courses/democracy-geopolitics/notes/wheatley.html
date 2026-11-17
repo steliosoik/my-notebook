@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Politics of Culture and Identity in Georgia | Democracy &amp; Geopolitics</title>
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+  <link rel="stylesheet" href="../../../style.css">
+  <style>
+    .reading-page {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 36px 22px 80px;
+      color: #26332f;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: #668477;
+      text-decoration: none;
+      font-size: .9rem;
+    }
+    .eyebrow {
+      color: #71867c;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .72rem;
+      font-weight: 700;
+    }
+    .reading-page h1 {
+      font-size: clamp(2rem, 5vw, 3.15rem);
+      line-height: 1.08;
+      letter-spacing: -.045em;
+      margin: 10px 0 12px;
+    }
+    .author {
+      color: #718078;
+      margin: 0 0 28px;
+    }
+    .intro {
+      background: #edf3ef;
+      border: 1px solid #dce8df;
+      border-radius: 22px;
+      padding: 24px 26px;
+      font-size: 1.06rem;
+      line-height: 1.7;
+      max-width: none;
+      width: 100%;
+    }
+    .section { margin-top: 38px; }
+    .section h2 {
+      font-size: 1.45rem;
+      letter-spacing: -.025em;
+      margin: 0 0 16px;
+    }
+    .section h3 {
+      font-size: 1.05rem;
+      margin: 0 0 9px;
+    }
+    .section p, .section li {
+      line-height: 1.72;
+      color: #4e5d56;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e5eae6;
+      border-radius: 18px;
+      padding: 19px;
+      box-shadow: 0 5px 18px rgba(31,50,40,.045);
+    }
+    .card h3 { margin: 0 0 8px; }
+    .card p { margin: 0; font-size: .94rem; }
+    .tag {
+      display: inline-block;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 5px 9px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    .sage { background: #e5efe8; color: #52735e; }
+    .blue { background: #e7eef8; color: #557092; }
+    .peach { background: #f8ece3; color: #9a6c4c; }
+    .lavender { background: #efebf8; color: #74658f; }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .comparison-card {
+      border-radius: 18px;
+      padding: 21px;
+    }
+    .comparison-card h3 { margin: 0 0 10px; }
+    .comparison-card p {
+      font-size: .92rem;
+      margin: 0;
+    }
+    .western { background: #eaf0f8; border: 1px solid #dce5f0; }
+    .georgian { background: #f7ece5; border: 1px solid #eddfd6; }
+
+    .spectrum {
+      background: #f7f8f6;
+      border: 1px solid #e5eae5;
+      border-radius: 22px;
+      padding: 22px;
+    }
+    .spectrum-track {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .spectrum-side {
+      border-radius: 16px;
+      padding: 19px;
+      min-height: 170px;
+    }
+    .spectrum-side h3 { margin: 0 0 9px; }
+    .spectrum-side p {
+      font-size: .9rem;
+      margin: 0;
+    }
+    .integration { background: #e5efe8; }
+    .demarcation { background: #f7eae3; }
+    .spectrum-caption {
+      color: #7a8980;
+      font-size: .8rem;
+      margin-top: 13px;
+    }
+
+    .event {
+      background: #f3eff8;
+      border: 1px solid #e6def0;
+      border-radius: 18px;
+      padding: 21px;
+      margin-top: 16px;
+    }
+    .event h3 { margin: 0 0 8px; }
+    .event p { margin: 0; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 18px 0;
+    }
+    .stat {
+      background: #f2f5f2;
+      border: 1px solid #e4eae4;
+      border-radius: 17px;
+      padding: 18px;
+    }
+    .stat-number {
+      display: block;
+      font-size: 1.85rem;
+      font-weight: 750;
+      letter-spacing: -.05em;
+      color: #456b55;
+      margin-bottom: 5px;
+    }
+    .stat-label {
+      color: #66766d;
+      font-size: .85rem;
+      line-height: 1.45;
+    }
+    .finding {
+      background: #edf2f8;
+      border: 1px solid #dce5f0;
+      border-radius: 20px;
+      padding: 22px;
+      margin-top: 18px;
+    }
+    .finding h3 { margin: 0 0 9px; }
+    .finding p { margin: 0; }
+
+    .dimension {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .dimension-side {
+      border-radius: 16px;
+      padding: 17px;
+      text-align: center;
+    }
+    .dimension-side strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .dimension-side span {
+      display: block;
+      font-size: .85rem;
+      line-height: 1.5;
+      color: #58665e;
+    }
+    .dimension-left { background: #e5efe8; }
+    .dimension-right { background: #f7eae3; }
+    .dimension-arrow {
+      font-size: 1.25rem;
+      color: #92a196;
+    }
+
+    .demographics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 17px;
+    }
+    .demographic {
+      border-radius: 17px;
+      padding: 19px;
+    }
+    .demographic h3 { margin: 0 0 9px; }
+    .demographic p { margin: 0; font-size: .92rem; }
+    .conservative { background: #f7ece5; }
+    .liberal { background: #eaf0f8; }
+
+    .party-row {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 15px;
+      align-items: start;
+      padding: 15px 0;
+      border-bottom: 1px solid #e8ece8;
+    }
+    .party-row:last-child { border-bottom: 0; }
+    .party-name { font-weight: 700; color: #34483d; }
+    .party-description {
+      color: #58665e;
+      font-size: .92rem;
+      line-height: 1.6;
+    }
+    .caveat {
+      background: #f7f5ed;
+      border: 1px solid #ece7d7;
+      border-radius: 17px;
+      padding: 18px 20px;
+      margin-top: 16px;
+    }
+    .caveat p { margin: 0; font-size: .92rem; }
+
+    .takeaway {
+      background: #263d34;
+      color: #f5f8f5;
+      border-radius: 22px;
+      padding: 25px 27px;
+      margin-top: 38px;
+    }
+    .takeaway h2 {
+      color: #fff;
+      margin: 0 0 10px;
+      font-size: 1.25rem;
+    }
+    .takeaway p {
+      color: #e0e9e2;
+      margin: 0;
+      line-height: 1.7;
+    }
+    .source-note {
+      color: #87938c;
+      font-size: .82rem;
+      margin-top: 28px;
+    }
+    @media (max-width: 680px) {
+      .grid, .comparison, .spectrum-track, .demographics {
+        grid-template-columns: 1fr;
+      }
+      .stats { grid-template-columns: 1fr 1fr; }
+      .dimension { grid-template-columns: 1fr; }
+      .dimension-arrow {
+        transform: rotate(90deg);
+        text-align: center;
+      }
+      .party-row { grid-template-columns: 1fr; gap: 5px; }
+      .reading-page { padding: 25px 16px 60px; }
+      .intro { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+<main class="reading-page">
+
+  <a class="back-link" href="../notes.html">← Back to Notes library</a>
+
+  <div class="eyebrow">Country cases · Georgia</div>
+  <h1>The Politics of Culture and Identity in Postcommunist States</h1>
+  <p class="author">Jonathan Wheatley (2021) · “A New Political Cleavage in Georgia?”</p>
+
+  <div class="intro">
+    Wheatley challenges the assumption that postcommunist political competition is primarily shaped by charismatic leadership and clientelistic networks. His argument is that Georgia has developed a distinct cultural cleavage associated with globalisation, national identity and the country's relationship with the West. This division is embedded in social structure and, to a more limited extent, reflected in voting behaviour.
+  </div>
+
+  <section class="section">
+    <h2>Core concepts</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="tag sage">Political structure</span>
+        <h3>Political cleavage</h3>
+        <p>A combination of social divisions, ideological orientations and patterns of political behaviour that becomes reflected in political organisation and party affiliation.</p>
+      </article>
+      <article class="card">
+        <span class="tag lavender">Ideological dimension</span>
+        <h3>GAL-TAN</h3>
+        <p>Green-Alternative-Libertarian versus Traditional-Authoritarian-Nationalist. A cultural dimension contrasting socially progressive and cosmopolitan values with traditionalist and nationalist positions.</p>
+      </article>
+      <article class="card">
+        <span class="tag blue">Openness</span>
+        <h3>Cultural integration</h3>
+        <p>An orientation favouring openness towards external cultural influences, Western integration and socially liberal values.</p>
+      </article>
+      <article class="card">
+        <span class="tag peach">Protection</span>
+        <h3>Cultural demarcation</h3>
+        <p>An orientation favouring national and cultural protectionism, traditional authority and resistance to external cultural influences.</p>
+      </article>
+      <article class="card">
+        <span class="tag sage">Globalisation</span>
+        <h3>Winners and losers of globalisation</h3>
+        <p>Social groups that benefit from global economic and cultural integration versus those that experience dislocation and perceive these transformations as threatening.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Are postcommunist societies ideologically divided?</h2>
+    <p>Western European party systems were historically structured around economic divisions between labour and capital. More recently, cultural issues have generated another dimension of political competition, particularly between cosmopolitan liberalism and social conservatism.</p>
+
+    <div class="comparison">
+      <article class="comparison-card western">
+        <span class="tag blue">Western European pattern</span>
+        <h3>Two dimensions of competition</h3>
+        <p>Economic divisions between labour and capital historically structured party competition. Cultural issues increasingly introduced a second dimension contrasting cosmopolitan liberalism with social conservatism.</p>
+      </article>
+      <article class="comparison-card georgian">
+        <span class="tag peach">Postcommunist debate</span>
+        <h3>Weaker social foundations?</h3>
+        <p>Communist rule weakened traditional social groups and party-constituency relationships. Political competition was therefore often understood through charismatic leaders and clientelistic networks rather than stable ideological programmes.</p>
+      </article>
+    </div>
+
+    <p>Kitschelt and colleagues nevertheless identify overlapping divisions in postcommunist societies: supporters of the former regime versus reformers, economic winners versus losers, and cultural libertarians versus authoritarians.</p>
+
+    <div class="finding">
+      <h3>Wheatley's intervention</h3>
+      <p>The winners-versus-losers cleavage of globalisation deserves greater attention in the post-Soviet context. Globalisation does not affect all social groups equally: different experiences can produce competing political orientations and understandings of national identity.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Georgia's emerging culture wars</h2>
+    <p>Georgian political competition increasingly exhibits a confrontation between religious traditionalism and socially progressive movements. Cultural identity is becoming a more salient dimension of political conflict.</p>
+
+    <div class="grid">
+      <article class="card">
+        <span class="tag peach">Traditionalist mobilisation</span>
+        <h3>Georgian Orthodox Church</h3>
+        <p>The Georgian Orthodox Church became an influential political actor, opposing certain Western cultural influences and defending its privileged position in Georgian society.</p>
+      </article>
+      <article class="card">
+        <span class="tag peach">Conservative movements</span>
+        <h3>Cultural protection</h3>
+        <p>Conservative movements mobilised against LGBT rights, secularisation, immigration and what they perceived as Western cultural decadence.</p>
+      </article>
+      <article class="card">
+        <span class="tag blue">Progressive mobilisation</span>
+        <h3>Civil society and activists</h3>
+        <p>Progressive activists and civil society organisations challenged traditionalist positions, particularly concerning minority rights and secular governance.</p>
+      </article>
+      <article class="card">
+        <span class="tag lavender">Political conflict</span>
+        <h3>Competing visions of society</h3>
+        <p>These tensions indicate that political disagreement is not simply about economic policy or leadership, but also about the cultural direction of the Georgian state and society.</p>
+      </article>
+    </div>
+
+    <div class="event">
+      <span class="tag lavender">Illustrative event · 2013</span>
+      <h3>Anti-homophobic rally in Tbilisi</h3>
+      <p>The 2013 anti-homophobic rally in Tbilisi resulted in violence against activists. It illustrates the intensity of the confrontation between progressive movements and conservative forces.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Methodology: measuring ideological divisions</h2>
+    <p>Wheatley examines public opinion data collected through the xmamkvlevi Voting Advice Application ahead of Georgia's 2016 parliamentary elections. Rather than assuming that ideological divisions exist, the study tests how policy attitudes cluster into dimensions.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-number">9,245</span>
+        <span class="stat-label">Cleaned responses in the original dataset</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">30</span>
+        <span class="stat-label">Policy statements included</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">2</span>
+        <span class="stat-label">Ideological dimensions identified</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="tag sage">Analytical method</span>
+      <h3>Mokken Scale Analysis</h3>
+      <p>The analysis identified two ideological dimensions: a dominant cultural dimension incorporating 11 issues, and a weaker economic dimension incorporating three issues.</p>
+    </div>
+
+    <div class="finding">
+      <h3>What makes up the cultural dimension?</h3>
+      <p>Attitudes towards Russia and the West, the Orthodox Church, LGBT rights, national identity and foreign ownership. These issues cluster into a broader cultural orientation rather than functioning as isolated policy preferences.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>The ideological configuration</h2>
+    <p>The cultural and economic dimensions are correlated, but they do not follow the conventional Western European alignment. Wheatley identifies a distinctive relationship between economic and cultural attitudes.</p>
+
+    <div class="dimension">
+      <div class="dimension-side dimension-left">
+        <strong>Economically left-wing</strong>
+        <span>Tends to correlate with social conservatism</span>
+      </div>
+      <div class="dimension-arrow">↔</div>
+      <div class="dimension-side dimension-right">
+        <strong>Economically right-wing</strong>
+        <span>Tends to correlate with socially liberal and cosmopolitan attitudes</span>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-number">11</span>
+        <span class="stat-label">Issues in the dominant cultural dimension</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">3</span>
+        <span class="stat-label">Issues in the weaker economic dimension</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">0.35</span>
+        <span class="stat-label">Pearson correlation between the two dimensions</span>
+      </div>
+    </div>
+
+    <p>The correlation indicates that economic and cultural attitudes are related, but the cultural dimension is substantially more prominent in the ideological structure identified by the study.</p>
+  </section>
+
+  <section class="section">
+    <h2>From cultural integration to cultural demarcation</h2>
+    <p>The emerging cleavage reflects competing responses to globalisation and different understandings of Georgia's national identity and international orientation.</p>
+
+    <div class="spectrum">
+      <div class="spectrum-track">
+        <div class="spectrum-side integration">
+          <span class="tag sage">Cultural integration</span>
+          <h3>Openness and cosmopolitanism</h3>
+          <p>Greater openness towards external cultural influences, Western integration, socially liberal values and international engagement.</p>
+        </div>
+        <div class="spectrum-side demarcation">
+          <span class="tag peach">Cultural demarcation</span>
+          <h3>Tradition and protection</h3>
+          <p>Emphasis on national identity, traditional authority, cultural protection and resistance to perceived external pressures.</p>
+        </div>
+      </div>
+      <p class="spectrum-caption">Conceptual representation of the cultural cleavage identified by Wheatley.</p>
+    </div>
+
+    <p>Globalisation creates different opportunities and experiences across social groups. These differences can generate competing visions of national identity, cultural belonging and the country's relationship with the West.</p>
+  </section>
+
+  <section class="section">
+    <h2>Social structure and political preferences</h2>
+    <p>The cultural cleavage is not simply an abstract ideological division. Wheatley finds that cultural orientations are associated with demographic characteristics.</p>
+
+    <div class="demographics">
+      <article class="demographic conservative">
+        <span class="tag peach">Nationalist-conservative tendency</span>
+        <h3>Social characteristics</h3>
+        <p>Older individuals, women and people with technical education tend towards nationalist-conservative positions.</p>
+      </article>
+      <article class="demographic liberal">
+        <span class="tag blue">Cosmopolitan-liberal tendency</span>
+        <h3>Social characteristics</h3>
+        <p>Younger individuals, men and university graduates tend towards cosmopolitan-liberal positions.</p>
+      </article>
+    </div>
+
+    <p>These patterns suggest that ideological orientations are socially embedded. Different demographic groups tend to experience and interpret cultural and global changes differently.</p>
+  </section>
+
+  <section class="section">
+    <h2>Party preferences and the limits of ideological alignment</h2>
+    <div class="card">
+      <div class="party-row">
+        <div class="party-name">Georgian Dream</div>
+        <div class="party-description">Attracts more nationalist-conservative voters.</div>
+      </div>
+      <div class="party-row">
+        <div class="party-name">Alliance of Patriots</div>
+        <div class="party-description">Also attracts more nationalist-conservative voters.</div>
+      </div>
+      <div class="party-row">
+        <div class="party-name">UNM</div>
+        <div class="party-description">Its supporters tend to be more socially liberal and pro-Western.</div>
+      </div>
+    </div>
+
+    <div class="caveat">
+      <span class="tag peach">Important qualification</span>
+      <p>Party electorates remain relatively ideologically heterogeneous. The existence of a cultural cleavage does not mean that Georgian parties have become fully programmatic or that voting is determined exclusively by ideological alignment. Charismatic leadership continues to matter.</p>
+    </div>
+  </section>
+
+  <div class="takeaway">
+    <h2>Core takeaway</h2>
+    <p>Postcommunist political competition cannot be reduced to clientelism and charismatic leadership. Georgia is developing a politically significant cleavage between cultural integration and cultural demarcation. Globalisation produces different experiences across social groups, generating competing visions of national identity and international orientation. These divisions increasingly influence political preferences and party support, even though fully programmatic political parties remain underdeveloped.</p>
+  </div>
+
+  <p class="source-note">Reading notes based on Jonathan Wheatley (2021), “The Politics of Culture and Identity in Postcommunist States: A New Political Cleavage in Georgia?”, *Europe-Asia Studies*, 73, pp. 1508–1530.</p>
+
+</main>
+</body>
+</html>
