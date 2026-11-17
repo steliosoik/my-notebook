@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enyedi (2005) | My Notes</title>
+  <link rel="stylesheet" href="../../../style.css">
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+
+  <style>
+    .reading-page { max-width:1050px; margin:0 auto; padding:38px 0 70px; }
+    .back-link { display:inline-block; color:var(--muted); font-size:13px; margin-bottom:30px; }
+    .reading-header { margin-bottom:30px; }
+    .eyebrow { color:#718a79; font-size:10px; font-weight:700; letter-spacing:1.3px; margin-bottom:12px; }
+    .reading-header h1 { font-size:clamp(29px,5vw,43px); line-height:1.15; max-width:800px; }
+    .subtitle { color:var(--muted); margin-top:12px; font-size:15px; }
+    .author-line { color:var(--muted); font-size:12px; margin-top:15px; }
+    .central-argument { background:#edf3ef; border:1px solid #dce8df; border-radius:22px; padding:25px 27px; margin-bottom:35px; }
+    .central-argument p:last-child { color:#405b49; font-size:16px; line-height:1.7; }
+    .section { margin:36px 0; }
+    .section-heading { font-size:22px; margin-bottom:15px; }
+    .section-intro { color:var(--muted); font-size:13px; line-height:1.7; max-width:790px; margin-bottom:19px; }
+    .concept-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .concept-card { background:white; border:1px solid var(--border); border-radius:17px; padding:18px; }
+    .concept-card h3 { font-size:14px; margin-bottom:7px; }
+    .concept-card p { color:var(--muted); font-size:12px; line-height:1.65; }
+    .concept-tag { color:#78917e; font-size:9px; font-weight:700; letter-spacing:.8px; margin-bottom:8px; }
+    .process-flow { display:grid; grid-template-columns:repeat(5,1fr); gap:8px; align-items:stretch; }
+    .process-step { background:#edf1f7; border-radius:15px; padding:17px 12px; min-height:145px; position:relative; }
+    .process-step:nth-child(2) { background:#eaf1ed; }
+    .process-step:nth-child(3) { background:#f5eee5; }
+    .process-step:nth-child(4) { background:#eeeafa; }
+    .process-step:nth-child(5) { background:#e7f0e9; }
+    .process-step .step-no { color:#82909b; font-size:10px; font-weight:700; }
+    .process-step h3 { font-size:13px; margin:12px 0 7px; }
+    .process-step p { color:#647180; font-size:11px; line-height:1.55; }
+    .process-caption { background:#f7f8f7; border:1px solid var(--border); border-radius:13px; padding:14px 17px; margin-top:12px; }
+    .process-caption p { color:var(--muted); font-size:12px; line-height:1.65; }
+    .three-forces { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .force-card { border-radius:18px; padding:21px; min-height:160px; }
+    .force-card:nth-child(1) { background:#eaf0fa; }
+    .force-card:nth-child(2) { background:#f4edf8; }
+    .force-card:nth-child(3) { background:#f6efe4; }
+    .force-card h3 { font-size:15px; margin:10px 0 8px; }
+    .force-card p { color:#647080; font-size:12px; line-height:1.65; }
+    .force-icon { font-size:24px; }
+    .timeline { position:relative; padding-left:25px; }
+    .timeline:before { content:""; position:absolute; left:7px; top:8px; bottom:12px; width:2px; background:#dce5df; }
+    .timeline-item { position:relative; padding:0 0 24px 15px; }
+    .timeline-item:before { content:""; position:absolute; left:-22px; top:5px; width:11px; height:11px; border-radius:50%; background:#8da795; border:3px solid #edf3ef; }
+    .timeline-item h3 { font-size:14px; margin-bottom:6px; }
+    .timeline-item p { color:var(--muted); font-size:12px; line-height:1.7; }
+    .timeline-item .date { color:#78917e; font-size:10px; font-weight:700; letter-spacing:.8px; margin-bottom:5px; }
+    .case-card { background:#f7f8f7; border:1px solid var(--border); border-radius:18px; padding:20px; }
+    .case-card h3 { font-size:15px; margin-bottom:8px; }
+    .case-card p { color:var(--muted); font-size:12px; line-height:1.7; }
+    .case-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .evidence-card { background:white; border:1px solid var(--border); border-radius:17px; padding:20px; }
+    .evidence-card .metric { font-size:25px; font-weight:700; color:#637d6b; margin-bottom:7px; }
+    .evidence-card p { color:var(--muted); font-size:12px; line-height:1.65; }
+    .takeaway { background:#e9eff9; border-radius:21px; padding:24px 26px; margin-top:35px; }
+    .takeaway h2 { font-size:19px; margin-bottom:9px; }
+    .takeaway p { color:#52647d; font-size:14px; line-height:1.7; }
+    .method-card { background:#f7f5f1; border-radius:17px; padding:20px; }
+    .method-card p { color:#66717d; font-size:12px; line-height:1.7; }
+    .reading-footer { display:flex; justify-content:space-between; gap:15px; border-top:1px solid var(--border); padding-top:20px; margin-top:35px; }
+    .reading-footer a { color:#64816e; font-size:12px; }
+    @media(max-width:750px) {
+      .concept-grid,.three-forces,.case-grid { grid-template-columns:1fr; }
+      .process-flow { grid-template-columns:1fr; }
+      .process-step { min-height:0; }
+      .case-grid { grid-template-columns:1fr; }
+      .reading-footer { flex-direction:column; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href="../../../index.html">
+      <span class="brand-icon">✳</span>
+      <span>my notebook</span>
+    </a>
+    <nav class="navigation">
+      <a href="../../../index.html">Home</a>
+      <a href="../index.html">Course</a>
+      <a class="active" href="../notes.html">Notes</a>
+      <a href="../syllabus.html">Syllabus</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <article class="reading-page">
+
+      <a class="back-link" href="../notes.html">← Back to reading library</a>
+
+      <header class="reading-header">
+        <p class="eyebrow">DEMOCRACY & GEOPOLITICS / SESSION 4</p>
+        <h1>The Role of Agency in Cleavage Formation</h1>
+        <p class="subtitle">How political actors construct and reshape political divisions</p>
+        <p class="author-line">Zsolt Enyedi (2005)</p>
+      </header>
+
+      <section class="central-argument">
+        <p class="eyebrow">CENTRAL ARGUMENT</p>
+        <p>Political cleavages do not simply reflect pre-existing social divisions. Parties and political entrepreneurs actively shape how social differences become politically meaningful, combining separate constituencies into broader political identities. However, their capacity to do so remains constrained by existing social structures and institutional conditions.</p>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">Core concepts</h2>
+        <div class="concept-grid">
+          <div class="concept-card">
+            <p class="concept-tag">POLITICAL STRUCTURE</p>
+            <h3>Political cleavage</h3>
+            <p>A durable pattern of political competition embedded in social, cognitive or emotional structures, rather than temporary reactions to particular issues or personalities.</p>
+          </div>
+          <div class="concept-card">
+            <p class="concept-tag">AGENCY</p>
+            <h3>Political agency</h3>
+            <p>The capacity of political actors, particularly parties and their leaders, to shape how social differences become politically meaningful.</p>
+          </div>
+          <div class="concept-card">
+            <p class="concept-tag">ACTORS</p>
+            <h3>Political entrepreneurs</h3>
+            <p>Actors who mobilise interests and identities, construct alliances and organise political competition.</p>
+          </div>
+          <div class="concept-card">
+            <p class="concept-tag">PARTY ORGANISATION</p>
+            <h3>Mosaic cleavage party</h3>
+            <p>A party that integrates several previously separate social groups under a common political identity.</p>
+          </div>
+          <div class="concept-card">
+            <p class="concept-tag">INSTITUTIONS</p>
+            <h3>Institutional thresholds</h3>
+            <p>Electoral and institutional conditions that encourage parties to build sufficiently large coalitions to gain political power.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">1. From social differences to political cleavages</h2>
+        <p class="section-intro">Traditional cleavage analysis often examines correlations between characteristics such as class, religion and geography and voting behaviour. Enyedi argues that this misses the political process through which those differences acquire meaning.</p>
+
+        <div class="process-flow">
+          <div class="process-step">
+            <span class="step-no">01 · SOCIETY</span>
+            <h3>Social differences</h3>
+            <p>Class, religion, geography and other existing social characteristics.</p>
+          </div>
+          <div class="process-step">
+            <span class="step-no">02 · INTERPRETATION</span>
+            <h3>Political framing</h3>
+            <p>Political actors define which differences matter and how they should be understood.</p>
+          </div>
+          <div class="process-step">
+            <span class="step-no">03 · MOBILISATION</span>
+            <h3>Coalition-building</h3>
+            <p>Previously separate groups are encouraged to identify with one another.</p>
+          </div>
+          <div class="process-step">
+            <span class="step-no">04 · ORGANISATION</span>
+            <h3>Political identity</h3>
+            <p>Parties consolidate shared identities and organise political competition.</p>
+          </div>
+          <div class="process-step">
+            <span class="step-no">05 · OUTCOME</span>
+            <h3>Cleavage formation</h3>
+            <p>A more durable pattern of political competition emerges.</p>
+          </div>
+        </div>
+
+        <div class="process-caption">
+          <p><strong>Analytical distinction:</strong> The existence of social differences does not automatically produce political conflict. Political actors help determine which differences become politically salient and how separate groups come to identify with a common political camp.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">2. The three forces shaping cleavage formation</h2>
+        <p class="section-intro">Parties operate between existing social conditions, political agency and institutional constraints. They can mobilise existing divisions, but they can also construct new political identities and alliances.</p>
+
+        <div class="three-forces">
+          <div class="force-card">
+            <div class="force-icon">◉</div>
+            <h3>Social and attitudinal structures</h3>
+            <p>Existing social characteristics, interests and attitudes provide the material from which political identities can be constructed.</p>
+          </div>
+          <div class="force-card">
+            <div class="force-icon">◇</div>
+            <h3>Political entrepreneurs</h3>
+            <p>Parties and their leaders mobilise groups, construct common identities and reorganise political competition.</p>
+          </div>
+          <div class="force-card">
+            <div class="force-icon">▦</div>
+            <h3>Institutional constraints</h3>
+            <p>Electoral systems and the pursuit of political power encourage coalition-building and influence the strategies available to parties.</p>
+          </div>
+        </div>
+
+        <div class="process-caption">
+          <p>Agency is consequential, but not unlimited. Political actors work with existing social structures and institutional conditions rather than operating independently of them.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">3. Mosaic cleavage parties</h2>
+        <p class="section-intro">A mosaic cleavage party brings together several previously separate social constituencies around a common ideological denominator.</p>
+
+        <div class="case-grid">
+          <div class="case-card">
+            <h3>German CDU</h3>
+            <p>The integration of Catholic and Protestant voters illustrates how a party can bring distinct religious constituencies together within a broader political identity.</p>
+          </div>
+          <div class="case-card">
+            <h3>Hungarian Fidesz</h3>
+            <p>Enyedi argues that Fidesz underwent a comparable transformation, reorganising political competition and bringing different constituencies into a broader conservative camp.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">4. Fidesz and the construction of a political camp</h2>
+        <p class="section-intro">The Hungarian case illustrates how ideological repositioning and organisational development can reshape the relationship between social characteristics and party preference.</p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <p class="date">1988 · FOUNDING</p>
+            <h3>A liberal, anti-Communist youth movement</h3>
+            <p>Fidesz emerges as a liberal youth movement opposing Communist rule.</p>
+          </div>
+          <div class="timeline-item">
+            <p class="date">1992–1994 · ELECTORAL DECLINE</p>
+            <h3>A strategic ideological repositioning</h3>
+            <p>Despite an electoral decline from approximately 33% in 1992 to 7% in 1994, the leadership pursues a longer-term strategy of ideological and organisational consolidation, moving towards Christian-nationalist conservatism.</p>
+          </div>
+          <div class="timeline-item">
+            <p class="date">ORGANISATIONAL EXPANSION</p>
+            <h3>Building a wider conservative environment</h3>
+            <p>Fidesz cultivates connections with conservative intellectuals, religious organisations and civic associations, extending its presence beyond electoral politics.</p>
+          </div>
+          <div class="timeline-item">
+            <p class="date">2002 · ELECTORAL DEFEAT</p>
+            <h3>The Civic Circles</h3>
+            <p>Following its electoral defeat, the Civic Circles further expand the party's organisational presence and create a wider social environment around it.</p>
+          </div>
+          <div class="timeline-item">
+            <p class="date">1994–2002 · ELECTORATE TRANSFORMATION</p>
+            <h3>A changing relationship between society and voting</h3>
+            <p>Enyedi's analysis finds that religiosity, urbanisation, left-right identification and authoritarian attitudes became differently associated with party preference as Fidesz changed its political orientation.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">5. Evidence of changing political identities</h2>
+        <p class="section-intro">Enyedi's analysis of Hungarian electorates between 1994 and 2002 suggests that party constituencies and the political meaning of social characteristics can change together.</p>
+
+        <div class="case-grid">
+          <div class="evidence-card">
+            <div class="metric">1994–2002</div>
+            <p>The period examined in the analysis of changing relationships between social characteristics, attitudes and party preference.</p>
+          </div>
+          <div class="evidence-card">
+            <div class="metric">Age × authoritarianism</div>
+            <p>The relationship between age and authoritarianism weakened considerably, suggesting that political attitudes and identities are not entirely fixed by social background.</p>
+          </div>
+        </div>
+
+        <div class="process-caption">
+          <p>The changing associations between religiosity, urbanisation, left-right identification, authoritarian attitudes and party preference support the argument that political identities are shaped through political processes rather than simply inherited from society.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">Methodological and analytical contribution</h2>
+        <div class="method-card">
+          <p>Enyedi develops a conceptual argument about the role of political agency in cleavage formation, using the transformation of Fidesz and the changing Hungarian electorate as the central empirical illustration. The analysis demonstrates how party strategy and organisational development can reshape the relationship between social characteristics and political competition.</p>
+        </div>
+      </section>
+
+      <section class="takeaway">
+        <h2>Overall takeaway</h2>
+        <p>Cleavages are not simply inherited from society: they are also politically constructed. Parties can reshape the political meaning of social differences through ideological repositioning, coalition-building and organisational expansion. Fidesz demonstrates how this process can consolidate a new political camp. Yet agency remains constrained by the social structures and institutional conditions within which political actors operate.</p>
+      </section>
+
+      <footer class="reading-footer">
+        <a href="minbaeva.html">← Previous reading: Minbaeva et al.</a>
+        <a href="../notes.html">Back to reading library ↑</a>
+      </footer>
+
+    </article>
+  </main>
+</body>
+</html>
