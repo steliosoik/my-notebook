@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knott (2025) | My Notes</title>
+  <link rel="stylesheet" href="../../../style.css">
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+
+  <style>
+    .reading-page { max-width:1050px; margin:0 auto; padding:38px 0 70px; }
+    .back-link { display:inline-block; color:var(--muted); font-size:13px; margin-bottom:30px; }
+    .eyebrow { color:#718a79; font-size:10px; font-weight:700; letter-spacing:1.3px; margin-bottom:12px; }
+    .reading-header { margin-bottom:30px; }
+    .reading-header h1 { font-size:clamp(29px,5vw,43px); line-height:1.15; max-width:800px; }
+    .subtitle { color:var(--muted); margin-top:12px; font-size:15px; }
+    .author-line { color:var(--muted); font-size:12px; margin-top:15px; }
+    .central-argument { background:#edf3ef; border:1px solid #dce8df; border-radius:22px; padding:25px 27px; margin-bottom:35px; }
+    .central-argument p:last-child { color:#405b49; font-size:16px; line-height:1.7; }
+    .section { margin:36px 0; }
+    .section-heading { font-size:22px; margin-bottom:15px; }
+    .section-intro { color:var(--muted); font-size:13px; line-height:1.7; max-width:790px; margin-bottom:19px; }
+    .concept-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .concept-card { background:white; border:1px solid var(--border); border-radius:17px; padding:18px; }
+    .concept-card h3 { font-size:14px; margin-bottom:7px; }
+    .concept-card p { color:var(--muted); font-size:12px; line-height:1.65; }
+    .concept-tag { color:#78917e; font-size:9px; font-weight:700; letter-spacing:.8px; margin-bottom:8px; }
+    .contrast-grid { display:grid; grid-template-columns:1fr 1fr; gap:13px; }
+    .contrast-card { border-radius:19px; padding:23px; min-height:210px; }
+    .contrast-card.top-down { background:#f3eefa; }
+    .contrast-card.bottom-up { background:#eaf2ed; }
+    .contrast-card .label { font-size:9px; letter-spacing:1px; font-weight:700; opacity:.7; }
+    .contrast-card h3 { font-size:19px; margin:12px 0 10px; }
+    .contrast-card p { color:#647080; font-size:12px; line-height:1.7; }
+    .contrast-card ul { margin:12px 0 0 17px; color:#647080; font-size:12px; line-height:1.8; }
+    .lens-arrow { text-align:center; color:#8a9a90; font-size:12px; padding:10px; }
+    .language-diagram { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+    .language-card { background:#f7f8f7; border:1px solid var(--border); border-radius:17px; padding:19px; }
+    .language-card .number { font-size:10px; color:#809386; font-weight:700; }
+    .language-card h3 { font-size:14px; margin:9px 0 7px; }
+    .language-card p { color:var(--muted); font-size:12px; line-height:1.65; }
+    .important-note { background:#f5f0e7; border-radius:14px; padding:16px 18px; margin-top:13px; }
+    .important-note p { color:#71634e; font-size:12px; line-height:1.7; }
+    .region-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+    .region-card { background:white; border:1px solid var(--border); border-radius:17px; padding:19px; }
+    .region-card h3 { font-size:14px; margin-bottom:8px; }
+    .region-card p { color:var(--muted); font-size:12px; line-height:1.65; }
+    .region-card.special { background:#f4eff8; border-color:#e9def0; }
+    .region-card.special.alt { background:#edf2f8; border-color:#dce6f1; }
+    .interaction-flow { display:grid; grid-template-columns:1fr auto 1fr auto 1fr; align-items:center; gap:10px; }
+    .interaction-node { background:#edf2ed; border-radius:15px; padding:17px 12px; text-align:center; }
+    .interaction-node:nth-of-type(3) { background:#eaf0f8; }
+    .interaction-node:nth-of-type(5) { background:#f4edf7; }
+    .interaction-node h3 { font-size:13px; margin-bottom:6px; }
+    .interaction-node p { font-size:11px; line-height:1.55; color:#66717d; }
+    .arrow { color:#8c9c91; font-size:19px; }
+    .takeaway { background:#e9eff9; border-radius:21px; padding:24px 26px; margin-top:35px; }
+    .takeaway h2 { font-size:19px; margin-bottom:9px; }
+    .takeaway p { color:#52647d; font-size:14px; line-height:1.7; }
+    .method-card { background:#f7f5f1; border-radius:17px; padding:20px; }
+    .method-card p { color:#66717d; font-size:12px; line-height:1.7; }
+    .reading-footer { display:flex; justify-content:space-between; gap:15px; border-top:1px solid var(--border); padding-top:20px; margin-top:35px; }
+    .reading-footer a { color:#64816e; font-size:12px; }
+    @media(max-width:750px) {
+      .concept-grid,.contrast-grid,.language-diagram,.region-grid { grid-template-columns:1fr; }
+      .interaction-flow { grid-template-columns:1fr; }
+      .arrow { transform:rotate(90deg); text-align:center; }
+      .reading-footer { flex-direction:column; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href="../../../index.html">
+      <span class="brand-icon">✳</span>
+      <span>my notebook</span>
+    </a>
+    <nav class="navigation">
+      <a href="../../../index.html">Home</a>
+      <a href="../index.html">Course</a>
+      <a class="active" href="../notes.html">Notes</a>
+      <a href="../syllabus.html">Syllabus</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <article class="reading-page">
+
+      <a class="back-link" href="../notes.html">← Back to reading library</a>
+
+      <header class="reading-header">
+        <p class="eyebrow">DEMOCRACY & GEOPOLITICS / SESSION 4</p>
+        <h1>Mapping Plurality in Moldova</h1>
+        <p class="subtitle">Ethnic and linguistic diversity beyond the narrative of societal division</p>
+        <p class="author-line">Eleanor Knott (2025)</p>
+      </header>
+
+      <section class="central-argument">
+        <p class="eyebrow">CENTRAL ARGUMENT</p>
+        <p>Ethnic and linguistic plurality does not necessarily produce societal division. Knott challenges representations of Moldova as a deeply divided society by distinguishing political narratives about identity from the more complex realities of everyday social interaction. Census data and a bottom-up perspective reveal how distinct identities can coexist with bilingualism, cooperation and shared social practices.</p>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">Core concepts</h2>
+        <div class="concept-grid">
+          <div class="concept-card">
+            <p class="concept-tag">DIVERSITY</p>
+            <h3>Plurality</h3>
+            <p>The coexistence of different identities, languages and social affiliations within a society.</p>
+          </div>
+          <div class="concept-card">
+            <p class="concept-tag">SOCIAL RELATIONS</p>
+            <h3>Societal division</h3>
+            <p>A condition in which differences become meaningful boundaries separating groups and shaping their relationships.</p>
+          </div>
+          <div class="concept-card">
+            <p class="concept-tag">NATIONAL IDENTITY</p>
+            <h3>Titular ethnicity / language</h3>
+            <p>The ethnicity or language associated with the dominant national group and national identity.</p>
+          </div>
+          <div class="concept-card">
+            <p class="concept-tag">TOP-DOWN</p>
+            <h3>Top-down approach</h3>
+            <p>Understanding identity and division through political institutions, elites and national narratives.</p>
+          </div>
+          <div class="concept-card">
+            <p class="concept-tag">BOTTOM-UP</p>
+            <h3>Bottom-up approach</h3>
+            <p>Examining how ordinary people experience, negotiate and manage differences in everyday life.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">1. Questioning the divided-society narrative</h2>
+        <p class="section-intro">Moldova is frequently characterised through ethnic and linguistic divisions, particularly those involving Moldovan, Romanian and Russian identities. Knott questions whether political disputes over identity necessarily reflect how ordinary citizens experience social relations.</p>
+
+        <div class="contrast-grid">
+          <div class="contrast-card top-down">
+            <p class="label">THE POLITICAL REPRESENTATION</p>
+            <h3>Top-down perspective</h3>
+            <p>Political institutions and elites construct narratives about national identity, language and belonging.</p>
+            <ul>
+              <li>Political disputes over national identity</li>
+              <li>Contestation over language and symbols</li>
+              <li>Identity boundaries emphasised in national narratives</li>
+            </ul>
+          </div>
+          <div class="contrast-card bottom-up">
+            <p class="label">EVERYDAY SOCIAL REALITY</p>
+            <h3>Bottom-up perspective</h3>
+            <p>Ordinary people navigate multiple identities and languages through everyday interaction.</p>
+            <ul>
+              <li>Bilingualism and multilingual communication</li>
+              <li>Shared social practices</li>
+              <li>Cooperation across identity boundaries</li>
+            </ul>
+          </div>
+        </div>
+        <div class="important-note">
+          <p><strong>Historical context:</strong> Soviet nationality policies institutionalised distinctions between Moldovan and Romanian identity. These legacies help explain why national identity and language remain politically contested. However, political contestation should not automatically be treated as evidence of everyday societal division.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">2. What the 2014 census reveals</h2>
+        <p class="section-intro">Knott uses the 2014 census to examine ethnicity, native language and language use across Moldova's regions. The crucial analytical point is that these are related, but distinct, dimensions of identity.</p>
+
+        <div class="language-diagram">
+          <div class="language-card">
+            <span class="number">DIMENSION 01</span>
+            <h3>Ethnicity</h3>
+            <p>How individuals identify ethnically. Most regions have a Moldovan ethnic majority, although important regional differences exist.</p>
+          </div>
+          <div class="language-card">
+            <span class="number">DIMENSION 02</span>
+            <h3>Native language</h3>
+            <p>The language an individual identifies as their native language. This does not necessarily determine their everyday language use.</p>
+          </div>
+          <div class="language-card">
+            <span class="number">DIMENSION 03</span>
+            <h3>Language use</h3>
+            <p>The language individuals actually use in communication. It may extend beyond their ethnic or native-language identification.</p>
+          </div>
+        </div>
+
+        <div class="important-note">
+          <p><strong>Key distinction:</strong> Identifying a language as one's native language does not necessarily determine which language one uses in everyday communication. Language use is therefore not a straightforward indicator of ethnic identification.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">3. Regional patterns of plurality</h2>
+        <p class="section-intro">The census reveals regional variation rather than a single, uniform pattern of ethnic and linguistic composition.</p>
+
+        <div class="region-grid">
+          <div class="region-card">
+            <h3>Most regions</h3>
+            <p>Most regions have a Moldovan ethnic majority, although the relationship between ethnicity and language use varies.</p>
+          </div>
+          <div class="region-card special">
+            <h3>Gagauzia</h3>
+            <p>Notable for its Gagauz population, illustrating the regional diversity within Moldova.</p>
+          </div>
+          <div class="region-card special alt">
+            <h3>Taraclia</h3>
+            <p>Notable for its Bulgarian population, providing another example of regional plurality.</p>
+          </div>
+          <div class="region-card">
+            <h3>Urban areas</h3>
+            <p>Generally exhibit greater linguistic diversity, with Russian and Romanian more prominent than in rural areas.</p>
+          </div>
+        </div>
+
+        <div class="important-note">
+          <p><strong>Russian as a common language:</strong> Russian is widely used beyond the ethnic Russian population, suggesting that it functions as a common language of inter-ethnic communication.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">4. From identity boundaries to everyday interaction</h2>
+        <p class="section-intro">The article shifts attention from the existence of different identities to the ways people interact across them.</p>
+
+        <div class="interaction-flow">
+          <div class="interaction-node">
+            <h3>Distinct identities</h3>
+            <p>People maintain different ethnic and linguistic affiliations.</p>
+          </div>
+          <span class="arrow">→</span>
+          <div class="interaction-node">
+            <h3>Everyday multilingualism</h3>
+            <p>Multiple languages facilitate communication across identity boundaries.</p>
+          </div>
+          <span class="arrow">→</span>
+          <div class="interaction-node">
+            <h3>Social cooperation</h3>
+            <p>Shared practices and interaction can coexist with distinct identities.</p>
+          </div>
+        </div>
+
+        <div class="important-note">
+          <p>People can maintain distinct ethnic or linguistic identities without treating those differences as obstacles to social interaction. Plurality should therefore not be confused with conflict.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">Methodological contribution</h2>
+        <div class="method-card">
+          <p>Knott combines census data from 2014 with a bottom-up perspective on everyday social relations. By distinguishing ethnicity, native language and language use across regions, the analysis moves beyond political representations of identity and examines how plurality is experienced in practice.</p>
+        </div>
+      </section>
+
+      <section class="takeaway">
+        <h2>Overall takeaway</h2>
+        <p>Knott challenges the assumption that ethnic and linguistic diversity necessarily produces societal division. The key analytical question is not simply whether different identities exist, but whether and how those differences become meaningful boundaries in social life. A society can contain substantial identity diversity while remaining characterised by bilingualism, cooperation and shared everyday practices.</p>
+      </section>
+
+      <footer class="reading-footer">
+        <a href="enyedi.html">← Previous reading: Enyedi</a>
+        <a href="../notes.html">Back to reading library ↑</a>
+      </footer>
+
+    </article>
+  </main>
+</body>
+</html>
