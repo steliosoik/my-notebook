@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shaping the Authoritarian Arena | Democracy & Geopolitics</title>
+  <link rel="stylesheet" href="../../../style.css">
+  <style>
+    .reading-page { max-width: 1050px; margin: 0 auto; padding: 32px 22px 70px; color: var(--text, #26332e); }
+    .back-link { display: inline-block; margin-bottom: 28px; color: #71877b; text-decoration: none; font-size: .9rem; }
+    .eyebrow { color: #82978b; font-size: .76rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.08; letter-spacing: -.045em; margin: 12px 0; }
+    .subtitle { color: #78847e; font-size: 1.05rem; line-height: 1.6; max-width: 780px; }
+    .author { color: #87928c; font-size: .9rem; margin-top: 18px; }
+    .section { margin-top: 38px; }
+    .section h2 { font-size: 1.35rem; letter-spacing: -.025em; margin: 0 0 16px; }
+    .section > p { line-height: 1.75; color: #53615a; }
+    .argument { background: #edf3ee; border: 1px solid #dce8df; border-radius: 22px; padding: 25px; margin-top: 28px; }
+    .tag { color: #718d7b; font-size: .72rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+    .argument p { color: #34463b; font-size: 1.08rem; line-height: 1.7; margin-bottom: 0; }
+    .concept-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+    .concept { background: #fff; border: 1px solid #e8ece9; border-radius: 16px; padding: 17px; }
+    .concept strong { display: block; color: #394c40; margin-bottom: 7px; }
+    .concept span { color: #69766f; font-size: .91rem; line-height: 1.6; display: block; }
+    .dual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+    .dual-card { border-radius: 19px; padding: 21px; min-height: 205px; }
+    .dual-card h3 { font-size: 1.08rem; margin: 10px 0 8px; }
+    .dual-card p { font-size: .9rem; line-height: 1.6; margin: 0; }
+    .domination { background: #f8ecea; color: #765b58; }
+    .representation { background: #eaf1fb; color: #536781; }
+    .mini-label { font-size: .7rem; font-weight: 750; letter-spacing: .1em; text-transform: uppercase; opacity: .75; }
+    .resource-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
+    .resource { background: #fff; border: 1px solid #e8ece9; border-radius: 15px; padding: 16px; }
+    .resource strong { display: block; margin-bottom: 6px; color: #4d5c52; }
+    .resource span { color: #758078; font-size: .85rem; line-height: 1.5; display: block; }
+    .flow { margin-top: 15px; background: #f6f5f2; border-radius: 16px; padding: 17px; text-align: center; color: #657169; line-height: 1.7; font-size: .9rem; }
+    .two-stages { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .stage { background: #fff; border: 1px solid #e8ece9; border-radius: 17px; padding: 19px; }
+    .stage .number { color: #8da493; font-weight: 750; font-size: .75rem; letter-spacing: .1em; }
+    .stage h3 { color: #45574b; margin: 9px 0 7px; font-size: 1rem; }
+    .stage p { color: #69766f; margin: 0; font-size: .9rem; line-height: 1.6; }
+    .institution-types { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .institution { background: #f5f6f4; border-radius: 16px; padding: 18px; }
+    .institution strong { color: #45574b; display: block; margin-bottom: 7px; }
+    .institution p { margin: 0; color: #69766f; font-size: .88rem; line-height: 1.6; }
+    .manipulation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+    .manipulation { border-radius: 18px; padding: 20px; }
+    .agents { background: #f4edf8; }
+    .adversaries { background: #edf2f8; }
+    .manipulation h3 { margin: 0 0 8px; font-size: 1.02rem; }
+    .manipulation p { color: #66716d; font-size: .9rem; line-height: 1.6; }
+    .manipulation ul { padding-left: 18px; margin-bottom: 0; color: #66716d; font-size: .88rem; line-height: 1.7; }
+    .ambivalence { background: #f1f3ee; border: 1px solid #e1e8df; border-radius: 22px; padding: 22px; }
+    .ambivalence h3 { color: #46584a; text-align: center; margin: 0 0 16px; font-size: 1.1rem; }
+    .ambivalence-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .ambivalence-side { background: #fff; border-radius: 15px; padding: 17px; }
+    .ambivalence-side strong { display: block; color: #4d5c52; margin-bottom: 7px; }
+    .ambivalence-side p { color: #69766f; font-size: .88rem; line-height: 1.6; margin: 0; }
+    .ambivalence-footer { text-align: center; margin-top: 14px; color: #647268; font-size: .9rem; line-height: 1.6; }
+    .takeaway { margin-top: 38px; padding: 25px; border-radius: 22px; background: #eef1fa; }
+    .takeaway .tag { color: #7c82a6; }
+    .takeaway p { color: #414967; font-size: 1.05rem; line-height: 1.7; margin-bottom: 0; }
+    .footer { border-top: 1px solid #e8ece9; margin-top: 42px; padding-top: 18px; color: #929b95; font-size: .8rem; }
+    @media (max-width: 620px) {
+      .reading-page { padding: 22px 16px 50px; }
+      .dual-grid, .two-stages, .institution-types, .manipulation-grid, .ambivalence-grid { grid-template-columns: 1fr; }
+      .resource-grid { grid-template-columns: 1fr; }
+      .argument { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="reading-page">
+    <a class="back-link" href="../notes.html">← Back to Notes</a>
+    <div class="eyebrow">Democracy &amp; Geopolitics · Political divides</div>
+    <h1>Shaping the Authoritarian Arena</h1>
+    <p class="subtitle">The Politics of Uncertainty: Sustaining and Subverting Electoral Authoritarianism · Chapter 2</p>
+    <div class="author">Andreas Schedler · 2013 · pp. 54–76</div>
+
+    <section class="argument">
+      <div class="tag">Central argument</div>
+      <p>Electoral authoritarian regimes do not survive by simply eliminating democracy's institutional architecture. They manipulate representative institutions to preserve authoritarian control. Yet these institutions cannot be completely controlled without losing their governing utility. They therefore remain spaces in which opposition and resistance can emerge.</p>
+    </section>
+
+    <section class="section">
+      <h2>Core concepts</h2>
+      <div class="concept-grid">
+        <div class="concept"><strong>Electoral authoritarianism</strong><span>A regime that formally adopts democratic institutions while systematically manipulating their operation to preserve authoritarian rule.</span></div>
+        <div class="concept"><strong>Institutions of domination</strong><span>Organisational structures through which authoritarian rulers establish control using violence, money and ideology.</span></div>
+        <div class="concept"><strong>Institutions of representation</strong><span>Formal institutions intended to constrain state power and facilitate political pluralism, including legislatures, courts, elections, parties and independent media.</span></div>
+        <div class="concept"><strong>Institutional manipulation</strong><span>Purposeful interference by authoritarian rulers with formally representative institutions to prevent them from developing meaningful autonomy.</span></div>
+        <div class="concept"><strong>Institutional landscaping</strong><span>Macro-level decisions concerning the overall institutional architecture of an authoritarian regime.</span></div>
+        <div class="concept"><strong>Institutional gardening</strong><span>Continuous, micro-level adjustments and manipulation of existing institutions to maintain authoritarian control.</span></div>
+        <div class="concept"><strong>Institutional ambivalence</strong><span>The inherent duality of representative institutions, which serve authoritarian interests while simultaneously creating opportunities for opposition and resistance.</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>The institutional foundations of authoritarianism</h2>
+      <p>Schedler distinguishes between two institutional logics. Electoral authoritarian regimes combine structures that sustain authoritarian domination with institutions that formally constrain it.</p>
+      <div class="dual-grid">
+        <div class="dual-card domination">
+          <div class="mini-label">Institutions of domination</div>
+          <h3>Preserving authoritarian control</h3>
+          <p>Structures through which rulers exercise power, restrict challenges and sustain regime authority.</p>
+        </div>
+        <div class="dual-card representation">
+          <div class="mini-label">Institutions of representation</div>
+          <h3>Constraining state power</h3>
+          <p>Formal democratic institutions intended to divide power and introduce societal pluralism.</p>
+        </div>
+      </div>
+      <p>Three resources sustain authoritarian domination:</p>
+      <div class="resource-grid">
+        <div class="resource"><strong>Violence</strong><span>Generates fear and is institutionalised through repression and repressive bureaucracies.</span></div>
+        <div class="resource"><strong>Money</strong><span>Satisfies material interests and facilitates co-optation through economic institutions.</span></div>
+        <div class="resource"><strong>Ideology</strong><span>Establishes regime-supportive beliefs and legitimates authoritarian rule through ideological apparatuses.</span></div>
+      </div>
+      <div class="flow">Violence → Repression<br>Money → Co-optation<br>Ideology → Legitimation</div>
+    </section>
+
+    <section class="section">
+      <h2>The two stages of democratisation</h2>
+      <p>Schedler distinguishes between establishing representative institutions formally and making them effective in practice. Contemporary electoral autocracies have largely conceded the first battle while attempting to win the second through manipulation.</p>
+      <div class="two-stages">
+        <div class="stage">
+          <div class="number">STAGE 01</div>
+          <h3>De jure representation</h3>
+          <p>Establishing representative institutions formally, through constitutional and legal arrangements.</p>
+        </div>
+        <div class="stage">
+          <div class="number">STAGE 02</div>
+          <h3>De facto representation</h3>
+          <p>Making those institutions effective in practice, with meaningful autonomy and the capacity to constrain power.</p>
+        </div>
+      </div>
+      <div class="institution-types" style="margin-top:13px;">
+        <div class="institution"><strong>Dividing power within the state</strong><p>Legislatures, courts and decentralised authorities distribute authority and formally constrain executive power.</p></div>
+        <div class="institution"><strong>Introducing societal pluralism</strong><p>Elections, parties, media and civil society create channels for political competition and social representation.</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Institutional manipulation: containing agents and adversaries</h2>
+      <p>Authoritarian rulers manipulate two categories of actors. They seek to control both those operating within state institutions and those capable of organising opposition outside them.</p>
+      <div class="manipulation-grid">
+        <div class="manipulation agents">
+          <h3>Containing agents</h3>
+          <p>Controlling institutions that exercise delegated state authority.</p>
+          <ul>
+            <li>Legislative disempowerment</li>
+            <li>Controlling the selection of representatives</li>
+            <li>Institutional fragmentation</li>
+            <li>Judicial insulation</li>
+            <li>Bureaucratic oversight of local authorities</li>
+          </ul>
+        </div>
+        <div class="manipulation adversaries">
+          <h3>Containing adversaries</h3>
+          <p>Restricting societal pluralism and the capacity for independent organisation.</p>
+          <ul>
+            <li>Media ownership control, censorship and intimidation</li>
+            <li>Hierarchical state-controlled organisations</li>
+            <li>Societal disorganisation</li>
+            <li><em>Divide et impera</em>: exploiting divisions between independent organisations through selective rewards and punishments</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flow">Institutions are difficult to abolish once established. Rulers therefore continually adapt their manipulation strategies rather than dismantling the institutional architecture.</div>
+    </section>
+
+    <section class="section">
+      <h2>New institutionalism and institutional ambivalence</h2>
+      <p>Schedler challenges the assumption that representative institutions are merely decorative under authoritarianism. New institutionalist scholarship demonstrates their instrumental value: legislatures, parties and courts facilitate co-optation, power-sharing, conflict management and regime survival.</p>
+      <div class="ambivalence">
+        <h3>The same institutions produce two opposing effects</h3>
+        <div class="ambivalence-grid">
+          <div class="ambivalence-side">
+            <strong>Instruments of authoritarian rule</strong>
+            <p>Representative institutions help rulers manage conflict, co-opt political actors, distribute power and maintain regime survival.</p>
+          </div>
+          <div class="ambivalence-side">
+            <strong>Arenas of resistance</strong>
+            <p>Institutions empower regime agents and potential adversaries, who can develop interests and sources of autonomy independent of the ruler.</p>
+          </div>
+        </div>
+        <div class="ambivalence-footer"><strong>The institutional dilemma:</strong> Institutions require some autonomy to perform their governing functions. That same autonomy creates opportunities for subversion.</div>
+      </div>
+    </section>
+
+    <section class="takeaway">
+      <div class="tag">Core takeaway</div>
+      <p>Electoral authoritarianism survives not by eliminating democracy's institutional architecture but by manipulating it. Nevertheless, institutional manipulation is never absolute. Representative institutions remain arenas of struggle, simultaneously facilitating authoritarian domination and creating opportunities for democratic resistance.</p>
+    </section>
+
+    <div class="footer">Reading notes · Schedler (2013) · The Politics of Uncertainty, Chapter 2</div>
+  </main>
+</body>
+</html>
