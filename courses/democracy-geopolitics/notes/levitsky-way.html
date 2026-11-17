@@ -2,74 +2,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Levitsky & Way | My Notes</title>
-<link rel="stylesheet" href="../../../style.css">
-<style>
-.note-page{max-width:900px;margin:40px auto}.note-meta{color:#64816e;font-size:11px;font-weight:700;letter-spacing:1px}.note-page h1{font-size:clamp(30px,5vw,43px);margin:12px 0}.subtitle{color:var(--muted);margin-bottom:28px}.note-block{background:white;border:1px solid var(--border);border-radius:19px;padding:24px;margin:18px 0}.note-block h2{font-size:20px;margin-bottom:13px}.note-block h3{font-size:15px;margin:17px 0 6px}.note-block p,.note-block li{font-size:14px;color:#586371;line-height:1.8}.note-block ul{padding-left:20px}.concept{padding:12px 0;border-bottom:1px solid var(--border)}.concept:last-child{border:0}.concept strong{color:#354b3d}.concept p{margin-top:4px}.insight{background:#edf3ef;border-radius:15px;padding:19px;margin:18px 0}.insight p{color:#526b5a}.matrix{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:15px}.matrix div{background:#f5f6f8;padding:15px;border-radius:13px}.matrix strong{font-size:13px}.matrix p{font-size:12px;margin-top:5px}.back{display:inline-block;color:#64816e;font-size:13px;margin-bottom:20px}@media(max-width:600px){.matrix{grid-template-columns:1fr}.note-block{padding:18px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Levitsky & Way | My Notebook</title>
+  <link rel="stylesheet" href="../../../style.css">
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+  <style>
+    .reading-page { max-width: 920px; margin: 42px auto 70px; }
+    .back-link { display:inline-block; color:#64816e; font-size:13px; margin-bottom:28px; }
+    .reading-meta { color:#64816e; font-size:11px; font-weight:700; letter-spacing:1.2px; }
+    .reading-title { font-size:clamp(32px,5vw,48px); line-height:1.12; letter-spacing:-1.5px; margin:13px 0 10px; max-width:760px; }
+    .reading-subtitle { color:var(--muted); font-size:15px; margin-bottom:25px; }
+    .reading-tags { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:35px; }
+    .reading-tags span { background:#edf3ef; color:#587562; padding:7px 12px; border-radius:20px; font-size:11px; }
+    .reading-section { margin:35px 0; }
+    .section-heading { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+    .section-number { display:grid; place-items:center; width:30px; height:30px; flex-shrink:0; border-radius:10px; background:#edf3ef; color:#587562; font-size:12px; font-weight:700; }
+    .section-heading h2 { font-size:21px; letter-spacing:-.4px; }
+    .reading-card { background:white; border:1px solid var(--border); border-radius:20px; padding:25px; margin:14px 0; }
+    .reading-card p { color:#586371; font-size:14px; line-height:1.85; margin:9px 0; }
+    .reading-card h3 { font-size:15px; margin:20px 0 6px; }
+    .reading-card h3:first-child { margin-top:0; }
+    .concept-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .concept-card { background:white; border:1px solid var(--border); border-radius:17px; padding:19px; }
+    .concept-card strong { display:block; color:#354b3d; font-size:14px; margin-bottom:7px; }
+    .concept-card p { color:#586371; font-size:13px; line-height:1.75; }
+    .concept-card.wide { grid-column:1/-1; }
+    .concept-card ul { padding-left:18px; margin-top:10px; color:#586371; font-size:13px; line-height:1.8; }
+    .framework-intro { color:var(--muted); font-size:14px; line-height:1.8; margin-bottom:18px; }
+    .matrix { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .matrix-card { border-radius:17px; padding:19px; min-height:145px; }
+    .matrix-card strong { font-size:13px; display:block; margin-bottom:8px; }
+    .matrix-card p { font-size:13px; line-height:1.7; }
+    .matrix-card.high { background:#eaf2ec; color:#405f49; }
+    .matrix-card.mid { background:#edf1fa; color:#4e6081; }
+    .matrix-card.low { background:#f7f0e7; color:#826944; }
+    .matrix-card.weak { background:#f1eff6; color:#695d7d; }
+    .matrix-label { font-size:10px; text-transform:uppercase; letter-spacing:1px; opacity:.75; margin-bottom:9px; }
+    .case-list { display:grid; gap:12px; }
+    .case-card { background:white; border:1px solid var(--border); border-radius:17px; padding:20px; }
+    .case-card h3 { font-size:15px; margin-bottom:7px; }
+    .case-card p { color:#586371; font-size:13px; line-height:1.8; }
+    .insight { background:#eaf2ec; border-radius:20px; padding:24px; margin:14px 0; }
+    .insight-label { color:#587562; font-size:10px; font-weight:700; letter-spacing:1px; margin-bottom:9px; }
+    .insight p { color:#405f49; font-size:15px; line-height:1.8; }
+    .reading-footer { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px; margin-top:45px; padding-top:22px; border-top:1px solid var(--border); }
+    .reading-footer a { color:#64816e; font-size:13px; }
+    @media(max-width:650px) {
+      .concept-grid,.matrix { grid-template-columns:1fr; }
+      .concept-card.wide { grid-column:auto; }
+      .reading-card { padding:19px; }
+      .reading-title { letter-spacing:-.8px; }
+    }
+  </style>
 </head>
 <body>
-<header class="topbar">
-<a class="brand" href="../../../index.html"><span class="brand-icon">✳</span><span>my notebook</span></a>
-<nav class="navigation"><a href="../../../index.html">Home</a><a href="../index.html">Course</a><a href="../notes.html">Notes</a></nav>
-</header>
-<main class="container note-page">
-<a class="back" href="../notes.html">← Back to notes library</a>
-<p class="note-meta">FOUNDATIONS · SESSION 1 · 2006</p>
-<h1>Linkage, Leverage, and Regime Change</h1>
-<p class="subtitle">Steven Levitsky & Lucan A. Way · Comparative Politics (2006)</p>
+  <header class="topbar">
+    <a class="brand" href="../../../index.html">
+      <span class="brand-icon">✳</span>
+      <span>my notebook</span>
+    </a>
+    <nav class="navigation">
+      <a href="../../../index.html">Home</a>
+      <a href="../index.html">Course</a>
+      <a class="active" href="../notes.html">Notes</a>
+      <a href="../syllabus.html">Syllabus</a>
+    </nav>
+  </header>
 
-<section class="note-block">
-<h2>Central argument</h2>
-<p>Levitsky and Way explain divergent post-Cold War regime trajectories through two variables: Western leverage and linkage to the West. Their framework explains why external democratising pressure contributed to consolidation in some countries but produced limited, unstable or inconsistent outcomes elsewhere.</p>
-<p>Leverage creates external vulnerability, while linkage provides the connections and domestic pressure points through which external pressure can become sustained democratising influence.</p>
-</section>
+  <main class="container reading-page">
+    <a class="back-link" href="../notes.html">← Back to notes library</a>
 
-<section class="note-block">
-<h2>Core concepts</h2>
-<div class="concept"><strong>Competitive authoritarianism</strong><p>Civilian electoral regimes in which formal democratic institutions are the primary means of gaining power, but incumbent abuses of civil liberties, media, opposition and elections make the playing field so uneven that the regime cannot be classified as a procedural democracy.</p></div>
-<div class="concept"><strong>Western leverage</strong><p>The degree to which an incumbent regime is vulnerable to external democratising pressure, including conditionality, sanctions, diplomatic persuasion and military intervention. It is shaped by state strength, economic size and aid dependency, but constrained by Western strategic priorities and alternative sources of support.</p></div>
-<div class="concept"><strong>Linkage to the West</strong><p>The density of ties and cross-border flows connecting a country to the US, EU and Western-led institutions. It has five dimensions:</p><ul><li>Economic: trade, investment, credit and aid.</li><li>Geopolitical: treaties, alliances and institutional ties.</li><li>Social: migration, tourism, diaspora and education.</li><li>Communication: information exchange, internet and Western media.</li><li>Transnational civil society: connections between domestic organisations and Western networks.</li></ul></div>
-<div class="concept"><strong>Electoralism</strong><p>A narrow democratisation approach focused primarily on multiparty elections, while neglecting civil liberties, media access and distortions of the political playing field.</p></div>
-<div class="concept"><strong>Intermestic constituency</strong><p>Domestic business, political and technocratic actors with direct ties to the West and a vested interest in maintaining international integration and democratic norms.</p></div>
-<div class="concept"><strong>Double boomerang effect</strong><p>A mechanism in high-linkage environments whereby international exposure and punitive responses to regime abuses trigger domestic opposition from elites who fear the costs of international isolation.</p></div>
-</section>
+    <p class="reading-meta">FOUNDATIONS · SESSION 1 · 2006</p>
+    <h1 class="reading-title">Linkage, Leverage, and Regime Change</h1>
+    <p class="reading-subtitle">Steven Levitsky & Lucan A. Way · Comparative Politics (2006)</p>
 
-<section class="note-block">
-<h2>The linkage–leverage framework</h2>
-<p>The interaction of the two variables determines the intensity and consistency of external democratising pressure.</p>
-<div class="matrix">
-<div><strong>High linkage · High leverage</strong><p>Consistent and effective pressure. International scrutiny, sanctions and domestic backlash reinforce each other. Example: Slovakia.</p></div>
-<div><strong>High linkage · Low leverage</strong><p>Consistent but diffuse pressure. Media, transnational networks and Western-oriented elites constrain abuses. Example: Mexico.</p></div>
-<div><strong>Low linkage · High leverage</strong><p>Intermittent pressure. External actors can influence electoral turnover but struggle to sustain oversight. Example: Zambia.</p></div>
-<div><strong>Low linkage · Low leverage</strong><p>Weak external pressure. Geopolitical insulation and limited connections leave domestic factors dominant. Example: Russia.</p></div>
-</div>
-</section>
+    <div class="reading-tags">
+      <span>Comparative politics</span>
+      <span>Democratisation</span>
+      <span>International influence</span>
+    </div>
 
-<section class="note-block">
-<h2>Key mechanisms and country cases</h2>
-<h3>Linkage and domestic constraints</h3>
-<p>Dense Western connections increase the international visibility of authoritarian abuses. Media and civil society networks expose violations, while external support can strengthen domestic opposition through funding, training, protection and access to international platforms.</p>
-<p>Linkage also creates intermestic constituencies. Domestic elites with international economic and professional ties may oppose actions that threaten their country's international standing.</p>
-<h3>Slovakia: high linkage, high leverage</h3>
-<p>EU accession conditionality and institutional monitoring increased the costs of Mečiar's authoritarian practices. The denial of accession negotiations in 1997 contributed to a double boomerang effect: Western support strengthened opposition forces, while domestic political and social actors feared exclusion from Western integration. The 1998 electoral defeat of Mečiar was followed by sustained democratisation.</p>
-<h3>Mexico: high linkage, low leverage</h3>
-<p>Deep economic integration through NAFTA exposed the PRI to international scrutiny. The government made incremental electoral concessions to protect investment and international credibility, contributing to reforms that enabled Vicente Fox's peaceful victory in 2000.</p>
-<h3>Zambia: low linkage, high leverage</h3>
-<p>High aid dependency created vulnerability to Western pressure, but weak linkage meant limited domestic transmission of that pressure. Aid freezes and diplomatic measures failed to generate broad elite opposition, while authoritarian practices continued under Chiluba.</p>
-<h3>Russia: low linkage, low leverage</h3>
-<p>Russia's size, energy resources, nuclear arsenal and strategic importance limited Western leverage. Low linkage also restricted the domestic reach of external democratising pressure. Yeltsin and Putin were therefore insulated from sustained international constraints as authoritarian practices consolidated.</p>
-</section>
+    <section class="reading-section">
+      <div class="section-heading">
+        <span class="section-number">01</span>
+        <h2>Central argument</h2>
+      </div>
+      <div class="reading-card">
+        <p>Levitsky and Way explain divergent post-Cold War regime trajectories through two variables: Western leverage and linkage to the West. Their framework explains why external democratising pressure contributed to consolidation in some countries but produced limited, unstable or inconsistent outcomes elsewhere.</p>
+        <p>Leverage creates external vulnerability, while linkage provides the connections and domestic pressure points through which external pressure can become sustained democratising influence.</p>
+      </div>
+    </section>
 
-<section class="note-block">
-<h2>Overall takeaway</h2>
-<div class="insight"><p><strong>Linkage is central to durable democratisation.</strong> Leverage may help force political turnover, but without dense connections that sustain scrutiny and domestic resistance, electoral change does not necessarily produce democratic consolidation.</p></div>
-<p>The framework also connects domestic regime structures to international politics: regimes insulated from external pressure can consolidate authoritarian power internally and acquire greater freedom to pursue revisionist geopolitical strategies externally.</p>
-</section>
+    <section class="reading-section">
+      <div class="section-heading">
+        <span class="section-number">02</span>
+        <h2>Core concepts</h2>
+      </div>
+      <div class="concept-grid">
+        <div class="concept-card">
+          <strong>Competitive authoritarianism</strong>
+          <p>Civilian electoral regimes in which formal democratic institutions are the primary means of gaining power, but incumbent abuses of civil liberties, media, opposition and elections make the playing field so uneven that the regime cannot be classified as a procedural democracy.</p>
+        </div>
+        <div class="concept-card">
+          <strong>Western leverage</strong>
+          <p>The degree to which an incumbent regime is vulnerable to external democratising pressure, including conditionality, sanctions, diplomatic persuasion and military intervention. It is shaped by state strength, economic size and aid dependency, but constrained by Western strategic priorities and alternative sources of support.</p>
+        </div>
+        <div class="concept-card wide">
+          <strong>Linkage to the West</strong>
+          <p>The density of ties and cross-border flows connecting a country to the US, EU and Western-led institutions. It has five dimensions:</p>
+          <ul>
+            <li>Economic: trade, investment, credit and aid.</li>
+            <li>Geopolitical: treaties, alliances and institutional ties.</li>
+            <li>Social: migration, tourism, diaspora and education.</li>
+            <li>Communication: information exchange, internet and Western media.</li>
+            <li>Transnational civil society: connections between domestic organisations and Western networks.</li>
+          </ul>
+        </div>
+        <div class="concept-card">
+          <strong>Electoralism</strong>
+          <p>A narrow democratisation approach focused primarily on multiparty elections, while neglecting civil liberties, media access and distortions of the political playing field.</p>
+        </div>
+        <div class="concept-card">
+          <strong>Intermestic constituency</strong>
+          <p>Domestic business, political and technocratic actors with direct ties to the West and a vested interest in maintaining international integration and democratic norms.</p>
+        </div>
+        <div class="concept-card wide">
+          <strong>Double boomerang effect</strong>
+          <p>A mechanism in high-linkage environments whereby international exposure and punitive responses to regime abuses trigger domestic opposition from elites who fear the costs of international isolation.</p>
+        </div>
+      </div>
+    </section>
 
-<footer><a href="../notes.html">← Notes library</a><span>DEMOCRACY & GEOPOLITICS</span></footer>
-</main>
+    <section class="reading-section">
+      <div class="section-heading">
+        <span class="section-number">03</span>
+        <h2>The linkage–leverage framework</h2>
+      </div>
+      <p class="framework-intro">The interaction of the two variables determines the intensity and consistency of external democratising pressure.</p>
+      <div class="matrix">
+        <div class="matrix-card high">
+          <div class="matrix-label">High linkage · High leverage</div>
+          <strong>Consistent and effective pressure</strong>
+          <p>International scrutiny, sanctions and domestic backlash reinforce each other. Example: Slovakia.</p>
+        </div>
+        <div class="matrix-card mid">
+          <div class="matrix-label">High linkage · Low leverage</div>
+          <strong>Consistent but diffuse pressure</strong>
+          <p>Media, transnational networks and Western-oriented elites constrain abuses. Example: Mexico.</p>
+        </div>
+        <div class="matrix-card low">
+          <div class="matrix-label">Low linkage · High leverage</div>
+          <strong>Intermittent pressure</strong>
+          <p>External actors can influence electoral turnover but struggle to sustain oversight. Example: Zambia.</p>
+        </div>
+        <div class="matrix-card weak">
+          <div class="matrix-label">Low linkage · Low leverage</div>
+          <strong>Weak external pressure</strong>
+          <p>Geopolitical insulation and limited connections leave domestic factors dominant. Example: Russia.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="reading-section">
+      <div class="section-heading">
+        <span class="section-number">04</span>
+        <h2>Key mechanisms and country cases</h2>
+      </div>
+      <div class="reading-card">
+        <h3>Linkage and domestic constraints</h3>
+        <p>Dense Western connections increase the international visibility of authoritarian abuses. Media and civil society networks expose violations, while external support can strengthen domestic opposition through funding, training, protection and access to international platforms.</p>
+        <p>Linkage also creates intermestic constituencies. Domestic elites with international economic and professional ties may oppose actions that threaten their country's international standing.</p>
+      </div>
+      <div class="case-list">
+        <div class="case-card">
+          <h3>Slovakia · High linkage, high leverage</h3>
+          <p>EU accession conditionality and institutional monitoring increased the costs of Mečiar's authoritarian practices. The denial of accession negotiations in 1997 contributed to a double boomerang effect: Western support strengthened opposition forces, while domestic political and social actors feared exclusion from Western integration. The 1998 electoral defeat of Mečiar was followed by sustained democratisation.</p>
+        </div>
+        <div class="case-card">
+          <h3>Mexico · High linkage, low leverage</h3>
+          <p>Deep economic integration through NAFTA exposed the PRI to international scrutiny. The government made incremental electoral concessions to protect investment and international credibility, contributing to reforms that enabled Vicente Fox's peaceful victory in 2000.</p>
+        </div>
+        <div class="case-card">
+          <h3>Zambia · Low linkage, high leverage</h3>
+          <p>High aid dependency created vulnerability to Western pressure, but weak linkage meant limited domestic transmission of that pressure. Aid freezes and diplomatic measures failed to generate broad elite opposition, while authoritarian practices continued under Chiluba.</p>
+        </div>
+        <div class="case-card">
+          <h3>Russia · Low linkage, low leverage</h3>
+          <p>Russia's size, energy resources, nuclear arsenal and strategic importance limited Western leverage. Low linkage also restricted the domestic reach of external democratising pressure. Yeltsin and Putin were therefore insulated from sustained international constraints as authoritarian practices consolidated.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="reading-section">
+      <div class="section-heading">
+        <span class="section-number">05</span>
+        <h2>Overall takeaway</h2>
+      </div>
+      <div class="insight">
+        <div class="insight-label">THE CENTRAL INSIGHT</div>
+        <p><strong>Linkage is central to durable democratisation.</strong> Leverage may help force political turnover, but without dense connections that sustain scrutiny and domestic resistance, electoral change does not necessarily produce democratic consolidation.</p>
+      </div>
+      <div class="reading-card">
+        <p>The framework also connects domestic regime structures to international politics: regimes insulated from external pressure can consolidate authoritarian power internally and acquire greater freedom to pursue revisionist geopolitical strategies externally.</p>
+      </div>
+    </section>
+
+    <div class="reading-footer">
+      <a href="../notes.html">← Back to notes library</a>
+      <a href="mead.html">Next reading: Mead (2014) →</a>
+    </div>
+  </main>
 </body>
 </html>
