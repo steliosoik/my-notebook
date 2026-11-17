@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geostrategic Inbetweenness | Democracy & Geopolitics</title>
+  <link rel="stylesheet" href="../../../style.css">
+  <style>
+    .reading-page { max-width: 1050px; margin: 0 auto; padding: 32px 22px 70px; color: var(--text, #26332e); }
+    .back-link { display: inline-block; margin-bottom: 28px; color: #71877b; text-decoration: none; font-size: .9rem; }
+    .eyebrow { color: #82978b; font-size: .76rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.08; letter-spacing: -.045em; margin: 12px 0; }
+    .subtitle { color: #78847e; font-size: 1.05rem; line-height: 1.6; max-width: 800px; }
+    .author { color: #87928c; font-size: .9rem; margin-top: 18px; }
+    .section { margin-top: 38px; }
+    .section h2 { font-size: 1.35rem; letter-spacing: -.025em; margin: 0 0 16px; }
+    .section > p { line-height: 1.75; color: #53615a; }
+    .argument { background: #edf3ee; border: 1px solid #dce8df; border-radius: 22px; padding: 25px; margin-top: 28px; }
+    .tag { color: #718d7b; font-size: .72rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+    .argument p { color: #34463b; font-size: 1.08rem; line-height: 1.7; margin-bottom: 0; }
+    .concept-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+    .concept { background: #fff; border: 1px solid #e8ece9; border-radius: 16px; padding: 17px; }
+    .concept strong { display: block; color: #394c40; margin-bottom: 7px; }
+    .concept span { color: #69766f; font-size: .91rem; line-height: 1.6; display: block; }
+    .distinction { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+    .dist-card { border-radius: 19px; padding: 21px; min-height: 200px; }
+    .dist-card h3 { font-size: 1.08rem; margin: 10px 0 8px; }
+    .dist-card p { font-size: .9rem; line-height: 1.65; margin: 0; }
+    .structural { background: #eaf1fb; color: #536781; }
+    .strategic { background: #edf3ee; color: #506b57; }
+    .mini-label { font-size: .7rem; font-weight: 750; letter-spacing: .1em; text-transform: uppercase; opacity: .75; }
+    .shift { margin-top: 13px; border-radius: 15px; padding: 16px; background: #f6f5f2; text-align: center; color: #657169; font-size: .9rem; line-height: 1.6; }
+    .geography-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 11px; }
+    .geo-card { background: #fff; border: 1px solid #e8ece9; border-radius: 16px; padding: 17px; }
+    .geo-card strong { display: block; color: #46564c; margin-bottom: 7px; }
+    .geo-card p { margin: 0; color: #69766f; font-size: .88rem; line-height: 1.6; }
+    .consequence-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 11px; }
+    .consequence { border-radius: 16px; padding: 17px; background: #f5f6f4; }
+    .consequence strong { display: block; color: #46564c; margin-bottom: 7px; }
+    .consequence p { margin: 0; color: #69766f; font-size: .88rem; line-height: 1.6; }
+    .postures { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .posture { border-radius: 18px; padding: 20px; min-height: 175px; }
+    .posture h3 { font-size: 1.05rem; margin: 9px 0 7px; }
+    .posture p { font-size: .88rem; line-height: 1.6; margin: 0; }
+    .consent { background: #edf2f8; color: #536781; }
+    .contestation { background: #f5edf8; color: #6c587c; }
+    .counteraction { background: #f8eee8; color: #805f4d; }
+    .framework { border-radius: 20px; padding: 22px; background: #f5f6f4; }
+    .framework h3 { margin: 0 0 8px; color: #45574b; font-size: 1.05rem; }
+    .framework p { color: #69766f; line-height: 1.65; font-size: .91rem; margin: 0; }
+    .country-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(245px, 1fr)); gap: 12px; }
+    .country { border: 1px solid #e8ece9; border-radius: 17px; padding: 18px; background: #fff; }
+    .country h3 { color: #43564a; margin: 0 0 8px; font-size: 1rem; }
+    .country p { color: #69766f; font-size: .88rem; line-height: 1.6; margin: 0; }
+    .takeaway { margin-top: 38px; padding: 25px; border-radius: 22px; background: #eef1fa; }
+    .takeaway .tag { color: #7c82a6; }
+    .takeaway p { color: #414967; font-size: 1.05rem; line-height: 1.7; margin-bottom: 0; }
+    .footer { border-top: 1px solid #e8ece9; margin-top: 42px; padding-top: 18px; color: #929b95; font-size: .8rem; }
+    @media (max-width: 620px) {
+      .reading-page { padding: 22px 16px 50px; }
+      .distinction { grid-template-columns: 1fr; }
+      .postures { grid-template-columns: 1fr; }
+      .argument { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="reading-page">
+    <a class="back-link" href="../notes.html">← Back to Notes</a>
+    <div class="eyebrow">Democracy &amp; Geopolitics · Geopolitical contestation</div>
+    <h1>Geostrategic “Inbetweenness”</h1>
+    <p class="subtitle">As a (Mis)fortune of Eastern European Neighbours of Russia and the European Union</p>
+    <div class="author">Andriy Tyushka &amp; Tracey German · 2025 · pp. 520–531</div>
+
+    <section class="argument">
+      <div class="tag">Central argument</div>
+      <p>Eastern European states situated between the EU and Russia are not merely geographical buffer zones or passive objects of great-power competition. Their position creates structural vulnerabilities, political polarisation and difficult foreign-policy choices, but it can also provide opportunities to exercise agency and influence regional power dynamics. The authors distinguish between geopolitical inbetweenness as a structural condition and geostrategic inbetweenness as the ways states respond to it.</p>
+    </section>
+
+    <section class="section">
+      <h2>Core concepts</h2>
+      <div class="concept-grid">
+        <div class="concept"><strong>Geopolitical inbetweenness</strong><span>A state's position between competing great powers, understood not simply geographically but also through political identity, international status and strategic environment. It is socially and politically constructed through great-power interaction.</span></div>
+        <div class="concept"><strong>Geostrategic inbetweenness</strong><span>The strategic responses through which states navigate, exploit or attempt to escape their geopolitical position. It transforms inbetweenness from a structural constraint into a potential instrument of statecraft.</span></div>
+        <div class="concept"><strong>Liminality</strong><span>An ambiguous and unsettled condition of belonging, in which a state may identify with one power, remain between competing powers or partially belong to both.</span></div>
+        <div class="concept"><strong>Ontological security</strong><span>A state's need for continuity, identity and a relatively stable understanding of its place in the international system. Inbetweenness threatens this stability through persistent uncertainty.</span></div>
+        <div class="concept"><strong>Shelter diplomacy</strong><span>Seeking protection or security guarantees from external powers, formally through alliances or informally through strategic partnerships.</span></div>
+        <div class="concept"><strong>Objectification</strong><span>The reduction of in-between states to instruments of great-power competition, denying their agency and potentially undermining their sovereignty.</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>From geopolitical condition to strategic agency</h2>
+      <p>The central distinction is between where a state is situated in the international order and what it does with that position.</p>
+      <div class="distinction">
+        <div class="dist-card structural">
+          <div class="mini-label">Structural condition</div>
+          <h3>Geopolitical inbetweenness</h3>
+          <p>States occupy a contested environment in which EU and Russian interests overlap and increasingly conflict. Their location, identity and political orientation are shaped by competing integration projects and external expectations.</p>
+        </div>
+        <div class="dist-card strategic">
+          <div class="mini-label">Strategic response</div>
+          <h3>Geostrategic inbetweenness</h3>
+          <p>States navigate, exploit or attempt to escape their position. They can adjust alignment, seek external shelter, contest great-power expectations or use their intermediary position to preserve room for manoeuvre.</p>
+        </div>
+      </div>
+      <div class="shift"><strong>Key analytical shift:</strong> Inbetweenness is not only something that happens to states. It can also become something states strategically act upon.</div>
+    </section>
+
+    <section class="section">
+      <h2>More than geography: competing geopolitical configurations</h2>
+      <p>The authors focus on the EU's six Eastern Partnership neighbours. Their positions cannot be understood through physical location alone: identity, political orientation and competing integration projects also matter. These identities are fluid rather than permanent.</p>
+      <div class="country-grid">
+        <div class="country"><h3>Armenia</h3><p>One of the six Eastern Partnership neighbours navigating the contested space between Russian and European influence.</p></div>
+        <div class="country"><h3>Azerbaijan</h3><p>A state whose strategic position provides opportunities for pragmatic equidistance and partnerships beyond the EU and Russia.</p></div>
+        <div class="country"><h3>Belarus</h3><p>A neighbour whose multi-vector manoeuvring became increasingly difficult as EU–Russia relations deteriorated.</p></div>
+        <div class="country"><h3>Georgia</h3><p>A state whose foreign-policy orientation and external relationships illustrate the challenges of navigating competing geopolitical expectations.</p></div>
+        <div class="country"><h3>Moldova</h3><p>A state balancing external pressures while pursuing EU accession and differentiated integration.</p></div>
+        <div class="country"><h3>Ukraine</h3><p>A state confronting the existential implications of competing geopolitical projects and the defence of sovereignty.</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Strategic significance and objectification</h2>
+      <p>In-between states matter because of their strategic importance to competing powers, not necessarily because of their size or military capabilities. They become arenas for competing visions of regional order.</p>
+      <div class="geography-grid">
+        <div class="geo-card"><strong>Buffer zones</strong><p>States situated between competing powers, theoretically reducing tensions through neutrality. Historically, however, they have had mixed success in maintaining stability.</p></div>
+        <div class="geo-card"><strong>Grey zones</strong><p>Contested spaces where different identities, loyalties and political orientations coexist.</p></div>
+        <div class="geo-card"><strong>Spheres of influence</strong><p>Exclusive areas of political, military and economic control claimed by a great power. These directly threaten the sovereignty of states such as Ukraine.</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>The consequences of inbetweenness</h2>
+      <div class="consequence-grid">
+        <div class="consequence"><strong>Pressure to choose</strong><p>Choices can become existential questions of national identity and survival. Choosing often means losing.</p></div>
+        <div class="consequence"><strong>Domestic polarisation</strong><p>Domestic political divisions frequently mirror geopolitical divisions, particularly between pro-European and pro-Russian orientations.</p></div>
+        <div class="consequence"><strong>Distinctive security cultures</strong><p>States develop particular understandings of security and strategic vulnerability through their position between competing powers.</p></div>
+        <div class="consequence"><strong>Shelter diplomacy</strong><p>States seek third-party partnerships and security guarantees to reduce vulnerability. Examples include Azerbaijan's relationship with Türkiye and Belarus's and Georgia's outreach to China.</p></div>
+        <div class="consequence"><strong>Strategic flexibility</strong><p>Foreign-policy responses can shift as states attempt to preserve sovereignty and room for manoeuvre.</p></div>
+        <div class="consequence"><strong>Opportunities for agency</strong><p>Great-power rivalry can paradoxically create opportunities for smaller states to influence the competition itself, rather than merely being shaped by it.</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Three strategic postures</h2>
+      <p>The authors identify three ways in which in-between states can respond to their geopolitical environment. These postures are not necessarily mutually exclusive or permanent.</p>
+      <div class="postures">
+        <div class="posture consent">
+          <div class="mini-label">Posture 01</div>
+          <h3>Consent</h3>
+          <p>Accepting or accommodating the existing geopolitical configuration.</p>
+        </div>
+        <div class="posture contestation">
+          <div class="mini-label">Posture 02</div>
+          <h3>Contestation</h3>
+          <p>Challenging the expectations or influence of competing powers.</p>
+        </div>
+        <div class="posture counteraction">
+          <div class="mini-label">Posture 03</div>
+          <h3>Counteraction</h3>
+          <p>Actively resisting external pressures and attempting to alter the strategic situation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Theoretical framework: realist constructivism</h2>
+      <div class="framework">
+        <h3>Material constraints and socially constructed meaning</h3>
+        <p>The authors employ realist constructivism, combining the material power and structural constraints emphasised by realism with the importance of identity, norms and socially constructed understandings emphasised by constructivism.</p>
+        <p style="margin-top:12px;"><strong>Konstruktpolitik</strong> describes the attempt to change the social and ideational environment in order to compensate for material limitations. Geography cannot easily be changed, but the political meaning of geography can. States can reshape how external powers perceive their identity, sovereignty and strategic role.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Comparative country trajectories</h2>
+      <div class="country-grid">
+        <div class="country"><h3>Belarus</h3><p>Lukashenka's multi-vector manoeuvring became increasingly untenable as EU–Russia relations deteriorated, pushing Belarus towards Russia.</p></div>
+        <div class="country"><h3>Armenia and Georgia</h3><p>Their different responses to changing geopolitical circumstances demonstrate that similar structural pressures can produce different strategic choices.</p></div>
+        <div class="country"><h3>Moldova</h3><p>Uses balancing, hedging and differentiated integration to navigate competing external pressures while pursuing EU accession.</p></div>
+        <div class="country"><h3>Ukraine</h3><p>Illustrates the dangers of unsuccessful hedging and underbalancing, ultimately facing existential war to defend sovereignty.</p></div>
+        <div class="country"><h3>Azerbaijan</h3><p>Exploits its position through pragmatic equidistance between the EU and Russia, strategic alignment with Türkiye and energy-connectivity projects.</p></div>
+      </div>
+    </section>
+
+    <section class="takeaway">
+      <div class="tag">Core takeaway</div>
+      <p>Inbetweenness is simultaneously a constraint and an opportunity. The foreign-policy behaviour of these states should not automatically be interpreted as inconsistency or indecision. Strategic shifts, hedging and U-turns can constitute rational attempts to preserve sovereignty, maintain room for manoeuvre and survive great-power competition.</p>
+    </section>
+
+    <div class="footer">Reading notes · Tyushka &amp; German (2025) · Geopolitical contestation</div>
+  </main>
+</body>
+</html>
