@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redžić & Everett (2020) | My Notes</title>
+  <link rel="stylesheet" href="../../../style.css">
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+
+  <style>
+    .reading-page { max-width:1050px; margin:0 auto; padding:38px 0 70px; }
+    .back-link { display:inline-block; color:var(--muted); font-size:13px; margin-bottom:30px; }
+    .eyebrow { color:#718a79; font-size:10px; font-weight:700; letter-spacing:1.3px; margin-bottom:12px; }
+    .reading-header { margin-bottom:30px; }
+    .reading-header h1 { font-size:clamp(29px,5vw,43px); line-height:1.15; max-width:850px; }
+    .subtitle { color:var(--muted); margin-top:12px; font-size:15px; }
+    .author-line { color:var(--muted); font-size:12px; margin-top:15px; }
+    .central-argument { background:#edf3ef; border:1px solid #dce8df; border-radius:22px; padding:25px 27px; margin-bottom:35px; }
+    .central-argument p:last-child { color:#405b49; font-size:16px; line-height:1.7; }
+    .section { margin:36px 0; }
+    .section-heading { font-size:22px; margin-bottom:15px; }
+    .section-intro { color:var(--muted); font-size:13px; line-height:1.7; max-width:790px; margin-bottom:19px; }
+    .concept-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .concept-card { background:white; border:1px solid var(--border); border-radius:17px; padding:18px; }
+    .concept-card h3 { font-size:14px; margin-bottom:7px; }
+    .concept-card p { color:var(--muted); font-size:12px; line-height:1.65; }
+    .concept-tag { color:#78917e; font-size:9px; font-weight:700; letter-spacing:.8px; margin-bottom:8px; }
+    .comparison { display:grid; grid-template-columns:1fr 1fr; gap:13px; }
+    .comparison-card { border-radius:19px; padding:23px; min-height:235px; }
+    .comparison-card.historical { background:#eaf1eb; }
+    .comparison-card.transitional { background:#f4edf7; }
+    .comparison-card .label { font-size:9px; letter-spacing:1px; font-weight:700; opacity:.7; }
+    .comparison-card h3 { font-size:19px; margin:12px 0 10px; }
+    .comparison-card p { color:#647080; font-size:12px; line-height:1.7; }
+    .comparison-card ul { margin:12px 0 0 17px; color:#647080; font-size:12px; line-height:1.8; }
+    .durability { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:14px; }
+    .durability-card { border:1px solid var(--border); border-radius:16px; padding:18px; }
+    .durability-card h3 { font-size:13px; margin-bottom:7px; }
+    .durability-card p { color:var(--muted); font-size:12px; line-height:1.65; }
+    .country-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+    .country-card { background:#f7f8f7; border:1px solid var(--border); border-radius:17px; padding:19px; }
+    .country-card h3 { font-size:14px; margin-bottom:8px; }
+    .country-card p { color:var(--muted); font-size:12px; line-height:1.7; }
+    .country-card .type { color:#78917e; font-size:9px; font-weight:700; letter-spacing:.8px; margin-bottom:8px; }
+    .country-card.historical { background:#edf3ef; border-color:#dce8df; }
+    .country-card.transitional { background:#f3eff8; border-color:#e6dff0; }
+    .country-card.mixed { background:#f6f0e7; border-color:#eee4d5; }
+    .analytical-flow { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+    .flow-card { background:#edf1f7; border-radius:16px; padding:19px; }
+    .flow-card:nth-child(2) { background:#f4edf7; }
+    .flow-card:nth-child(3) { background:#eaf2ed; }
+    .flow-card h3 { font-size:14px; margin:9px 0 7px; }
+    .flow-card p { color:#647080; font-size:12px; line-height:1.65; }
+    .flow-card .num { color:#82909b; font-size:10px; font-weight:700; }
+    .important-note { background:#f5f0e7; border-radius:14px; padding:16px 18px; margin-top:13px; }
+    .important-note p { color:#71634e; font-size:12px; line-height:1.7; }
+    .takeaway { background:#e9eff9; border-radius:21px; padding:24px 26px; margin-top:35px; }
+    .takeaway h2 { font-size:19px; margin-bottom:9px; }
+    .takeaway p { color:#52647d; font-size:14px; line-height:1.7; }
+    .reading-footer { display:flex; justify-content:space-between; gap:15px; border-top:1px solid var(--border); padding-top:20px; margin-top:35px; }
+    .reading-footer a { color:#64816e; font-size:12px; }
+    @media(max-width:750px) {
+      .concept-grid,.comparison,.country-grid,.durability,.analytical-flow { grid-template-columns:1fr; }
+      .reading-footer { flex-direction:column; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href="../../../index.html">
+      <span class="brand-icon">✳</span>
+      <span>my notebook</span>
+    </a>
+    <nav class="navigation">
+      <a href="../../../index.html">Home</a>
+      <a href="../index.html">Course</a>
+      <a class="active" href="../notes.html">Notes</a>
+      <a href="../syllabus.html">Syllabus</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <article class="reading-page">
+
+      <a class="back-link" href="../notes.html">← Back to reading library</a>
+
+      <header class="reading-header">
+        <p class="eyebrow">DEMOCRACY & GEOPOLITICS / SESSION 4</p>
+        <h1>Cleavages in the Post-Communist Countries of Europe: A Review</h1>
+        <p class="subtitle">Historical persistence, transitional instability and the limits of frozen cleavage theory</p>
+        <p class="author-line">Ena Redžić and Judas Everett (2020)</p>
+      </header>
+
+      <section class="central-argument">
+        <p class="eyebrow">CENTRAL ARGUMENT</p>
+        <p>Frozen cleavage theory remains useful for understanding post-Communist party competition, but it cannot fully explain its volatility. Historically rooted divisions, particularly religious, ethnic and geographical ones, tend to persist more strongly than cleavages emerging from economic and political transition. Yet political parties can reorganise existing divisions, incorporate new issues and challenge established alignments.</p>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">Core concepts</h2>
+        <div class="concept-grid">
+          <div class="concept-card">
+            <p class="concept-tag">SOCIAL STRUCTURE</p>
+            <h3>Social cleavage</h3>
+            <p>A division involving social differences, collective identity and political or organisational expression.</p>
+          </div>
+          <div class="concept-card">
+            <p class="concept-tag">THEORETICAL FRAMEWORK</p>
+            <h3>Frozen cleavage theory</h3>
+            <p>The proposition that historically established social divisions become institutionalised in party systems and produce relatively stable patterns of political competition.</p>
+          </div>
+          <div class="concept-card">
+            <p class="concept-tag">HISTORICAL LEGACIES</p>
+            <h3>Historical cleavages</h3>
+            <p>Divisions rooted in earlier historical experiences, such as religion, ethnicity or regional differences.</p>
+          </div>
+          <div class="concept-card">
+            <p class="concept-tag">POST-COMMUNIST TRANSITION</p>
+            <h3>Transitional cleavages</h3>
+            <p>Divisions emerging from the transition away from Communism, particularly over economic reform and democratisation.</p>
+          </div>
+          <div class="concept-card">
+            <p class="concept-tag">POLITICAL COMPETITION</p>
+            <h3>Political salience</h3>
+            <p>The extent to which a social division becomes relevant to political competition and voting behaviour.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">1. The central distinction: historical vs transitional cleavages</h2>
+        <p class="section-intro">The authors revisit whether Lipset and Rokkan's frozen cleavage theory can explain party competition in post-Communist societies, where democratisation and economic transformation created new political conflicts.</p>
+
+        <div class="comparison">
+          <div class="comparison-card historical">
+            <p class="label">HISTORICAL CLEAVAGES</p>
+            <h3>More persistent</h3>
+            <p>Divisions rooted in earlier historical experiences have generally proved more durable.</p>
+            <ul>
+              <li>Religious differences</li>
+              <li>Ethnic divisions</li>
+              <li>Geographical and regional divisions</li>
+            </ul>
+          </div>
+          <div class="comparison-card transitional">
+            <p class="label">TRANSITIONAL CLEAVAGES</p>
+            <h3>Less stable</h3>
+            <p>Divisions emerging from the transition to democracy and market economies have often been less durable.</p>
+            <ul>
+              <li>Economic reform and privatisation</li>
+              <li>Democratisation</li>
+              <li>Legacy of Communism</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="durability">
+          <div class="durability-card">
+            <h3>Why historical divisions endure</h3>
+            <p>They are rooted in longer-standing social identities and experiences, which can continue to structure political competition.</p>
+          </div>
+          <div class="durability-card">
+            <h3>Why transitional divisions weaken</h3>
+            <p>Issues initially structuring competition can be absorbed into mainstream party agendas rather than producing permanently distinct political camps.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">2. Why transitional cleavages are less stable</h2>
+        <p class="section-intro">Economic reform, privatisation and the legacy of Communism initially structured political competition across post-Communist societies. However, these issues did not always translate into durable political camps.</p>
+
+        <div class="country-grid">
+          <div class="country-card transitional">
+            <p class="type">CZECH REPUBLIC · PARTY SYSTEM DISRUPTION</p>
+            <h3>ANO 2011</h3>
+            <p>A relatively established socio-economic left-right dimension was disrupted by the emergence of ANO 2011, which mobilised dissatisfaction with established political parties and challenged existing patterns of competition.</p>
+          </div>
+          <div class="country-card mixed">
+            <p class="type">HUNGARY · PARTY AGENCY</p>
+            <h3>Fidesz</h3>
+            <p>Fidesz did not simply inherit an established political division. It actively reorganised political competition around nationalism, conservatism and anti-liberalism.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">3. National differences and the limits of freezing</h2>
+        <p class="section-intro">The country cases demonstrate that the persistence of a social division does not necessarily guarantee a stable party system or an unchanged pattern of political representation.</p>
+
+        <div class="country-grid">
+          <div class="country-card historical">
+            <p class="type">HISTORICAL CLEAVAGES</p>
+            <h3>Croatia and Poland</h3>
+            <p>Historical religious and geographical divisions remain important features of political competition.</p>
+          </div>
+          <div class="country-card historical">
+            <p class="type">HISTORICAL CLEAVAGES</p>
+            <h3>Bulgaria, Romania and Slovakia</h3>
+            <p>Ethnic divisions continue to shape political representation, although their electoral salience and organisational expression vary.</p>
+          </div>
+          <div class="country-card transitional">
+            <p class="type">PARTY SYSTEM CHANGE</p>
+            <h3>Czech Republic</h3>
+            <p>Challenger parties have disrupted previously established socio-economic competition.</p>
+          </div>
+          <div class="country-card mixed">
+            <p class="type">POLITICAL REORGANISATION</p>
+            <h3>Hungary</h3>
+            <p>Party agency has helped reorganise political identities and establish new ideological divisions.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">4. The distinction between social persistence and political stability</h2>
+        <p class="section-intro">The Romanian and Slovak cases are particularly useful for distinguishing the existence of an ethnic division from its actual political influence.</p>
+
+        <div class="analytical-flow">
+          <div class="flow-card">
+            <span class="num">01 · SOCIAL LEVEL</span>
+            <h3>Identity persists</h3>
+            <p>Ethnic identities may remain socially significant within a society.</p>
+          </div>
+          <div class="flow-card">
+            <span class="num">02 · POLITICAL LEVEL</span>
+            <h3>Salience varies</h3>
+            <p>The electoral relevance and organisational expression of that identity can change.</p>
+          </div>
+          <div class="flow-card">
+            <span class="num">03 · PARTY SYSTEM</span>
+            <h3>Representation shifts</h3>
+            <p>Mainstream parties may absorb relevant political demands, while electoral alignments become less stable.</p>
+          </div>
+        </div>
+
+        <div class="important-note">
+          <p><strong>Key distinction:</strong> Social cleavages may endure even when the party systems representing them change. The persistence of a division and the stability of its political expression are not the same thing.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-heading">Theoretical contribution</h2>
+        <p class="section-intro">The review identifies both the continuing relevance and the limitations of frozen cleavage theory in post-Communist Europe.</p>
+        <div class="durability">
+          <div class="durability-card">
+            <h3>What frozen cleavage theory explains</h3>
+            <p>Historically rooted social divisions can remain important foundations of political competition across major political transformations.</p>
+          </div>
+          <div class="durability-card">
+            <h3>What it cannot fully explain</h3>
+            <p>Political competition remains susceptible to change as parties reorganise existing divisions, incorporate new issues and challenge established patterns.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="takeaway">
+        <h2>Overall takeaway</h2>
+        <p>Frozen cleavage theory remains useful, but it cannot fully explain the volatility of post-Communist party systems. Historically rooted divisions are generally more persistent than those created during the transition from Communism. Yet political parties can reorganise existing divisions, incorporate new issues and challenge established alignments. Social cleavages may endure even when the party systems representing them change.</p>
+      </section>
+
+      <footer class="reading-footer">
+        <a href="knott-2025.html">← Previous reading: Knott (2025)</a>
+        <a href="../notes.html">Back to reading library ↑</a>
+      </footer>
+
+    </article>
+  </main>
+</body>
+</html>
