@@ -2,89 +2,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mead | My Notes</title>
-<link rel="stylesheet" href="../../../style.css">
-<style>
-.note-page{max-width:900px;margin:40px auto}.note-meta{color:#64816e;font-size:11px;font-weight:700;letter-spacing:1px}.note-page h1{font-size:clamp(30px,5vw,43px);margin:12px 0}.subtitle{color:var(--muted);margin-bottom:28px}.note-block{background:white;border:1px solid var(--border);border-radius:19px;padding:24px;margin:18px 0}.note-block h2{font-size:20px;margin-bottom:13px}.note-block h3{font-size:15px;margin:17px 0 6px}.note-block p,.note-block li{font-size:14px;color:#586371;line-height:1.8}.note-block ul{padding-left:20px}.concept{padding:12px 0;border-bottom:1px solid var(--border)}.concept:last-child{border:0}.concept strong{color:#354b3d}.concept p{margin-top:4px}.insight{background:#edf3ef;border-radius:15px;padding:19px;margin:18px 0}.insight p{color:#526b5a}.region-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:15px}.region-grid div{background:#f5f6f8;padding:15px;border-radius:13px}.region-grid strong{font-size:13px}.region-grid p{font-size:12px;margin-top:5px}.back{display:inline-block;color:#64816e;font-size:13px;margin-bottom:20px}@media(max-width:600px){.region-grid{grid-template-columns:1fr}.note-block{padding:18px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mead (2014) | My Notebook</title>
+  <link rel="stylesheet" href="../../../style.css">
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+  <style>
+    .reading-page { max-width:920px; margin:42px auto 70px; }
+    .back-link { display:inline-block; color:#64816e; font-size:13px; margin-bottom:28px; }
+    .reading-meta { color:#64816e; font-size:11px; font-weight:700; letter-spacing:1.2px; }
+    .reading-title { font-size:clamp(32px,5vw,48px); line-height:1.12; letter-spacing:-1.5px; margin:13px 0 10px; max-width:760px; }
+    .reading-subtitle { color:var(--muted); font-size:15px; margin-bottom:25px; }
+    .reading-tags { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:35px; }
+    .reading-tags span { background:#edf3ef; color:#587562; padding:7px 12px; border-radius:20px; font-size:11px; }
+    .reading-section { margin:35px 0; }
+    .section-heading { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+    .section-number { display:grid; place-items:center; width:30px; height:30px; flex-shrink:0; border-radius:10px; background:#edf3ef; color:#587562; font-size:12px; font-weight:700; }
+    .section-heading h2 { font-size:21px; letter-spacing:-.4px; }
+    .reading-card { background:white; border:1px solid var(--border); border-radius:20px; padding:25px; margin:14px 0; }
+    .reading-card p { color:#586371; font-size:14px; line-height:1.85; margin:9px 0; }
+    .reading-card h3 { font-size:15px; margin:20px 0 6px; }
+    .reading-card h3:first-child { margin-top:0; }
+    .concept-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .concept-card { background:white; border:1px solid var(--border); border-radius:17px; padding:19px; }
+    .concept-card strong { display:block; color:#354b3d; font-size:14px; margin-bottom:7px; }
+    .concept-card p { color:#586371; font-size:13px; line-height:1.75; }
+    .concept-card.wide { grid-column:1/-1; }
+    .timeline { display:grid; gap:12px; }
+    .timeline-item { display:grid; grid-template-columns:115px 1fr; gap:15px; background:white; border:1px solid var(--border); border-radius:17px; padding:20px; }
+    .timeline-period { color:#64816e; font-size:11px; font-weight:700; letter-spacing:.6px; }
+    .timeline-item h3 { font-size:15px; margin-bottom:7px; }
+    .timeline-item p { color:#586371; font-size:13px; line-height:1.8; }
+    .pillar-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .pillar { border-radius:18px; padding:20px; min-height:190px; }
+    .pillar.europe { background:#eaf0fa; color:#4c6183; }
+    .pillar.middle-east { background:#f7eee4; color:#846b4e; }
+    .pillar.asia { background:#edf3ef; color:#4d7058; }
+    .pillar-label { font-size:10px; letter-spacing:1px; text-transform:uppercase; opacity:.75; margin-bottom:12px; }
+    .pillar h3 { font-size:17px; margin-bottom:9px; }
+    .pillar p { font-size:13px; line-height:1.75; }
+    .country-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .country-card { background:white; border:1px solid var(--border); border-radius:17px; padding:19px; }
+    .country-card strong { display:block; font-size:15px; margin-bottom:8px; color:#354b3d; }
+    .country-card p { font-size:13px; line-height:1.75; color:#586371; }
+    .insight { background:#eaf2ec; border-radius:20px; padding:24px; margin:14px 0; }
+    .insight-label { color:#587562; font-size:10px; font-weight:700; letter-spacing:1px; margin-bottom:9px; }
+    .insight p { color:#405f49; font-size:15px; line-height:1.8; }
+    .reading-footer { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px; margin-top:45px; padding-top:22px; border-top:1px solid var(--border); }
+    .reading-footer a { color:#64816e; font-size:13px; }
+    @media(max-width:700px) {
+      .concept-grid,.pillar-grid,.country-grid { grid-template-columns:1fr; }
+      .concept-card.wide { grid-column:auto; }
+      .timeline-item { grid-template-columns:1fr; gap:8px; }
+      .reading-card { padding:19px; }
+      .reading-title { letter-spacing:-.8px; }
+    }
+  </style>
 </head>
 <body>
-<header class="topbar">
-<a class="brand" href="../../../index.html"><span class="brand-icon">✳</span><span>my notebook</span></a>
-<nav class="navigation"><a href="../../../index.html">Home</a><a href="../index.html">Course</a><a href="../notes.html">Notes</a></nav>
-</header>
-<main class="container note-page">
-<a class="back" href="../notes.html">← Back to notes library</a>
-<p class="note-meta">FOUNDATIONS · SESSION 1 · 2014</p>
-<h1>The Return of Geopolitics</h1>
-<p class="subtitle">Walter Russell Mead · The Return of Geopolitics: The Revenge of the Revisionist Powers</p>
+  <header class="topbar">
+    <a class="brand" href="../../../index.html">
+      <span class="brand-icon">✳</span>
+      <span>my notebook</span>
+    </a>
+    <nav class="navigation">
+      <a href="../../../index.html">Home</a>
+      <a href="../index.html">Course</a>
+      <a class="active" href="../notes.html">Notes</a>
+      <a href="../syllabus.html">Syllabus</a>
+    </nav>
+  </header>
 
-<section class="note-block">
-<h2>Central argument</h2>
-<p>Mead challenges the post-Cold War assumption that traditional hard-power geopolitics had become obsolete. Western leaders interpreted the ideological defeat of communism as evidence that liberal democracy and economic integration had displaced zero-sum power politics.</p>
-<p>Russia, China and Iran did not accept the post-Cold War settlement. They continued to pursue strategic interests through military capabilities and realpolitik, challenging the Western-led order and demonstrating the continuing importance of hard power.</p>
-</section>
+  <main class="container reading-page">
+    <a class="back-link" href="../notes.html">← Back to notes library</a>
 
-<section class="note-block">
-<h2>Core concepts</h2>
-<div class="concept"><strong>Revisionist powers</strong><p>States that reject the post-Cold War geopolitical settlement and use hard power and realpolitik to alter regional balances of power and challenge US-led frameworks. Mead focuses on Russia, China and Iran.</p></div>
-<div class="concept"><strong>Liberal world order</strong><p>The post-Cold War international system championed by the US and its European allies, built around rules-based governance, trade liberalisation, human rights, rule of law, nuclear non-proliferation and international cooperation.</p></div>
-<div class="concept"><strong>End of History thesis</strong><p>The idea popularised by Francis Fukuyama that liberal democracy represents the final ideological endpoint of political development, with no competing model capable of sustaining comparable freedom, dignity and long-term dynamism.</p></div>
-<div class="concept"><strong>Post-historical politics</strong><p>A foreign-policy outlook that treats territorial boundaries, military deployment and spheres of influence as increasingly obsolete, prioritising cooperation and institutional problem-solving.</p></div>
-<div class="concept"><strong>Zero-sum geopolitics</strong><p>Power politics in which one state's strategic, economic or territorial gains are understood as relative losses for rivals, producing competition through military power and coercion.</p></div>
-</section>
+    <p class="reading-meta">FOUNDATIONS · SESSION 1 · 2014</p>
+    <h1 class="reading-title">The Return of Geopolitics and Revisionist Powers</h1>
+    <p class="reading-subtitle">Walter Russell Mead · Foreign Affairs (2014)</p>
 
-<section class="note-block">
-<h2>The early 1990s geopolitical settlement</h2>
-<p>The Western-led order rested on a particular distribution of power following the Soviet collapse. Mead identifies three regional pillars:</p>
-<div class="region-grid">
-<div><strong>Europe</strong><p>German reunification, the dissolution of the Soviet Union and the integration of former Warsaw Pact states and Baltic republics into NATO and the EU.</p></div>
-<div><strong>Middle East</strong><p>Dominance of US-aligned Sunni powers, alongside the strategic double containment of Iran and Iraq.</p></div>
-<div><strong>Asia</strong><p>US naval and military primacy, supported by bilateral security alliances across the region.</p></div>
-</div>
-<p>These arrangements reflected the balance of power in the early 1990s. The central miscalculation was to treat that temporary configuration as a permanent condition of international politics.</p>
-</section>
+    <div class="reading-tags">
+      <span>International relations</span>
+      <span>Great power politics</span>
+      <span>Geopolitical revisionism</span>
+    </div>
 
-<section class="note-block">
-<h2>Western strategic miscalculations</h2>
-<h3>The post-Cold War assumption</h3>
-<p>Western elites assumed that the defeat of communism had made traditional hard power increasingly irrelevant. They expected non-Western states either to adopt Western liberal principles or to become economically and militarily marginal.</p>
-<h3>The Clinton administration</h3>
-<p>Mead identifies a reduction in defence spending, cuts to State Department funding and difficulties securing congressional support for US contributions to the United Nations as expressions of confidence in a self-sustaining global economic and political order.</p>
-<h3>The George W. Bush administration</h3>
-<p>Although the attacks of 11 September 2001 forced renewed attention to international conflict, the administration retained post-historical assumptions in its belief that democracy could be rapidly implanted across the Arab Middle East, beginning with the invasion of Iraq.</p>
-</section>
+    <section class="reading-section">
+      <div class="section-heading">
+        <span class="section-number">01</span>
+        <h2>Central argument</h2>
+      </div>
+      <div class="reading-card">
+        <p>Mead challenges the post-Cold War Western assumption that the ideological victory of liberal democracy had rendered traditional hard-power geopolitics obsolete. Western leaders confused the triumph of liberal capitalism over communism with the disappearance of zero-sum competition over territory, military capabilities and regional spheres of influence.</p>
+        <p>Russia, China and Iran never accepted the geopolitical settlement established after the Soviet collapse. While Western governments increasingly prioritised global governance and institutional cooperation, these revisionist powers continued to use military capabilities and realpolitik to challenge US dominance.</p>
+      </div>
+    </section>
 
-<section class="note-block">
-<h2>Revisionist powers and geopolitical competition</h2>
-<h3>Iran</h3>
-<p>Mead presents Iran as the weakest of the three revisionist powers in conventional economic and military terms, but highly effective in exploiting regional opportunities. The notes emphasise its expansion of influence in Iraq, intervention in Syria alongside Hezbollah and exploitation of divisions among Sunni states.</p>
-<h3>Russia</h3>
-<p>Russia is presented as a middling revisionist power that uses its position to disrupt Western projects across the former Soviet Union. The notes identify the war with Georgia in 2008, the annexation of Crimea in 2014, interventions in Ukraine, its role in Armenia and its use of diplomatic and institutional leverage in international politics.</p>
-<h3>China</h3>
-<p>The notes identify China as a central revisionist power whose growing military and economic capabilities challenge US regional dominance. Its position also differs from Russia and Iran in important economic and strategic respects.</p>
-</section>
+    <section class="reading-section">
+      <div class="section-heading">
+        <span class="section-number">02</span>
+        <h2>Core concepts</h2>
+      </div>
+      <div class="concept-grid">
+        <div class="concept-card">
+          <strong>Revisionist powers</strong>
+          <p>States that reject the post-Cold War geopolitical settlement and seek to alter regional balances of power through hard power and realpolitik. Mead focuses on Russia, China and Iran.</p>
+        </div>
+        <div class="concept-card">
+          <strong>Liberal world order</strong>
+          <p>The US- and European-led international system built around rules-based governance, trade liberalisation, human rights, the rule of law, nuclear nonproliferation and international cooperation.</p>
+        </div>
+        <div class="concept-card">
+          <strong>End of History thesis</strong>
+          <p>Associated with Francis Fukuyama, the thesis holds that liberal democracy represents the final ideological endpoint of political development, following the defeat of competing ideological models.</p>
+        </div>
+        <div class="concept-card">
+          <strong>Post-historical politics</strong>
+          <p>A Western foreign policy paradigm that treats traditional geopolitical competition, territorial disputes and military power as increasingly obsolete, favouring institutional problem-solving and win-win cooperation.</p>
+        </div>
+        <div class="concept-card wide">
+          <strong>Zero-sum geopolitics</strong>
+          <p>Classical power politics in which one state's strategic, economic or territorial gains are perceived as losses for its rivals. It is associated with military competition, coercion and struggles over regional influence.</p>
+        </div>
+      </div>
+    </section>
 
-<section class="note-block">
-<h2>Why the revisionist powers are not a unified alliance</h2>
-<p>Despite their shared interest in weakening US dominance, the notes identify four sources of friction:</p>
-<ul>
-<li><strong>Geopolitical suspicion:</strong> Russia's long-term anxieties about China's rise and expanding influence in Central Asia.</li>
-<li><strong>Ideological divergence:</strong> Iran's theocratic worldview differs substantially from China's party-state system and Russia's nationalist autocracy.</li>
-<li><strong>Economic conflict over energy:</strong> Russia and Iran benefit from high oil prices, whereas China, as a major energy importer, has an interest in lower prices.</li>
-<li><strong>Regional stability:</strong> Instability in the Middle East can serve Russian and Iranian interests by distracting Western powers, while creating economic and supply-chain risks for China.</li>
-</ul>
-</section>
+    <section class="reading-section">
+      <div class="section-heading">
+        <span class="section-number">03</span>
+        <h2>The three pillars of the post-Cold War settlement</h2>
+      </div>
+      <p class="framework-intro">Mead argues that the liberal world order rested on a set of regional power arrangements established in the aftermath of the Soviet collapse.</p>
+      <div class="pillar-grid">
+        <div class="pillar europe">
+          <div class="pillar-label">Pillar one</div>
+          <h3>Europe</h3>
+          <p>German unification, the dissolution of the Soviet Union and the integration of former Warsaw Pact states and Baltic republics into NATO and the European Union.</p>
+        </div>
+        <div class="pillar middle-east">
+          <div class="pillar-label">Pillar two</div>
+          <h3>Middle East</h3>
+          <p>Dominance of US-aligned Sunni powers, including Saudi Arabia, the Gulf states, Egypt and Turkey, alongside the strategic double containment of Iran and Iraq.</p>
+        </div>
+        <div class="pillar asia">
+          <div class="pillar-label">Pillar three</div>
+          <h3>Asia</h3>
+          <p>US naval and military primacy, supported by bilateral security alliances with Japan, South Korea, Australia, Indonesia and other regional partners.</p>
+        </div>
+      </div>
+      <div class="reading-card">
+        <p>These arrangements reflected the balance of power in the early 1990s. The central Western miscalculation was to treat this temporary configuration as a permanent condition of international politics.</p>
+      </div>
+    </section>
 
-<section class="note-block">
-<h2>Overall takeaway</h2>
-<div class="insight"><p><strong>Geopolitics did not disappear after the Cold War.</strong> The Western assumption that liberal institutions and economic interdependence had displaced power competition underestimated the willingness and capacity of revisionist states to challenge the existing order.</p></div>
-<p>The notes connect this international argument to domestic regime structures: authoritarian consolidation and insulation from external democratising pressure can provide regimes with the security and state capacity to pursue revisionist strategies abroad.</p>
-</section>
+    <section class="reading-section">
+      <div class="section-heading">
+        <span class="section-number">04</span>
+        <h2>Western strategic miscalculations</h2>
+      </div>
+      <p class="framework-intro">The assumption that traditional geopolitics had become obsolete shaped successive US administrations, weakening their capacity to defend the international order.</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-period">POST-COLD WAR</div>
+          <div>
+            <h3>The original miscalculation</h3>
+            <p>Western elites assumed that the defeat of communism had made hard power obsolete. Non-Western states were expected either to adopt Western liberalism or eventually become economically and militarily irrelevant.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">CLINTON</div>
+          <div>
+            <h3>Reduced strategic investment</h3>
+            <p>The administration assumed that the global economic system would largely operate by itself. It pursued substantial defence budget cuts, reduced State Department funding and struggled to secure congressional support for US contributions to the United Nations.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">GEORGE W. BUSH</div>
+          <div>
+            <h3>Democracy promotion through intervention</h3>
+            <p>Despite the return of global conflict after 9/11, foreign policy remained influenced by post-historical assumptions. The invasion of Iraq reflected the belief that democracy could be rapidly implanted across the Arab Middle East because history favoured Western values.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">OBAMA</div>
+          <div>
+            <h3>Transcending classical geopolitics</h3>
+            <p>Obama prioritised climate treaties, trade agreements, nuclear nonproliferation, arms control with Russia and ending wars in Iraq and Afghanistan. This agenda coincided with defence cuts and reduced engagement in Europe and the Middle East. Attempts to separate Iran's nuclear programme from its regional expansionism were complicated by Saudi and Israeli concerns and Russian intervention in Syria.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<footer><a href="../notes.html">← Notes library</a><span>DEMOCRACY & GEOPOLITICS</span></footer>
-</main>
+    <section class="reading-section">
+      <div class="section-heading">
+        <span class="section-number">05</span>
+        <h2>The internal constraints of status quo powers</h2>
+      </div>
+      <div class="country-grid">
+        <div class="country-card">
+          <strong>European Union</strong>
+          <p>The euro crisis redirected political attention inward, divided public opinion and generated economic strain. The EU's capacity and political will to project strategic influence beyond its borders were impaired.</p>
+        </div>
+        <div class="country-card">
+          <strong>United States</strong>
+          <p>Foreign policy fatigue after the wars in Iraq and Afghanistan, controversy over surveillance, slow recovery after the 2008 financial crisis and domestic political polarisation weakened support for international leadership.</p>
+        </div>
+        <div class="country-card">
+          <strong>Revisionist powers</strong>
+          <p>Russia, China and Iran continued to pursue regional influence and challenge US-led arrangements, exploiting the gap between Western ambitions and its capacity to sustain strategic commitments.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="reading-section">
+      <div class="section-heading">
+        <span class="section-number">06</span>
+        <h2>Revisionist powers and the challenge to US dominance</h2>
+      </div>
+      <div class="reading-card">
+        <h3>Russia</h3>
+        <p>Russia challenges the European settlement and US influence in its neighbourhood. Its actions demonstrate that territorial control, military power and regional spheres of influence remain central to international politics.</p>
+        <h3>China</h3>
+        <p>China's growing economic and military capabilities challenge the assumption of uncontested US primacy in Asia. Its rise creates pressure on the regional balance of power and the US alliance system.</p>
+        <h3>Iran</h3>
+        <p>Iran challenges the US-aligned regional order in the Middle East. Its regional ambitions cannot be understood solely through the nuclear question, because its geopolitical influence extends beyond nuclear negotiations.</p>
+      </div>
+    </section>
+
+    <section class="reading-section">
+      <div class="section-heading">
+        <span class="section-number">07</span>
+        <h2>Overall takeaway</h2>
+      </div>
+      <div class="insight">
+        <div class="insight-label">THE CENTRAL INSIGHT</div>
+        <p><strong>The end of the Cold War did not mean the end of geopolitics.</strong> The Western-led liberal order was built on a particular balance of power, not on the permanent disappearance of strategic competition. Revisionist powers continued to operate according to hard-power calculations while Western states increasingly acted as if institutional cooperation had replaced them.</p>
+      </div>
+      <div class="reading-card">
+        <p>Mead's argument is a warning against treating a temporary geopolitical settlement as an irreversible historical outcome. The capacity to sustain international order depends not only on institutions and economic integration, but also on military power, strategic attention and the willingness to defend existing arrangements.</p>
+      </div>
+    </section>
+
+    <div class="reading-footer">
+      <a href="../notes.html">← Back to notes library</a>
+      <a href="levitsky-way.html">Previous reading: Levitsky & Way →</a>
+    </div>
+  </main>
 </body>
 </html>
