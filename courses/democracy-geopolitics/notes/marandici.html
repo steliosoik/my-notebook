@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,30 +7,725 @@
   <title>Marandici (2021) | Democracy & Geopolitics</title>
   <link rel="stylesheet" href="../../../style.css">
   <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+
   <style>
-    .page-intro { margin:42px 0 28px; }
-    .page-intro h1 { font-size:clamp(30px,5vw,43px); line-height:1.12; max-width:850px; }
-    .page-intro .subtitle { color:var(--muted); margin-top:12px; max-width:760px; }
-    .metadata { color:var(--muted); font-size:12px; margin-top:15px; line-height:1.8; }
-    .topic-tags { display:flex; flex-wrap:wrap; gap:7px; margin-top:17px; }
-    .topic-tags span { background:#edf3ef; color:#587562; padding:6px 10px; border-radius:20px; font-size:11px; }
-    .note-content { max-width:850px; }
-    .note-content section { margin:30px 0; }
-    .note-content h2 { font-size:21px; margin-bottom:13px; }
-    .note-content h3 { font-size:16px; margin:20px 0 8px; }
-    .note-content p { line-height:1.75; margin:10px 0; }
-    .note-content ul { padding-left:21px; margin:10px 0; }
-    .note-content li { line-height:1.7; margin:7px 0; }
-    .concept { background:white; border:1px solid var(--border); border-radius:14px; padding:15px 17px; margin:10px 0; }
-    .concept strong { color:var(--text); }
-    .takeaway { background:#e8effa; border-radius:17px; padding:19px 21px; margin:30px 0; }
-    .takeaway p { color:#60718b; margin:0; }
-    .source-line { font-size:12px; color:var(--muted); }
-    .page-navigation { display:flex; justify-content:space-between; gap:15px; margin:38px 0 20px; padding-top:20px; border-top:1px solid var(--border); }
-    .page-navigation a { color:var(--muted); font-size:13px; }
-    @media(max-width:650px) { .page-navigation { flex-direction:column; } }
+    :root {
+      --mar-green: #587562;
+      --mar-green-light: #edf3ef;
+      --mar-blue: #e8effa;
+      --mar-blue-dark: #60718b;
+      --mar-ink: #26332d;
+      --mar-muted: #78827d;
+      --mar-line: #e7ebe8;
+      --mar-paper: #ffffff;
+      --mar-warm: #f8f5ef;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .reading-header {
+      margin: 42px 0 28px;
+      max-width: 940px;
+    }
+
+    .reading-kicker {
+      color: var(--mar-green);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 17px;
+    }
+
+    .reading-header h1 {
+      font-size: clamp(34px, 5vw, 52px);
+      letter-spacing: -1.7px;
+      line-height: 1.04;
+      max-width: 850px;
+      margin: 0;
+    }
+
+    .reading-subtitle {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.55;
+      max-width: 740px;
+      margin-top: 16px;
+    }
+
+    .reading-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px 20px;
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 22px;
+    }
+
+    .reading-meta span {
+      display: inline-block;
+    }
+
+    .reading-meta a {
+      color: var(--mar-green);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .reading-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 19px;
+    }
+
+    .reading-tags span {
+      background: var(--mar-green-light);
+      color: var(--mar-green);
+      padding: 7px 11px;
+      border-radius: 20px;
+      font-size: 10px;
+      font-weight: 650;
+    }
+
+    .reading-layout {
+      display: block;
+      margin-top: 30px;
+    }
+
+    .reading-main {
+      min-width: 0;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .argument-card {
+      background: #edf3ef;
+      color: #34443a;
+      padding: 30px 34px;
+      border: 1px solid #e1eae3;
+      border-radius: 20px;
+      margin-bottom: 42px;
+    }
+
+    .argument-label {
+      color: var(--mar-green);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 13px;
+    }
+
+    .argument-card h2 {
+      color: var(--mar-ink);
+      font-size: 25px;
+      line-height: 1.3;
+      max-width: 760px;
+      margin: 0 0 14px;
+    }
+
+    .argument-card p {
+      color: #4d5c52;
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 820px;
+      margin: 0;
+    }
+
+    .section-block {
+      margin: 0 0 50px;
+      scroll-margin-top: 25px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .section-number {
+      color: #8ba391;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .5px;
+    }
+
+    .section-heading h2 {
+      color: var(--mar-ink);
+      font-size: 24px;
+      letter-spacing: -.4px;
+      margin: 0;
+    }
+
+    .reading-main p {
+      color: #4d5852;
+      font-size: 15px;
+      line-height: 1.85;
+      max-width: 82ch;
+      margin: 15px 0;
+    }
+
+    .reading-main strong {
+      color: #34443a;
+    }
+
+    .reading-main h3 {
+      color: var(--mar-ink);
+      font-size: 17px;
+      margin: 27px 0 10px;
+    }
+
+    .reading-main ul {
+      padding-left: 20px;
+      margin: 12px 0;
+    }
+
+    .reading-main li {
+      color: #4d5852;
+      font-size: 15px;
+      line-height: 1.8;
+      margin: 9px 0;
+    }
+
+    /* Concept definitions */
+
+    .concept-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 11px;
+      margin: 20px 0;
+    }
+
+    .concept-card {
+      border: 1px solid var(--mar-line);
+      border-radius: 15px;
+      background: white;
+      padding: 18px;
+    }
+
+    .concept-index {
+      color: #91a397;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .concept-card h3 {
+      font-size: 15px;
+      margin: 8px 0 7px;
+    }
+
+    .concept-card p {
+      font-size: 13px;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    /* Five-stage chronology */
+
+    .sequence-intro {
+      color: var(--mar-muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      margin-bottom: 15px;
+    }
+
+    .sequence-list {
+      border: 1px solid var(--mar-line);
+      border-radius: 18px;
+      overflow: hidden;
+      margin: 22px 0;
+    }
+
+    .sequence-item {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 15px;
+      padding: 20px 22px;
+      border-bottom: 1px solid var(--mar-line);
+      background: white;
+    }
+
+    .sequence-item:last-child {
+      border-bottom: 0;
+    }
+
+    .sequence-marker {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .sequence-marker span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--mar-green-light);
+      color: var(--mar-green);
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .sequence-marker small {
+      color: var(--mar-muted);
+      font-size: 9px;
+      font-weight: 750;
+      letter-spacing: .6px;
+    }
+
+    .sequence-content h3 {
+      font-size: 15px;
+      margin: 2px 0 6px;
+    }
+
+    .sequence-content p {
+      font-size: 13px;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .sequence-content .sequence-outcome {
+      display: inline-block;
+      margin-top: 9px;
+      color: var(--mar-green);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .3px;
+    }
+
+    .sequence-item.final-stage {
+      background: #f7f8f6;
+    }
+
+    .sequence-item.final-stage .sequence-marker span {
+      background: #e8effa;
+      color: var(--mar-blue-dark);
+    }
+
+    /* Mechanism diagram */
+
+    .mechanism-panel {
+      background: #f6f8f6;
+      border: 1px solid var(--mar-line);
+      border-radius: 18px;
+      padding: 22px;
+      margin: 22px 0;
+    }
+
+    .mechanism-label {
+      color: var(--mar-muted);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      margin-bottom: 15px;
+    }
+
+    .mechanism-flow {
+      display: grid;
+      grid-template-columns: 1fr 32px 1fr 32px 1fr;
+      align-items: stretch;
+      gap: 7px;
+    }
+
+    .mechanism-step {
+      background: white;
+      border: 1px solid var(--mar-line);
+      border-radius: 12px;
+      padding: 15px 12px;
+      min-width: 0;
+    }
+
+    .mechanism-step small {
+      display: block;
+      color: var(--mar-green);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .7px;
+      margin-bottom: 7px;
+    }
+
+    .mechanism-step strong {
+      display: block;
+      color: var(--mar-ink);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .mechanism-step p {
+      font-size: 11px;
+      line-height: 1.6;
+      margin: 7px 0 0;
+    }
+
+    .mechanism-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #91a397;
+      font-size: 19px;
+    }
+
+    .mechanism-caption {
+      color: var(--mar-muted);
+      font-size: 11px;
+      line-height: 1.65;
+      margin: 15px 0 0 !important;
+    }
+
+    /* Bank fraud explanation */
+
+    .fraud-panel {
+      border: 1px solid var(--mar-line);
+      border-radius: 18px;
+      overflow: hidden;
+      margin: 22px 0;
+    }
+
+    .fraud-heading {
+      background: #f6f8f6;
+      padding: 17px 20px;
+      border-bottom: 1px solid var(--mar-line);
+    }
+
+    .fraud-heading h3 {
+      font-size: 16px;
+      margin: 0 0 5px;
+    }
+
+    .fraud-heading p {
+      color: var(--mar-muted);
+      font-size: 11px;
+      margin: 0;
+    }
+
+    .fraud-body {
+      padding: 19px 20px;
+    }
+
+    .fraud-step {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: 12px;
+      padding: 10px 0;
+    }
+
+    .fraud-step-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 25px;
+      height: 25px;
+      background: var(--mar-blue);
+      color: var(--mar-blue-dark);
+      border-radius: 50%;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .fraud-step strong {
+      display: block;
+      color: var(--mar-ink);
+      font-size: 13px;
+      margin-bottom: 3px;
+    }
+
+    .fraud-step p {
+      font-size: 12px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .fraud-result {
+      background: var(--mar-warm);
+      border-radius: 12px;
+      padding: 17px;
+      margin-top: 13px;
+    }
+
+    .fraud-result strong {
+      display: block;
+      color: #806b3f;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      margin-bottom: 6px;
+    }
+
+    .fraud-result p {
+      color: #746447;
+      font-size: 12px;
+      margin: 0;
+    }
+
+    .impact-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 19px 0;
+    }
+
+    .impact-stat {
+      background: #f6f8f6;
+      border-radius: 13px;
+      padding: 15px;
+    }
+
+    .impact-stat strong {
+      display: block;
+      color: var(--mar-ink);
+      font-size: 21px;
+      letter-spacing: -.5px;
+    }
+
+    .impact-stat span {
+      display: block;
+      color: var(--mar-muted);
+      font-size: 10px;
+      line-height: 1.5;
+      margin-top: 5px;
+    }
+
+    /* Case panels */
+
+    .case-panel {
+      border: 1px solid var(--mar-line);
+      border-radius: 18px;
+      overflow: hidden;
+      margin: 18px 0;
+    }
+
+    .case-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      background: #f6f8f6;
+      padding: 16px 19px;
+      border-bottom: 1px solid var(--mar-line);
+    }
+
+    .case-heading h3 {
+      font-size: 17px;
+      margin: 0;
+    }
+
+    .case-heading span {
+      color: var(--mar-muted);
+      font-size: 9px;
+      font-weight: 750;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    .case-body {
+      padding: 5px 19px 19px;
+    }
+
+    .case-insight {
+      background: var(--mar-blue);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 15px;
+    }
+
+    .case-insight strong {
+      display: block;
+      color: var(--mar-blue-dark);
+      font-size: 10px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+    }
+
+    .case-insight p {
+      color: #566a85;
+      font-size: 12px;
+      margin: 0;
+    }
+
+    /* Coalition composition */
+
+    .coalition-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 11px;
+      margin: 18px 0;
+    }
+
+    .coalition-card {
+      border: 1px solid var(--mar-line);
+      border-radius: 14px;
+      padding: 17px;
+      background: white;
+    }
+
+    .coalition-card small {
+      display: block;
+      color: var(--mar-muted);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .8px;
+      margin-bottom: 7px;
+    }
+
+    .coalition-card h3 {
+      font-size: 15px;
+      margin: 0 0 7px;
+    }
+
+    .coalition-card p {
+      font-size: 12px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Caution and takeaway */
+
+    .caution-card {
+      background: #fff8e9;
+      border: 1px solid #f0e6ca;
+      border-radius: 15px;
+      padding: 18px 20px;
+      margin: 22px 0;
+    }
+
+    .caution-card strong {
+      display: block;
+      color: #806b3f;
+      font-size: 11px;
+      margin-bottom: 6px;
+    }
+
+    .caution-card p {
+      color: #746447;
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .takeaway {
+      background: var(--mar-green-light);
+      border-radius: 18px;
+      padding: 22px 24px;
+      margin: 32px 0;
+    }
+
+    .takeaway-label {
+      color: var(--mar-green);
+      font-size: 9px;
+      font-weight: 850;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .takeaway p {
+      color: #405a49;
+      font-size: 15px;
+      line-height: 1.8;
+      margin: 9px 0 0;
+    }
+
+    .source-details {
+      border-top: 1px solid var(--mar-line);
+      padding-top: 17px;
+      margin-top: 30px;
+    }
+
+    .source-details p {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .page-navigation {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      margin: 38px 0 20px;
+    }
+
+    .page-navigation a {
+      color: var(--mar-green);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    @media(max-width: 700px) {
+      .mechanism-flow {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
+      .mechanism-arrow {
+        transform: rotate(90deg);
+        height: 19px;
+      }
+    }
+
+    @media(max-width: 560px) {
+      .concept-grid,
+      .coalition-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .impact-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .reading-header {
+        margin-top: 30px;
+      }
+
+      .argument-card {
+        padding: 22px;
+      }
+
+      .argument-card h2 {
+        font-size: 21px;
+      }
+
+      .argument-card p {
+        font-size: 14px;
+      }
+
+      .section-heading h2 {
+        font-size: 19px;
+      }
+
+      .sequence-item {
+        grid-template-columns: 43px 1fr;
+        gap: 10px;
+        padding: 17px 14px;
+      }
+
+      .sequence-marker span {
+        width: 30px;
+        height: 30px;
+      }
+
+      .page-navigation {
+        flex-direction: column;
+      }
+
+      .case-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
   </style>
 </head>
+
 <body>
   <header class="topbar">
     <a class="brand" href="../../../index.html">
@@ -45,91 +741,839 @@
   </header>
 
   <main class="container">
-    <div class="page-intro">
-      <p class="eyebrow">DEMOCRACY & GEOPOLITICS / MOLDOVA</p>
+
+    <header class="reading-header">
+      <p class="reading-kicker">Democracy & Geopolitics / Moldova / Session 9</p>
+
       <h1>Taming the Oligarchs?</h1>
-      <p class="subtitle">Democratization and state capture: the case of Moldova</p>
-      <div class="metadata">
-        ION MARANDICI · 2021<br>
-        <em>Demokratizatsiya: The Journal of Post-Soviet Democratization</em>, 29(1), 61–88<br>
-        Publication: Winter 2021
+
+      <p class="reading-subtitle">
+        Democratization and state capture: the case of Moldova
+      </p>
+
+      <div class="reading-meta">
+        <span><strong>Ion Marandici</strong></span>
+        <span>2021</span>
+        <span><em>Demokratizatsiya</em>, 29(1), 61–88</span>
+        <span>
+          <a href="https://doi.org/" target="_blank" rel="noopener">Publication details</a>
+        </span>
       </div>
-      <div class="topic-tags">
+
+      <div class="reading-tags">
         <span>Oligarchy</span>
         <span>State capture</span>
-        <span>Democratisation</span>
-        <span>State autonomy</span>
+        <span>Democratization</span>
+        <span>Grand corruption</span>
         <span>Collective action</span>
+        <span>Deoligarchization</span>
       </div>
-    </div>
+    </header>
 
-    <div class="note-content">
-      <section>
-        <h2>1. Overview and central argument</h2>
-        <p>Marandici examines the relationship between oligarchic state capture and democratisation in Moldova between 2009 and 2019. He argues that oligarchs initially helped bring down competitive authoritarianism, but subsequently obstructed democratic consolidation by exploiting the state for private and political gain.</p>
-        <p>The article challenges explanations that focus primarily on institutional design, party competition or the protection of private property. Instead, it emphasises the autonomy of the state, the role of wealthy business magnates and the capacity of collective action to challenge oligarchic dominance.</p>
-      </section>
+    <div class="reading-layout">
+      <article class="reading-main">
 
-      <section>
-        <h2>2. Core concepts</h2>
-        <div class="concept"><strong>Oligarchic state capture:</strong> The temporary loss of state autonomy vis-à-vis wealthy elites, whose networks influence the branches of government and pursue wealth defence, resource extraction and state exploitation.</div>
-        <div class="concept"><strong>State autonomy:</strong> The capacity of public institutions and officials to act independently of particularistic pressures from wealthy elites and oligarchic networks.</div>
-        <div class="concept"><strong>State exploitation:</strong> The extraction and appropriation of public resources by political and economic actors for private enrichment or political purposes.</div>
-        <div class="concept"><strong>Deoligarchization:</strong> The process of reducing oligarchic influence over the state and restoring institutional autonomy. Marandici distinguishes partial deoligarchization from deeper democratic consolidation.</div>
-        <div class="concept"><strong>Collective action:</strong> The mobilisation of citizens, civil society actors and political elites around opposition to oligarchic domination and demands for autonomous public institutions.</div>
-      </section>
+        <section class="argument-card">
+          <div class="argument-label">The argument in one minute</div>
+          <h2>Oligarchs can help defeat authoritarianism while simultaneously undermining democracy.</h2>
+          <p>
+            Marandici argues that Moldova's oligarchs initially helped dismantle
+            competitive authoritarianism by building rival political camps and
+            challenging the Communist government. Once in power, however, they
+            used extensive networks to capture state institutions and extract
+            public resources. The resulting corruption provoked a delayed,
+            cross-ideological popular backlash. This helped produce partial
+            deoligarchization, but not the full restoration of state autonomy
+            or democratic consolidation.
+          </p>
+        </section>
 
-      <section>
-        <h2>3. The trajectory of oligarchic capture (2009–2019)</h2>
-        <h3>From competitive authoritarianism to oligarchic influence</h3>
-        <p>Following the 2009 political transition, oligarchic actors became important in challenging the Communist Party's competitive authoritarian rule. However, the defeat of the old regime did not remove oligarchic power. Instead, influential business figures gained leverage over political parties, state institutions and decision-making networks.</p>
-        <p>Marandici's central paradox is that oligarchs could act as agents of political change while simultaneously undermining the democratic order that followed. Their cooperation against competitive authoritarianism did not reflect a durable commitment to democratic governance.</p>
+        <section class="section-block">
+          <div class="section-heading">
+            <span class="section-number">01</span>
+            <h2>The central problem: oligarchy and democratization</h2>
+          </div>
 
-        <h3>State exploitation and the banking fraud</h3>
-        <p>The most consequential example was the 2014 banking fraud, commonly known as the “theft of the century”. More than one billion US dollars was extracted from three Moldovan banks, a sum equivalent to approximately 12% of GDP. The scandal exposed the depth of oligarchic influence and the vulnerability of public institutions.</p>
-        <p>Rather than simply protecting existing wealth, oligarchic networks engaged in extensive exploitation of the state. The consequences included weakened public trust, institutional discredit and growing popular anger.</p>
+          <p>
+            Marandici challenges approaches to democratization that concentrate
+            primarily on political parties, formal institutions and electoral
+            competition. These approaches often overlook the political influence
+            of extremely wealthy individuals whose resources allow them to shape
+            the state from outside formal office.
+          </p>
 
-        <h3>Collective action and anti-oligarchic mobilisation</h3>
-        <p>The banking scandal helped transform state capture into a central political issue. Protests in 2015 brought together actors from different ideological and ethnolinguistic backgrounds. Anti-oligarchic mobilisation crossed the divisions that had traditionally structured Moldovan politics.</p>
-        <p>The subsequent political realignment contributed to the emergence of ACUM, an alliance involving the Dignity and Truth Platform and the Party of Action and Solidarity (PAS). This coalition represented a broader challenge to oligarchic dominance.</p>
-      </section>
+          <p>
+            The Moldovan case exposes a paradox. Oligarchs were instrumental in
+            ending the competitive authoritarian regime, but their subsequent
+            domination of the state obstructed democratic consolidation.
+            Democratization and state capture therefore did not simply represent
+            opposing processes. In Moldova, they initially developed alongside
+            one another.
+          </p>
 
-      <section>
-        <h2>4. The 2019 transition and its limits</h2>
-        <p>In 2019, ACUM and the Socialist Party formed a temporary coalition to remove Vlad Plahotniuc's Democratic Party network from power. Inter-oligarchic conflict, public mobilisation and political cooperation created an opening for partial deoligarchization.</p>
-        <p>However, the removal of Plahotniuc's network did not amount to complete institutional transformation. Oligarchic assets, media influence and political structures persisted, while the coalition itself proved fragile and eventually collapsed.</p>
-        <p>Marandici therefore distinguishes between removing a dominant oligarch and restoring state autonomy. Political turnover can disrupt capture without dismantling the networks and institutional dependencies that sustain it.</p>
-      </section>
+          <div class="concept-grid">
+            <div class="concept-card">
+              <div class="concept-index">CORE CONCEPT 01</div>
+              <h3>Oligarchic state capture</h3>
+              <p>
+                The temporary domination of the state by one or several
+                oligarchic networks, which exercise disproportionate influence
+                over state institutions through extensive connections.
+              </p>
+            </div>
 
-      <section>
-        <h2>5. What makes deoligarchization effective?</h2>
-        <p>The article argues that institutional reform alone is insufficient. Effective deoligarchization requires a combination of collective action and political support for autonomous state institutions.</p>
-        <ul>
-          <li><strong>Collective action:</strong> A broad constituency must sustain opposition to oligarchic influence beyond a single electoral or political confrontation.</li>
-          <li><strong>Autonomous institutions:</strong> Law enforcement and anti-corruption agencies need insulation from oligarchic pressure and political interference.</li>
-          <li><strong>Committed political elites:</strong> Reform requires political actors willing to support state autonomy and the rule of law.</li>
-          <li><strong>Public accountability:</strong> Citizens and civil society must be able to monitor state resources and challenge predatory networks.</li>
-        </ul>
-        <p>The central lesson is that democratic consolidation depends not simply on changing political leaders, but on rebuilding the state's capacity to act independently of wealthy private interests.</p>
-      </section>
+            <div class="concept-card">
+              <div class="concept-index">CORE CONCEPT 02</div>
+              <h3>State autonomy</h3>
+              <p>
+                The capacity of the state to formulate and pursue goals that
+                are not simply reflective of the demands or interests of
+                wealthy social groups.
+              </p>
+            </div>
 
-      <div class="takeaway">
-        <p><strong>Key takeaway</strong><br>
-        Oligarchs can help dismantle competitive authoritarianism while subsequently undermining democratisation through state exploitation. Deoligarchization therefore requires more than replacing dominant elites: it depends on collective action and the construction of durable pockets of state autonomy.</p>
-      </div>
+            <div class="concept-card">
+              <div class="concept-index">CORE CONCEPT 03</div>
+              <h3>State exploitation</h3>
+              <p>
+                The appropriation of state resources by political actors for
+                private or political benefit. In Moldova, this developed into
+                large-scale extraction through oligarchic networks.
+              </p>
+            </div>
 
-      <p class="source-line">Source: Marandici, I. (2021). “Taming the Oligarchs? Democratization and State Capture: The Case of Moldova.” <em>Demokratizatsiya: The Journal of Post-Soviet Democratization</em>, 29(1), 61–88.</p>
-    </div>
+            <div class="concept-card">
+              <div class="concept-index">CORE CONCEPT 04</div>
+              <h3>Deoligarchization</h3>
+              <p>
+                The removal of oligarchs from politics and the reduction of
+                their control over the state. Marandici distinguishes partial
+                deoligarchization from successful democratic consolidation.
+              </p>
+            </div>
+          </div>
 
-    <div class="page-navigation">
-      <a href="knott-2018.html">← Previous: Knott (2018)</a>
-      <a href="baltag-eaglestone.html">Next: Baltag & Eaglestone (2025) →</a>
+          <p>
+            The article adopts a state-centered perspective. Drawing on
+            Jeffrey Winters and Theda Skocpol, Marandici treats the state
+            as potentially autonomous from wealthy elites rather than
+            automatically reflecting the interests of the capitalist class.
+            The central question becomes how that autonomy is lost, and
+            under what conditions it can be recovered.
+          </p>
+        </section>
+
+        <section class="section-block" id="sequences">
+          <div class="section-heading">
+            <span class="section-number">02</span>
+            <h2>The five sequences of oligarchic state capture</h2>
+          </div>
+
+          <p>
+            The article's central explanatory contribution is its
+            <strong>comparative sequential account</strong> of Moldova
+            between 2009 and 2019. Rather than treating oligarchic influence
+            as static, Marandici traces how the relationship between
+            oligarchs, the state and collective action changed over time.
+          </p>
+
+          <div class="sequence-intro">THE POLITICAL TRAJECTORY, 2009–2019</div>
+
+          <div class="sequence-list">
+
+            <div class="sequence-item">
+              <div class="sequence-marker">
+                <span>01</span>
+                <small>2009</small>
+              </div>
+              <div class="sequence-content">
+                <h3>Oligarchs defeat competitive authoritarianism</h3>
+                <p>
+                  Vlad Filat builds the Liberal Democratic Party (PLDM)
+                  into a serious challenger to Vladimir Voronin's Communist
+                  regime. Following the 2009 electoral crisis and protests,
+                  Vlad Plahotniuc enters the political arena by sponsoring
+                  the Democratic Party (PDM). Their parties join the
+                  Alliance for European Integration (AIE), displacing
+                  the Communists.
+                </p>
+                <span class="sequence-outcome">
+                  OUTCOME: THE END OF COMPETITIVE AUTHORITARIANISM
+                </span>
+              </div>
+            </div>
+
+            <div class="sequence-item">
+              <div class="sequence-marker">
+                <span>02</span>
+                <small>2009–15</small>
+              </div>
+              <div class="sequence-content">
+                <h3>State capture by two oligarchs</h3>
+                <p>
+                  Filat and Plahotniuc compete over political influence,
+                  assets and state resources. Their networks penetrate
+                  government institutions, distribute public positions
+                  through patronage and weaken the capacity of the
+                  bureaucracy and judiciary to constrain them.
+                  Filat's network initially dominates state exploitation.
+                </p>
+                <span class="sequence-outcome">
+                  OUTCOME: OLIGARCHIC CONTROL AND GRAND CORRUPTION
+                </span>
+              </div>
+            </div>
+
+            <div class="sequence-item">
+              <div class="sequence-marker">
+                <span>03</span>
+                <small>2015</small>
+              </div>
+              <div class="sequence-content">
+                <h3>Collective action amid inter-oligarchic wars</h3>
+                <p>
+                  The banking scandal exposes the scale of state exploitation.
+                  Filat's arrest, enabled partly by conflict between oligarchic
+                  networks, coincides with growing public mobilization.
+                  Anti-oligarchic politics becomes a prominent issue across
+                  ideological and ethnolinguistic divisions.
+                </p>
+                <span class="sequence-outcome">
+                  OUTCOME: ANTI-OLIGARCHIC MOBILIZATION
+                </span>
+              </div>
+            </div>
+
+            <div class="sequence-item">
+              <div class="sequence-marker">
+                <span>04</span>
+                <small>2015–19</small>
+              </div>
+              <div class="sequence-content">
+                <h3>Collective action against Plahotniuc's dominance</h3>
+                <p>
+                  Following Filat's removal, Plahotniuc becomes the dominant
+                  powerbroker. Opposition groups and protest movements
+                  increasingly target his informal control over the state.
+                  New political forces emerge from the protest movement,
+                  eventually forming the ACUM alliance.
+                </p>
+                <span class="sequence-outcome">
+                  OUTCOME: A BROADER ANTI-OLIGARCHIC COALITION
+                </span>
+              </div>
+            </div>
+
+            <div class="sequence-item final-stage">
+              <div class="sequence-marker">
+                <span>05</span>
+                <small>2019</small>
+              </div>
+              <div class="sequence-content">
+                <h3>Incomplete deoligarchization</h3>
+                <p>
+                  ACUM and the Socialists form a temporary governing
+                  coalition in June 2019. Plahotniuc leaves the country
+                  and his network begins to disintegrate. Yet institutional
+                  vulnerabilities, political opportunism and populist
+                  alternatives persist.
+                </p>
+                <span class="sequence-outcome">
+                  OUTCOME: OLIGARCHIC REMOVAL WITHOUT FULL DEMOCRATIC CONSOLIDATION
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+          <p>
+            The sequences are causally ordered: each consists of multiple
+            events and processes that help produce the next stage.
+            The analytical point is that oligarchic power changes form
+            over time. Its initial contribution to political competition
+            does not prevent it from subsequently undermining democracy.
+          </p>
+        </section>
+
+        <section class="section-block" id="oligarchs">
+          <div class="section-heading">
+            <span class="section-number">03</span>
+            <h2>From democratizers to predators</h2>
+          </div>
+
+          <p>
+            Marandici's argument is not that oligarchs are inherently
+            anti-democratic in every political context. Their relationship
+            with democracy is contingent on their position within the
+            political system and the incentives they face.
+          </p>
+
+          <div class="mechanism-panel">
+            <div class="mechanism-label">THE SHIFT IN OLIGARCHIC INCENTIVES</div>
+
+            <div class="mechanism-flow">
+              <div class="mechanism-step">
+                <small>PHASE 01</small>
+                <strong>Opposition to competitive authoritarianism</strong>
+                <p>
+                  Rival oligarchs build political camps and challenge
+                  an incumbent regime that restricts their opportunities.
+                </p>
+              </div>
+
+              <div class="mechanism-arrow">→</div>
+
+              <div class="mechanism-step">
+                <small>PHASE 02</small>
+                <strong>Access to state power</strong>
+                <p>
+                  Political competition opens access to government,
+                  public resources and institutional influence.
+                </p>
+              </div>
+
+              <div class="mechanism-arrow">→</div>
+
+              <div class="mechanism-step">
+                <small>PHASE 03</small>
+                <strong>State exploitation</strong>
+                <p>
+                  Oligarchic networks use the state for extraction,
+                  patronage and electoral advantage.
+                </p>
+              </div>
+            </div>
+
+            <p class="mechanism-caption">
+              The disappearance of the common authoritarian threat changes
+              the incentives of oligarchs. Rather than continuing to support
+              democratic consolidation, they increasingly seek to control
+              and exploit the institutions that emerged from the transition.
+            </p>
+          </div>
+
+          <p>
+            This challenges the assumption that oligarchic political
+            involvement is primarily a strategy of <strong>wealth defense</strong>.
+            Marandici finds that Moldova's oligarchs engaged in extreme
+            state exploitation: they constructed patronage networks that
+            extracted public resources for personal enrichment and
+            electoral purposes.
+          </p>
+
+          <p>
+            These networks were multifunctional. Beyond extracting
+            resources, they could mobilize citizens, spread disinformation
+            and administer violence. Oligarchic power therefore extended
+            beyond financial influence into the organization of political
+            life itself.
+          </p>
+
+          <h3>Why political competition was insufficient</h3>
+
+          <p>
+            Marandici also challenges the idea that electoral competition
+            necessarily moderates state capture. In Moldova, political
+            competition was structured around identity, regional and
+            geopolitical cleavages rather than consistently around
+            good governance.
+          </p>
+
+          <p>
+            Parties sponsored by oligarchs could mobilize voters through
+            these established divisions. Once in government, they could
+            exploit the state while maintaining political support.
+            Competition could therefore enable capture before it
+            eventually generated opposition to it.
+          </p>
+        </section>
+
+        <section class="section-block" id="bank-fraud">
+          <div class="section-heading">
+            <span class="section-number">04</span>
+            <h2>The “robbery of the century”</h2>
+          </div>
+
+          <p>
+            The theft of more than one billion US dollars from three
+            Moldovan banks is the article's central empirical illustration
+            of extreme state exploitation. The fraud involved Banca de
+            Economii (BEM), Banca Socială and Unibank. The stolen amount
+            was equivalent to approximately 12% of Moldova's GDP.
+          </p>
+
+          <div class="impact-strip">
+            <div class="impact-stat">
+              <strong>$1bn+</strong>
+              <span>Amount stolen from the banking system</span>
+            </div>
+            <div class="impact-stat">
+              <strong>12%</strong>
+              <span>Approximate share of national GDP</span>
+            </div>
+            <div class="impact-stat">
+              <strong>3 banks</strong>
+              <span>BEM, Banca Socială and Unibank</span>
+            </div>
+          </div>
+
+          <div class="fraud-panel">
+            <div class="fraud-heading">
+              <h3>How the fraud operated</h3>
+              <p>A simplified account of the mechanisms described by Marandici</p>
+            </div>
+
+            <div class="fraud-body">
+
+              <div class="fraud-step">
+                <span class="fraud-step-number">1</span>
+                <div>
+                  <strong>Acquisition and control of the banks</strong>
+                  <p>
+                    Oligarchic groups competed over BEM, a systemic bank
+                    through which the state disbursed substantial public
+                    funds. Shares were acquired through intermediaries
+                    and politically connected transactions.
+                  </p>
+                </div>
+              </div>
+
+              <div class="fraud-step">
+                <span class="fraud-step-number">2</span>
+                <div>
+                  <strong>Loans to connected companies</strong>
+                  <p>
+                    The banks issued large loans to politically connected
+                    firms and fictitious businesses, often with dubious
+                    collateral. Funds moved through offshore companies
+                    and international banking channels.
+                  </p>
+                </div>
+              </div>
+
+              <div class="fraud-step">
+                <span class="fraud-step-number">3</span>
+                <div>
+                  <strong>Concealment and artificial financial stability</strong>
+                  <p>
+                    Complex transfers obscured the origin and destination
+                    of funds. Some transactions created the appearance of
+                    legitimate business activity and concealed the banks'
+                    deteriorating financial position.
+                  </p>
+                </div>
+              </div>
+
+              <div class="fraud-step">
+                <span class="fraud-step-number">4</span>
+                <div>
+                  <strong>Government bailout</strong>
+                  <p>
+                    The government injected public funds to prevent
+                    a banking collapse. The Leancă and Gaburici governments
+                    ultimately injected more than one billion dollars
+                    into the three banks.
+                  </p>
+                </div>
+              </div>
+
+              <div class="fraud-step">
+                <span class="fraud-step-number">5</span>
+                <div>
+                  <strong>Public absorption of the losses</strong>
+                  <p>
+                    The banks were eventually renationalized and liquidated.
+                    The financial consequences of the fraud were transferred
+                    to the state, while public confidence in political
+                    institutions deteriorated.
+                  </p>
+                </div>
+              </div>
+
+              <div class="fraud-result">
+                <strong>Why this mattered politically</strong>
+                <p>
+                  The fraud demonstrated that oligarchic networks could
+                  exploit public institutions on a massive scale while
+                  relying on the government to absorb the consequences.
+                  It transformed corruption from an abstract political
+                  accusation into a visible issue of public loss and
+                  institutional betrayal.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <h3>The political consequences</h3>
+
+          <p>
+            The banking fraud exposed the relationship between oligarchic
+            networks and the state. It also revealed the weakness of
+            regulatory oversight and the inability of captured institutions
+            to prevent the extraction of public resources.
+          </p>
+
+          <p>
+            The bailout was especially damaging because it demonstrated
+            that the government was not simply failing to prevent private
+            wrongdoing. Public authority itself was being used to sustain
+            the consequences of the fraud.
+          </p>
+
+          <p>
+            The result was a dramatic decline in trust in democratic
+            institutions. In October 2015, 89% of Moldovans expressed
+            dissatisfaction with democracy. Trust in Parliament fell
+            from 24% in 2014 to just 6%.
+          </p>
+        </section>
+
+        <section class="section-block" id="mobilization">
+          <div class="section-heading">
+            <span class="section-number">05</span>
+            <h2>Collective action and the anti-oligarchic coalition</h2>
+          </div>
+
+          <p>
+            The backlash against state capture developed after the
+            banking fraud, not before it. Marandici emphasizes that
+            collective action was a delayed response to extreme
+            exploitation rather than a permanent or pre-existing
+            societal constraint on oligarchic power.
+          </p>
+
+          <h3>From fragmented opposition to shared grievance</h3>
+
+          <p>
+            Initially, opposition to the oligarchs was fragmented.
+            The Communist Party (PCRM) adopted anti-oligarchic rhetoric,
+            but its appeals relied heavily on Soviet nostalgia and fears
+            of a possible union with Romania. These appeals did not
+            produce a broad coalition.
+          </p>
+
+          <p>
+            The banking fraud changed the political environment.
+            Disillusioned center-right voters appropriated the
+            anti-oligarchic theme, which had previously been associated
+            with the left. Protests intensified during 2015 and
+            culminated in the occupation of two major squares in
+            Chișinău.
+          </p>
+
+          <div class="coalition-grid">
+            <div class="coalition-card">
+              <small>CENTER-RIGHT PROTEST CAMP</small>
+              <h3>Freedom and Dignity City</h3>
+              <p>
+                Established by center-right demonstrators, including
+                veterans of the Transnistrian conflict and supporters
+                of unionist positions. The movement helped generate
+                the Dignity and Truth Platform and Action and Solidarity
+                Party.
+              </p>
+            </div>
+
+            <div class="coalition-card">
+              <small>LEFT AND POPULIST PROTEST CAMP</small>
+              <h3>Victory Town</h3>
+              <p>
+                Organized around the Party of Socialists and Our Party.
+                It expressed opposition to oligarchic rule from a
+                different ideological and geopolitical position.
+              </p>
+            </div>
+          </div>
+
+          <p>
+            Although the protest camps initially remained separate,
+            both demanded accountability for the banking fraud.
+            Their common opposition to oligarchic influence eventually
+            enabled joint demonstrations.
+          </p>
+
+          <p>
+            The result was unusual in Moldovan politics: a
+            <strong>multiethnic, transideological anti-oligarchic coalition</strong>
+            that crossed divisions which had traditionally structured
+            the party system.
+          </p>
+
+          <h3>From protest to political organization</h3>
+
+          <p>
+            The protest movement also generated new political actors.
+            The Dignity and Truth Platform (PDA) and Action and Solidarity
+            Party (PAS) emerged from the center-right mobilization.
+            They later joined forces in the ACUM alliance, which
+            contested elections against parties identified with
+            oligarchic interests.
+          </p>
+
+          <p>
+            Marandici's point is that collective action helped turn
+            state capture into a politically salient issue. It created
+            a constituency that demanded not only the removal of
+            individual oligarchs, but also impartial judges,
+            independent prosecutors and institutional reforms.
+          </p>
+        </section>
+
+        <section class="section-block" id="plahotniuc">
+          <div class="section-heading">
+            <span class="section-number">06</span>
+            <h2>Plahotniuc's dominance and the limits of resistance</h2>
+          </div>
+
+          <p>
+            Filat's arrest did not end oligarchic state capture.
+            Instead, it transformed its configuration. Plahotniuc
+            emerged as the dominant powerbroker, expanding his
+            network of political allies and institutional influence.
+          </p>
+
+          <div class="case-panel">
+            <div class="case-heading">
+              <h3>Vlad Plahotniuc</h3>
+              <span>Informal powerbroker</span>
+            </div>
+
+            <div class="case-body">
+              <p>
+                Plahotniuc's influence depended less on occupying
+                the highest formal office than on controlling the
+                relationships and networks through which political
+                decisions were made. Although he attempted to become
+                prime minister, President Nicolae Timofti rejected
+                his nomination on integrity grounds.
+              </p>
+
+              <p>
+                He instead relied on an extensive informal network.
+                The Democratic Party participated in every governing
+                coalition between 2009 and 2019, while Plahotniuc
+                repeatedly avoided holding a parliamentary seat
+                himself.
+              </p>
+
+              <p>
+                His influence extended into the judiciary. After
+                Andrei Năstase won the Chișinău mayoral election,
+                judges annulled the result on questionable grounds.
+                The episode prompted EU officials to describe
+                Moldova as a captured state.
+              </p>
+
+              <div class="case-insight">
+                <strong>What this reveals</strong>
+                <p>
+                  Formal political office is not a reliable measure
+                  of where power is located. Informal networks can
+                  dominate decision-making while their central actors
+                  remain outside the most visible state positions.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h3>The international dimension</h3>
+
+          <p>
+            External actors played an ambiguous role in the process.
+            Western governments and organizations initially supported
+            the AIE government and its pro-European orientation.
+            Filat and Plahotniuc cultivated relationships with Western
+            officials and lobbying firms, gaining international
+            legitimacy despite their domestic practices.
+          </p>
+
+          <p>
+            Marandici argues that external actors increasingly opposed
+            oligarchic influence only after domestic collective action
+            reached a tipping point. Their role was therefore neither
+            consistently supportive of democratization nor uniformly
+            opposed to oligarchic capture.
+          </p>
+
+          <p>
+            Plahotniuc also pursued policies critical of Russia,
+            including measures concerning Russian military personnel
+            and the Transnistrian conflict. This complicated the
+            relationship between geopolitical alignment and democratic
+            legitimacy: a pro-Western orientation did not necessarily
+            indicate an autonomous or democratic state.
+          </p>
+        </section>
+
+        <section class="section-block" id="deoligarchization">
+          <div class="section-heading">
+            <span class="section-number">07</span>
+            <h2>2019: partial deoligarchization</h2>
+          </div>
+
+          <p>
+            The 2019 parliamentary elections created an opportunity
+            to challenge Plahotniuc's dominance. ACUM and the Party
+            of Socialists obtained sufficient parliamentary support
+            to form a government. Despite their ideological differences,
+            they agreed on a temporary political arrangement to
+            deoligarchize the state.
+          </p>
+
+          <p>
+            The coalition was backed by the United States, the
+            European Union and Russia. Its formation marked a
+            significant moment because political actors with
+            competing geopolitical and ideological orientations
+            converged around opposition to oligarchic state capture.
+          </p>
+
+          <h3>The collapse of Plahotniuc's network</h3>
+
+          <p>
+            Plahotniuc's network initially resisted the new government.
+            A period of dual power followed, with competing claims
+            to governmental legitimacy and the mobilization of
+            political supporters. Under pressure from domestic
+            opposition and external actors, Plahotniuc eventually
+            left Moldova for the United States.
+          </p>
+
+          <p>
+            His departure triggered the disintegration of parts of
+            his network. Government officials, Constitutional Court
+            members and law enforcement figures resigned. Some
+            oligarchic assets were seized, although media and party
+            structures associated with the network continued to
+            operate.
+          </p>
+
+          <h3>Why the process remained incomplete</h3>
+
+          <p>
+            The removal of Plahotniuc did not automatically produce
+            democratic consolidation. The coalition between ACUM
+            and the Socialists was fragile, and the parties eventually
+            fell out. The Socialists subsequently allied with the
+            Democratic Party and voted out the ACUM government.
+          </p>
+
+          <p>
+            The political space left by the departing oligarchs also
+            created opportunities for populist and Eurosceptic
+            forces, including the Șor Party. These actors did not
+            necessarily represent a democratic alternative to
+            oligarchic rule.
+          </p>
+
+          <div class="caution-card">
+            <strong>Do not conflate deoligarchization with democratization</strong>
+            <p>
+              The removal of oligarchs from politics did not guarantee
+              the recovery of stolen resources, the creation of
+              autonomous institutions or the consolidation of
+              liberal democracy. Deoligarchization was real but
+              incomplete, and its political consequences were mixed.
+            </p>
+          </div>
+        </section>
+
+        <section class="section-block" id="implications">
+          <div class="section-heading">
+            <span class="section-number">08</span>
+            <h2>Theoretical and policy implications</h2>
+          </div>
+
+          <p>
+            Marandici's analysis challenges three assumptions in
+            the literature on state capture and democratization.
+          </p>
+
+          <h3>1. Oligarchs are not static political actors</h3>
+          <p>
+            Their relationship with democracy changes over time.
+            They can initially contribute to the defeat of
+            competitive authoritarianism and subsequently undermine
+            democratic consolidation once their interests are
+            better served by controlling the state.
+          </p>
+
+          <h3>2. State capture is more than wealth defense</h3>
+          <p>
+            Oligarchs do not simply seek to protect existing assets.
+            They can actively exploit public institutions to
+            extract resources, finance political networks and
+            preserve electoral influence. Their power is therefore
+            both economic and political.
+          </p>
+
+          <h3>3. Institutional reform requires a social constituency</h3>
+          <p>
+            Collective action against oligarchic capture emerges
+            after extensive exploitation has already occurred.
+            Protest helps create a constituency that supports
+            independent law enforcement and anti-corruption
+            institutions.
+          </p>
+
+          <p>
+            Consequently, institutional redesign alone is unlikely
+            to resolve oligarchic state capture. Reforms require
+            political support from civil society activists and
+            political elites committed to good governance.
+          </p>
+
+          <p>
+            Effective deoligarchization therefore depends on
+            collective action combined with the creation of
+            <strong>pockets of state autonomy</strong>: institutions
+            sufficiently insulated from the particularistic
+            pressures of oligarchic networks and electoral
+            competition.
+          </p>
+        </section>
+
+        <section class="takeaway">
+          <div class="takeaway-label">The central takeaway</div>
+          <p>
+            Moldova demonstrates that oligarchic power can both
+            facilitate and obstruct democratization. Oligarchs
+            helped defeat competitive authoritarianism, but
+            subsequently captured the state and used it for
+            large-scale extraction. The resulting popular backlash
+            enabled a diverse coalition to challenge their dominance.
+            Yet removing oligarchs was not equivalent to restoring
+            state autonomy or consolidating democracy. Durable
+            deoligarchization requires collective action and
+            institutions capable of operating independently
+            of wealthy elites.
+          </p>
+        </section>
+
+        <div class="source-details">
+          <p>
+            <strong>Full reference</strong><br>
+            Marandici, I. (2021). Taming the oligarchs? Democratization
+            and state capture: The case of Moldova.
+            <em>Demokratizatsiya: The Journal of Post-Soviet Democratization</em>,
+            29(1), 61–88.
+          </p>
+        </div>
+
+        <div class="page-navigation">
+          <a href="../notes.html">← Back to notes library</a>
+          <a href="baltag-eaglestone.html">Next reading: Baltag & Eaglestone (2025) →</a>
+        </div>
+
+      </article>
     </div>
 
     <footer>
       <a href="../notes.html">← Back to notes</a>
       <span>DEMOCRACY & GEOPOLITICS</span>
     </footer>
+
   </main>
 </body>
 </html>
