@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,30 +7,556 @@
   <title>Knott (2018) | Democracy & Geopolitics</title>
   <link rel="stylesheet" href="../../../style.css">
   <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+
   <style>
-    .page-intro { margin:42px 0 28px; }
-    .page-intro h1 { font-size:clamp(30px,5vw,43px); line-height:1.12; max-width:850px; }
-    .page-intro .subtitle { color:var(--muted); margin-top:12px; max-width:760px; }
-    .metadata { color:var(--muted); font-size:12px; margin-top:15px; line-height:1.8; }
-    .topic-tags { display:flex; flex-wrap:wrap; gap:7px; margin-top:17px; }
-    .topic-tags span { background:#edf3ef; color:#587562; padding:6px 10px; border-radius:20px; font-size:11px; }
-    .note-content { max-width:850px; }
-    .note-content section { margin:30px 0; }
-    .note-content h2 { font-size:21px; margin-bottom:13px; }
-    .note-content h3 { font-size:16px; margin:20px 0 8px; }
-    .note-content p { line-height:1.75; margin:10px 0; }
-    .note-content ul { padding-left:21px; margin:10px 0; }
-    .note-content li { line-height:1.7; margin:7px 0; }
-    .concept { background:white; border:1px solid var(--border); border-radius:14px; padding:15px 17px; margin:10px 0; }
-    .concept strong { color:var(--text); }
-    .takeaway { background:#e8effa; border-radius:17px; padding:19px 21px; margin:30px 0; }
-    .takeaway p { color:#60718b; margin:0; }
-    .source-line { font-size:12px; color:var(--muted); }
-    .page-navigation { display:flex; justify-content:space-between; gap:15px; margin:38px 0 20px; padding-top:20px; border-top:1px solid var(--border); }
-    .page-navigation a { color:var(--muted); font-size:13px; }
-    @media(max-width:650px) { .page-navigation { flex-direction:column; } }
+    :root {
+      --knott-green: #587562;
+      --knott-green-light: #edf3ef;
+      --knott-blue: #e8effa;
+      --knott-blue-dark: #60718b;
+      --knott-ink: #26332d;
+      --knott-muted: #78827d;
+      --knott-line: #e7ebe8;
+      --knott-paper: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    .reading-header {
+      margin: 42px 0 28px;
+      max-width: 940px;
+    }
+
+    .reading-kicker {
+      color: var(--knott-green);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 17px;
+    }
+
+    .reading-header h1 {
+      font-size: clamp(34px, 5vw, 52px);
+      letter-spacing: -1.7px;
+      line-height: 1.04;
+      max-width: 850px;
+      margin: 0;
+    }
+
+    .reading-subtitle {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.55;
+      max-width: 700px;
+      margin-top: 16px;
+    }
+
+    .reading-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px 20px;
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 22px;
+    }
+
+    .reading-meta span { display: inline-block; }
+
+    .reading-meta a {
+      color: var(--knott-green);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .reading-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 19px;
+    }
+
+    .reading-tags span {
+      background: var(--knott-green-light);
+      color: var(--knott-green);
+      padding: 7px 11px;
+      border-radius: 20px;
+      font-size: 10px;
+      font-weight: 650;
+    }
+
+    .reading-layout {
+      display: grid;
+      grid-template-columns: 205px minmax(0, 1fr);
+      gap: 34px;
+      align-items: start;
+      margin-top: 34px;
+    }
+
+    .reading-sidebar {
+      position: sticky;
+      top: 22px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 19px;
+      padding: 18px 14px;
+    }
+
+    .sidebar-label {
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      margin: 0 8px 12px;
+    }
+
+    .reading-sidebar nav a {
+      display: block;
+      padding: 9px 10px;
+      margin: 2px 0;
+      border-radius: 9px;
+      color: #687382;
+      font-size: 12px;
+      transition: background .18s, color .18s;
+    }
+
+    .reading-sidebar nav a:hover {
+      background: var(--knott-green-light);
+      color: var(--knott-green);
+    }
+
+    .sidebar-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 13px 8px;
+    }
+
+    .sidebar-back {
+      display: block;
+      padding: 8px 10px;
+      color: var(--knott-green);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .reading-main { min-width: 0; }
+
+    .argument-card {
+      background: var(--knott-ink);
+      color: white;
+      padding: 25px 27px;
+      border-radius: 20px;
+      margin-bottom: 25px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .argument-card:after {
+      content: "K";
+      position: absolute;
+      right: 15px;
+      bottom: -55px;
+      font-size: 180px;
+      font-weight: 900;
+      line-height: 1;
+      color: rgba(255,255,255,.045);
+      pointer-events: none;
+    }
+
+    .argument-label {
+      color: #b9d0c0;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 13px;
+    }
+
+    .argument-card h2 {
+      color: white;
+      font-size: 23px;
+      line-height: 1.25;
+      max-width: 650px;
+      margin: 0 0 12px;
+    }
+
+    .argument-card p {
+      color: #d6dfd9;
+      font-size: 13px;
+      line-height: 1.75;
+      max-width: 680px;
+      margin: 0;
+    }
+
+    .section-block {
+      margin: 0 0 42px;
+      scroll-margin-top: 25px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .section-number {
+      color: #8ba391;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .5px;
+    }
+
+    .section-heading h2 {
+      color: var(--knott-ink);
+      font-size: 22px;
+      letter-spacing: -.4px;
+      margin: 0;
+    }
+
+    .reading-main p {
+      color: #4d5852;
+      font-size: 13px;
+      line-height: 1.85;
+      margin: 11px 0;
+    }
+
+    .reading-main strong { color: #34443a; }
+
+    .reading-main h3 {
+      color: var(--knott-ink);
+      font-size: 15px;
+      margin: 23px 0 8px;
+    }
+
+    .reading-main ul {
+      padding-left: 20px;
+      margin: 12px 0;
+    }
+
+    .reading-main li {
+      color: #4d5852;
+      font-size: 13px;
+      line-height: 1.75;
+      margin: 7px 0;
+    }
+
+    .equilibrium {
+      background: #f6f8f6;
+      border: 1px solid var(--knott-line);
+      border-radius: 18px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .equilibrium-title {
+      color: var(--knott-muted);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      margin-bottom: 15px;
+    }
+
+    .equilibrium-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .force-card {
+      border-radius: 13px;
+      padding: 17px;
+      min-height: 145px;
+    }
+
+    .force-card.democracy {
+      background: #e8effa;
+    }
+
+    .force-card.authoritarian {
+      background: #edf3ef;
+    }
+
+    .force-direction {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 9px;
+    }
+
+    .democracy .force-direction { color: #60718b; }
+    .authoritarian .force-direction { color: #587562; }
+
+    .force-card h3 {
+      font-size: 15px;
+      margin: 0 0 7px;
+    }
+
+    .force-card p {
+      font-size: 11px;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .equilibrium-result {
+      text-align: center;
+      border-top: 1px solid #dfe5e1;
+      margin-top: 15px;
+      padding-top: 14px;
+    }
+
+    .equilibrium-result span {
+      display: inline-block;
+      background: white;
+      color: var(--knott-green);
+      border: 1px solid #dce5de;
+      border-radius: 30px;
+      padding: 8px 15px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .concept-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 11px;
+      margin-top: 17px;
+    }
+
+    .concept-card {
+      border: 1px solid var(--knott-line);
+      border-radius: 15px;
+      background: white;
+      padding: 17px;
+    }
+
+    .concept-card .concept-index {
+      color: #91a397;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .concept-card h3 {
+      font-size: 14px;
+      margin: 8px 0 7px;
+    }
+
+    .concept-card p {
+      font-size: 11px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .case-panel {
+      border: 1px solid var(--knott-line);
+      border-radius: 18px;
+      overflow: hidden;
+      margin: 16px 0;
+    }
+
+    .case-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      background: #f6f8f6;
+      padding: 16px 19px;
+      border-bottom: 1px solid var(--knott-line);
+    }
+
+    .case-heading h3 {
+      font-size: 17px;
+      margin: 0;
+    }
+
+    .case-heading span {
+      color: var(--knott-muted);
+      font-size: 9px;
+      font-weight: 750;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    .case-body { padding: 5px 19px 17px; }
+
+    .case-insight {
+      background: var(--knott-blue);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+
+    .case-insight strong {
+      display: block;
+      color: var(--knott-blue-dark);
+      font-size: 10px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+    }
+
+    .case-insight p {
+      color: #566a85;
+      font-size: 11px;
+      margin: 0;
+    }
+
+    .distinction {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 11px;
+      margin: 17px 0;
+    }
+
+    .distinction-card {
+      background: #f6f8f6;
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .distinction-card h3 {
+      margin: 0 0 8px;
+      font-size: 13px;
+    }
+
+    .distinction-card p {
+      font-size: 11px;
+      margin: 0;
+    }
+
+    .caution-card {
+      background: #fff8e9;
+      border: 1px solid #f0e6ca;
+      border-radius: 15px;
+      padding: 17px 19px;
+      margin: 20px 0;
+    }
+
+    .caution-card strong {
+      display: block;
+      color: #806b3f;
+      font-size: 11px;
+      margin-bottom: 5px;
+    }
+
+    .caution-card p {
+      color: #746447;
+      font-size: 12px;
+      margin: 0;
+    }
+
+    .implication-list {
+      counter-reset: implications;
+      list-style: none;
+      padding: 0 !important;
+    }
+
+    .implication-list li {
+      counter-increment: implications;
+      display: grid;
+      grid-template-columns: 27px 1fr;
+      gap: 11px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--knott-line);
+      margin: 0;
+    }
+
+    .implication-list li:before {
+      content: counter(implications, decimal-leading-zero);
+      color: var(--knott-green);
+      font-size: 10px;
+      font-weight: 800;
+      padding-top: 3px;
+    }
+
+    .takeaway {
+      background: var(--knott-green-light);
+      border-radius: 18px;
+      padding: 21px 23px;
+      margin: 30px 0;
+    }
+
+    .takeaway-label {
+      color: var(--knott-green);
+      font-size: 9px;
+      font-weight: 850;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .takeaway p {
+      color: #405a49;
+      font-size: 14px;
+      line-height: 1.75;
+      margin: 9px 0 0;
+    }
+
+    .source-details {
+      border-top: 1px solid var(--knott-line);
+      padding-top: 17px;
+      margin-top: 30px;
+    }
+
+    .source-details p {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .page-navigation {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      margin: 38px 0 20px;
+    }
+
+    .page-navigation a {
+      color: var(--knott-green);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    @media(max-width: 850px) {
+      .reading-layout {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .reading-sidebar {
+        position: static;
+        padding: 13px;
+      }
+
+      .reading-sidebar nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3px;
+      }
+
+      .reading-sidebar nav a { padding: 8px; }
+      .sidebar-label { margin-bottom: 8px; }
+    }
+
+    @media(max-width: 560px) {
+      .concept-grid,
+      .equilibrium-grid,
+      .distinction {
+        grid-template-columns: 1fr;
+      }
+
+      .reading-header { margin-top: 30px; }
+      .argument-card { padding: 21px; }
+      .argument-card h2 { font-size: 20px; }
+      .section-heading h2 { font-size: 19px; }
+      .page-navigation { flex-direction: column; }
+    }
   </style>
 </head>
+
 <body>
   <header class="topbar">
     <a class="brand" href="../../../index.html">
@@ -45,84 +572,492 @@
   </header>
 
   <main class="container">
-    <div class="page-intro">
-      <p class="eyebrow">DEMOCRACY & GEOPOLITICS / MOLDOVA</p>
+
+    <header class="reading-header">
+      <p class="reading-kicker">Democracy & Geopolitics / Moldova / Session 9</p>
+
       <h1>Perpetually “Partly Free”</h1>
-      <p class="subtitle">Lessons from post-Soviet hybrid regimes on backsliding in Central and Eastern Europe</p>
-      <div class="metadata">
-        ELEANOR KNOTT · 2018<br>
-        <em>East European Politics</em>, 34(3), 355–376<br>
-        DOI: <a href="https://doi.org/10.1080/21599165.2018.1493993" target="_blank" rel="noopener">10.1080/21599165.2018.1493993</a>
+
+      <p class="reading-subtitle">
+        Lessons from post-Soviet hybrid regimes on backsliding in Central and Eastern Europe
+      </p>
+
+      <div class="reading-meta">
+        <span><strong>Eleanor Knott</strong></span>
+        <span>2018</span>
+        <span><em>East European Politics</em>, 34(3), 355–376</span>
+        <span><a href="https://doi.org/10.1080/21599165.2018.1493993" target="_blank" rel="noopener">Read publication ↗</a></span>
       </div>
-      <div class="topic-tags">
+
+      <div class="reading-tags">
         <span>Hybrid regimes</span>
         <span>Democratic backsliding</span>
+        <span>Informal politics</span>
         <span>State capture</span>
         <span>Media capture</span>
-        <span>Civil society</span>
+        <span>Collective mobilisation</span>
       </div>
-    </div>
+    </header>
 
-    <div class="note-content">
-      <section>
-        <h2>1. Overview and central argument</h2>
-        <p>Knott examines Moldova and Ukraine to explain why some post-Soviet states have remained in a prolonged condition between democracy and authoritarianism. Rather than following a linear transition towards either regime type, these countries experience recurring periods of democratisation and backsliding. Knott conceptualises this condition as a <strong>democratic-authoritarian dynamic equilibrium</strong>.</p>
-        <p>The article argues that this equilibrium cannot be explained solely through the actions of presidents or governing parties. Informal power held by business-political elites, particularly through state and media capture, obstructs democratic consolidation. At the same time, civil society and citizens' capacity to mobilise constrain authoritarian consolidation.</p>
-      </section>
+    <div class="reading-layout">
 
-      <section>
-        <h2>2. Core concepts</h2>
-        <div class="concept"><strong>Hybrid regimes:</strong> Political systems combining formal democratic institutions and multiparty elections with persistent violations of political rights, civil liberties and electoral fairness.</div>
-        <div class="concept"><strong>Democratic-authoritarian dynamic equilibrium:</strong> A condition in which democratisation and backsliding repeatedly alternate, preventing movement towards either consolidated democracy or consolidated authoritarianism.</div>
-        <div class="concept"><strong>Backsliding:</strong> The gradual erosion of political competition and democratic protections, often initiated by political elites. It can occur in regimes that have never achieved consolidated democracy.</div>
-        <div class="concept"><strong>Extra-incumbent factors:</strong> Informal sources of political power located outside the presidency and formal government, particularly business-political networks capable of influencing state institutions and public debate.</div>
-        <div class="concept"><strong>State and media capture:</strong> The use of political and economic influence to subordinate public institutions and media organisations to private or partisan interests.</div>
-      </section>
+      <aside class="reading-sidebar">
+        <p class="sidebar-label">ON THIS PAGE</p>
+        <nav>
+          <a href="#argument">Central argument</a>
+          <a href="#framework">The framework</a>
+          <a href="#mechanisms">Three mechanisms</a>
+          <a href="#moldova">Moldova</a>
+          <a href="#ukraine">Ukraine</a>
+          <a href="#comparison">Comparative logic</a>
+          <a href="#implications">Wider implications</a>
+          <a href="#takeaway">Key takeaway</a>
+        </nav>
+        <div class="sidebar-divider"></div>
+        <a class="sidebar-back" href="../notes.html">← Notes library</a>
+      </aside>
 
-      <section>
-        <h2>3. Why democratisation remains limited</h2>
-        <h3>Extra-incumbent power and informal politics</h3>
-        <p>Knott shifts attention away from formal political office towards informal networks and patron-client relationships. Business-political elites, sometimes described as “grey cardinals”, can exercise substantial influence without holding executive office. Their networks penetrate institutions and preserve opportunities for enrichment, limiting the autonomy of the state.</p>
-        <p>This perspective also cautions against treating ethnic or geopolitical cleavages as sufficient explanations for political outcomes. Such divisions can obscure the informal economic and political relationships that sustain state capture.</p>
+      <article class="reading-main">
 
-        <h3>Media capture and unequal competition</h3>
-        <p>Control over media allows powerful business-political actors to shape public debate, restrict pluralism and influence electoral competition. In Moldova, Vlad Plahotniuc's network controlled a substantial share of the broadcasting market, illustrating how media concentration can reinforce political dominance beyond formal government positions.</p>
-        <p>Ukraine's media environment was more pluralistic because competing oligarchic groups controlled different outlets. However, this pluralism did not make the media independent: outlets remained politically instrumentalised by their owners.</p>
-      </section>
+        <section class="argument-card" id="argument">
+          <div class="argument-label">The argument in one minute</div>
+          <h2>Why do some countries remain caught between democracy and authoritarianism?</h2>
+          <p>
+            Knott argues that hybrid regimes persist because two forces operate
+            simultaneously. Business-political networks, state capture and media
+            capture obstruct democratisation. Civil society and citizens' capacity
+            to mobilise, meanwhile, constrain authoritarian consolidation. The
+            result is not necessarily a transition in either direction, but a
+            recurring democratic-authoritarian equilibrium.
+          </p>
+        </section>
 
-      <section>
-        <h2>4. Why authoritarian consolidation is also constrained</h2>
-        <h3>Mobilisation and civil society</h3>
-        <p>Citizens and civil society organisations can act as checks on authoritarian consolidation. Protest movements may challenge incumbents, expose corruption and demonstrate that political authority remains contestable.</p>
-        <p>Ukraine's Orange Revolution and Euromaidan illustrate how mobilisation can disrupt incumbent dominance. Euromaidan began as a pro-European protest and developed into a broader anti-corruption and anti-system mobilisation amid state repression and violence.</p>
+        <section class="section-block">
+          <div class="section-heading">
+            <span class="section-number">01</span>
+            <h2>Starting point: beyond a linear transition</h2>
+          </div>
 
-        <h3>Limits of mobilisation</h3>
-        <p>Mobilisation does not automatically produce democratic consolidation. Protest movements can remove incumbents or interrupt authoritarian projects without dismantling the informal networks and institutional weaknesses that enabled them. Social media can facilitate information circulation, but mobilisation also depends heavily on informal personal networks. Civil society itself should not automatically be assumed to be liberal or consistently democratic.</p>
-      </section>
+          <p>
+            Knott begins by challenging the assumption that political systems
+            necessarily move along a linear path from authoritarianism towards
+            democracy, or from democracy towards authoritarianism. Moldova and
+            Ukraine have spent much of the post-Soviet period in a political
+            grey zone, experiencing alternating episodes of democratic progress
+            and backsliding without consolidating either regime type.
+          </p>
 
-      <section>
-        <h2>5. Comparative implications</h2>
-        <p>Knott uses Moldova and Ukraine to draw lessons for Central and Eastern European states experiencing democratic backsliding. Democratic erosion need not culminate in consolidated authoritarianism. Instead, extra-incumbent networks, state capture and media capture can sustain a prolonged hybrid condition.</p>
-        <p>The central analytical implication is that examining elections and incumbent behaviour alone produces an incomplete picture. Understanding democratic resilience and backsliding requires attention to informal power, ownership structures, institutional autonomy and the capacity for collective mobilisation.</p>
-      </section>
+          <p>
+            The article calls this condition a
+            <strong>democratic-authoritarian dynamic equilibrium</strong>.
+            It is important that this is not simply a transitional stage.
+            The equilibrium can become durable because the political arrangements
+            sustaining it benefit actors with influence, while also making
+            meaningful reform difficult.
+          </p>
 
-      <div class="takeaway">
-        <p><strong>Key takeaway</strong><br>
-        Hybrid regimes persist because democratisation is obstructed by informal business-political power, state capture and media capture, while authoritarian consolidation is checked by citizens' capacity to mobilise. Neither electoral competition nor protest alone guarantees democratic consolidation.</p>
-      </div>
+          <div class="equilibrium">
+            <div class="equilibrium-title">THE TWO FORCES SUSTAINING HYBRIDITY</div>
 
-      <p class="source-line">Source: Knott, E. (2018). “Perpetually ‘partly free’: Lessons from post-Soviet hybrid regimes on backsliding in Central and Eastern Europe.” <em>East European Politics</em>, 34(3), 355–376.</p>
-    </div>
+            <div class="equilibrium-grid">
+              <div class="force-card democracy">
+                <div class="force-direction">Restrains democratisation</div>
+                <h3>Informal elite power</h3>
+                <p>
+                  State capture, media capture, corruption and patron-client
+                  networks preserve an uneven political playing field.
+                </p>
+              </div>
 
-    <div class="page-navigation">
-      <a href="../notes.html">← Back to notes library</a>
-      <a href="marandici.html">Next: Marandici (2021) →</a>
+              <div class="force-card authoritarian">
+                <div class="force-direction">Restrains authoritarianism</div>
+                <h3>Societal mobilisation</h3>
+                <p>
+                  Civil society, protest movements and citizens' capacity
+                  to organise make complete authoritarian consolidation harder.
+                </p>
+              </div>
+            </div>
+
+            <div class="equilibrium-result">
+              <span>Democratic-authoritarian dynamic equilibrium</span>
+            </div>
+          </div>
+
+          <p>
+            The important point is the interaction between these forces.
+            Democratic progress is repeatedly obstructed, but attempts to
+            monopolise power are also challenged. Neither side necessarily
+            wins decisively.
+          </p>
+        </section>
+
+        <section class="section-block" id="framework">
+          <div class="section-heading">
+            <span class="section-number">02</span>
+            <h2>The analytical framework</h2>
+          </div>
+
+          <p>
+            Knott uses hybrid regimes, particularly the competitive
+            authoritarianism framework associated with Levitsky and Way,
+            to move beyond a binary distinction between democracy and
+            authoritarianism. Elections and political competition exist,
+            but they are not necessarily fair: incumbents can manipulate
+            institutions, resources and media to maintain an uneven playing field.
+          </p>
+
+          <div class="concept-grid">
+            <div class="concept-card">
+              <div class="concept-index">CONCEPT 01</div>
+              <h3>Hybrid regimes</h3>
+              <p>
+                Systems combining formal democratic institutions and
+                multiparty elections with persistent violations of political
+                rights, civil liberties and electoral fairness.
+              </p>
+            </div>
+
+            <div class="concept-card">
+              <div class="concept-index">CONCEPT 02</div>
+              <h3>Backsliding</h3>
+              <p>
+                Gradual democratic erosion through the weakening of political
+                competition and protections. Knott uses the term beyond
+                consolidated democracies.
+              </p>
+            </div>
+
+            <div class="concept-card">
+              <div class="concept-index">CONCEPT 03</div>
+              <h3>Extra-incumbent factors</h3>
+              <p>
+                Informal power held outside the presidency and formal
+                political office, especially by business-political elites
+                who can influence state institutions.
+              </p>
+            </div>
+
+            <div class="concept-card">
+              <div class="concept-index">CONCEPT 04</div>
+              <h3>Informal politics</h3>
+              <p>
+                Political influence exercised through patron-client
+                relationships, personal networks and arrangements that
+                operate beyond formal institutional rules.
+              </p>
+            </div>
+          </div>
+
+          <p>
+            This is the article's main analytical move: explaining backsliding
+            requires looking beyond presidents, parties and formal institutions.
+            Knott directs attention towards actors who may not hold office but
+            can nevertheless shape the conditions under which political
+            competition takes place.
+          </p>
+        </section>
+
+        <section class="section-block" id="mechanisms">
+          <div class="section-heading">
+            <span class="section-number">03</span>
+            <h2>Three mechanisms that shape the equilibrium</h2>
+          </div>
+
+          <h3>A. State capture and crony capitalism</h3>
+          <p>
+            Systemic corruption and business-political networks make the
+            state a resource for enrichment. Rather than treating corruption
+            as a collection of isolated transactions, Knott presents it as
+            part of a political system that reproduces itself.
+          </p>
+          <p>
+            Weak judiciaries, police and representative institutions create
+            opportunities for powerful actors to exploit public authority.
+            Those who benefit from these arrangements have few incentives
+            to strengthen the institutions that could constrain them.
+          </p>
+
+          <h3>B. Media capture and the uneven playing field</h3>
+          <p>
+            Media ownership gives business-political elites the capacity
+            to shape public debate, influence electoral competition and
+            weaken opposition visibility. Media capture is analytically
+            distinct from state capture, but it can enable and reinforce it.
+          </p>
+          <p>
+            This matters because political competition can remain formally
+            open while becoming substantively unequal. Control over the
+            information environment can favour incumbents and their
+            informal allies without the need to abolish elections.
+          </p>
+
+          <h3>C. Civil society and citizen mobilisation</h3>
+          <p>
+            The countervailing force is the capacity of citizens to organise,
+            protest and challenge political elites. Mobilisation can expose
+            corruption, disrupt elite strategies and make authoritarian
+            consolidation more costly.
+          </p>
+          <p>
+            Knott does not treat civil society as an automatic engine of
+            democratisation. Protest can constrain authoritarian power
+            without dismantling the structures that obstruct democratic
+            consolidation.
+          </p>
+
+          <div class="caution-card">
+            <strong>A distinction worth keeping in mind</strong>
+            <p>
+              Mobilisation can prevent authoritarian consolidation without
+              producing consolidated democracy. The capacity to challenge
+              power and the capacity to build autonomous institutions are
+              not the same thing.
+            </p>
+          </div>
+        </section>
+
+        <section class="section-block" id="moldova">
+          <div class="section-heading">
+            <span class="section-number">04</span>
+            <h2>Moldova: concentrated informal power</h2>
+          </div>
+
+          <div class="case-panel">
+            <div class="case-heading">
+              <h3>Moldova</h3>
+              <span>State and media capture</span>
+            </div>
+            <div class="case-body">
+              <p>
+                Moldova illustrates how informal business-political networks
+                can exercise influence far beyond formal political office.
+                Knott focuses particularly on Vlad Plahotniuc, whose network
+                combined political influence with extensive media ownership.
+              </p>
+              <p>
+                The article notes that Plahotniuc owned four of the country's
+                five major television stations, as well as three major radio
+                stations. This concentration enabled the shaping of public
+                debate and the marginalisation of political rivals.
+              </p>
+              <p>
+                The case demonstrates why analysing the government alone
+                is insufficient. Informal networks can exercise decisive
+                influence over the political playing field even when they
+                do not occupy the most visible institutional positions.
+              </p>
+
+              <div class="case-insight">
+                <strong>What Moldova demonstrates</strong>
+                <p>
+                  A concentrated business-political network can combine
+                  institutional influence and media ownership to make
+                  democratic competition formally present but substantively
+                  unequal.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block" id="ukraine">
+          <div class="section-heading">
+            <span class="section-number">05</span>
+            <h2>Ukraine: pluralism without independence</h2>
+          </div>
+
+          <div class="case-panel">
+            <div class="case-heading">
+              <h3>Ukraine</h3>
+              <span>Rival oligarchic networks</span>
+            </div>
+            <div class="case-body">
+              <p>
+                Ukraine also experienced extensive oligarchic influence over
+                media and politics, but its media environment was more
+                pluralistic because competing business elites owned rival
+                outlets. This created a different configuration from
+                Moldova's concentrated media ownership.
+              </p>
+              <p>
+                However, pluralism did not mean independence. Media outlets
+                remained politically instrumentalised by their owners.
+                Competition between oligarchs could create space for
+                competing narratives without producing an autonomous
+                public sphere.
+              </p>
+
+              <div class="case-insight">
+                <strong>What Ukraine demonstrates</strong>
+                <p>
+                  Rival ownership can limit the dominance of one political
+                  network, but a plural media market is not necessarily
+                  an independent media system.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h3>Mobilisation as a counterweight</h3>
+          <p>
+            Ukraine also illustrates the capacity of popular mobilisation
+            to interrupt authoritarian projects. The Orange Revolution
+            demonstrated that protest could make electoral outcomes
+            consequential and challenge incumbent dominance.
+          </p>
+          <p>
+            Under Viktor Yanukovych, backsliding took the form of
+            constitutional changes, increased presidential power and
+            coercive practices. Euromaidan began in late 2013 as a
+            pro-European protest, but intensified repression and violence
+            transformed it into the Revolution of Dignity, with a broader
+            anti-corruption and anti-system character.
+          </p>
+          <p>
+            Yet the aftermath also illustrates the limits of mobilisation:
+            removing an incumbent and opening political space does not
+            automatically resolve institutional weaknesses or guarantee
+            the completion of reform.
+          </p>
+        </section>
+
+        <section class="section-block" id="comparison">
+          <div class="section-heading">
+            <span class="section-number">06</span>
+            <h2>Comparative logic: what the cases reveal</h2>
+          </div>
+
+          <p>
+            Knott does not present Moldova and Ukraine primarily as a
+            controlled comparison designed to explain differences between
+            the two countries. Rather, both are illustrative cases of
+            the dynamic equilibrium characteristic of post-Soviet
+            hybrid regimes.
+          </p>
+
+          <div class="distinction">
+            <div class="distinction-card">
+              <h3>Moldova</h3>
+              <p>
+                Concentrated media ownership and Plahotniuc's extensive
+                informal network illustrate how a dominant business-political
+                actor can shape the political playing field.
+              </p>
+            </div>
+            <div class="distinction-card">
+              <h3>Ukraine</h3>
+              <p>
+                Rival oligarchic media owners create a more pluralistic
+                but still politicised media environment. Protest provides
+                an important additional constraint on incumbents.
+              </p>
+            </div>
+          </div>
+
+          <p>
+            The broader lesson is that the precise configuration of
+            informal power may differ, but the relationship between
+            elite capture and democratic vulnerability remains central.
+            Ethnic and geopolitical divisions can also obscure these
+            informal relationships. Knott cautions against allowing
+            visible identity cleavages to distract from the political
+            networks that sustain enrichment-based politics.
+          </p>
+        </section>
+
+        <section class="section-block" id="implications">
+          <div class="section-heading">
+            <span class="section-number">07</span>
+            <h2>Wider implications for Central and Eastern Europe</h2>
+          </div>
+
+          <p>
+            Knott uses post-Soviet experiences to identify risks for
+            more consolidated Central and Eastern European democracies.
+            Backsliding does not necessarily lead directly to authoritarianism.
+            It can instead produce a prolonged hybrid condition in which
+            elections continue but informal elite networks undermine
+            meaningful democratic accountability.
+          </p>
+
+          <ul class="implication-list">
+            <li>
+              <span>
+                <strong>Look beyond incumbents.</strong>
+                Political power may be exercised by business-political
+                networks outside formal office.
+              </span>
+            </li>
+            <li>
+              <span>
+                <strong>Distinguish media pluralism from independence.</strong>
+                Competition between politically controlled outlets does
+                not necessarily create a free public sphere.
+              </span>
+            </li>
+            <li>
+              <span>
+                <strong>Do not equate protest with democratisation.</strong>
+                Mobilisation can disrupt authoritarian consolidation
+                without producing institutional autonomy.
+              </span>
+            </li>
+            <li>
+              <span>
+                <strong>Recognise the durability of hybridity.</strong>
+                Hybrid regimes are not necessarily temporary stages
+                on the way to democracy or authoritarianism.
+              </span>
+            </li>
+          </ul>
+
+          <p>
+            The equilibrium can be difficult to overcome because the
+            actors who benefit from informal political arrangements
+            have limited incentives to reform them. Even actors seeking
+            to challenge the system may become embedded in its networks
+            and practices.
+          </p>
+        </section>
+
+        <section class="takeaway" id="takeaway">
+          <div class="takeaway-label">The central takeaway</div>
+          <p>
+            Hybrid regimes endure through the interaction of two forces:
+            informal business-political power obstructs democratisation,
+            while civil society mobilisation constrains authoritarian
+            consolidation. The result is a durable political equilibrium
+            in which elections and protest remain possible, but neither
+            necessarily produces democratic consolidation.
+          </p>
+        </section>
+
+        <div class="source-details">
+          <p>
+            <strong>Full reference</strong><br>
+            Knott, E. (2018). Perpetually “partly free”: Lessons from
+            post-Soviet hybrid regimes on backsliding in Central and
+            Eastern Europe. <em>East European Politics</em>, 34(3),
+            355–376.
+            <a href="https://doi.org/10.1080/21599165.2018.1493993"
+               target="_blank" rel="noopener">https://doi.org/10.1080/21599165.2018.1493993</a>
+          </p>
+        </div>
+
+        <div class="page-navigation">
+          <a href="../notes.html">← Back to notes library</a>
+          <a href="marandici.html">Next reading: Marandici (2021) →</a>
+        </div>
+
+      </article>
     </div>
 
     <footer>
       <a href="../notes.html">← Back to notes</a>
       <span>DEMOCRACY & GEOPOLITICS</span>
     </footer>
+
   </main>
 </body>
 </html>
