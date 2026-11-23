@@ -4,612 +4,698 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Baltag & Eaglestone (2025) | Democracy & Geopolitics</title>
+  <title>Moldova: Hedging its Bets | My Notebook</title>
   <link rel="stylesheet" href="../../../style.css">
-  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
-
+  <link rel="icon" href="../../../favicon.svg">
   <style>
     :root {
-      --be-green: #587562;
-      --be-green-light: #edf3ef;
-      --be-blue: #e8effa;
-      --be-blue-dark: #60718b;
-      --be-ink: #26332d;
-      --be-muted: #78827d;
-      --be-line: #e7ebe8;
-      --be-warm: #f8f5ef;
+      --ink: #26332d;
+      --muted: #718078;
+      --border: #e3e9e5;
+      --green: #587562;
+      --green-pale: #edf3ef;
+      --blue: #60718b;
+      --blue-pale: #e8effa;
+      --amber: #a17b43;
+      --amber-pale: #f6f0e5;
+      --rose: #a66b69;
+      --rose-pale: #f7eded;
+      --surface: #ffffff;
+      --soft: #f7f9f7;
     }
 
-    html { scroll-behavior: smooth; }
+    * { box-sizing: border-box; }
 
-    .reading-header {
-      margin: 42px 0 28px;
-      max-width: 940px;
+    body {
+      color: var(--ink);
+      background: #fafbfa;
     }
 
-    .reading-kicker {
-      color: var(--be-green);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 17px;
+    .container {
+      width: min(1160px, calc(100% - 44px));
+      margin: 0 auto;
     }
 
-    .reading-header h1 {
-      font-size: clamp(34px, 5vw, 52px);
-      letter-spacing: -1.7px;
-      line-height: 1.04;
+    .page-intro {
+      padding: 62px 0 38px;
       max-width: 900px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: .76rem;
+      font-weight: 750;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(2.25rem, 5vw, 3.8rem);
+      line-height: 1.04;
+      letter-spacing: -.055em;
+      margin: 0 0 20px;
+      max-width: 850px;
+    }
+
+    .subtitle {
+      font-size: 1.12rem;
+      line-height: 1.7;
+      color: #65736b;
+      max-width: 800px;
       margin: 0;
     }
 
-    .reading-subtitle {
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.55;
-      max-width: 760px;
-      margin-top: 16px;
-    }
-
-    .reading-meta {
+    .source-line {
       display: flex;
       flex-wrap: wrap;
-      gap: 9px 20px;
+      gap: 8px 18px;
       color: var(--muted);
-      font-size: 11px;
-      margin-top: 22px;
+      font-size: .84rem;
+      margin-top: 24px;
     }
 
-    .reading-meta a {
-      color: var(--be-green);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .reading-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-top: 19px;
-    }
-
-    .reading-tags span {
-      background: var(--be-green-light);
-      color: var(--be-green);
-      padding: 7px 11px;
-      border-radius: 20px;
-      font-size: 10px;
+    .source-line a {
+      color: var(--green);
+      text-decoration: none;
       font-weight: 650;
     }
 
-    .reading-main {
-      max-width: 1000px;
-      margin: 30px auto 0;
-    }
-
-    .argument-card {
-      background: #edf3ef;
-      color: #34443a;
-      padding: 30px 34px;
-      border: 1px solid #e1eae3;
-      border-radius: 20px;
-      margin-bottom: 42px;
+    .argument-panel {
+      background: #eef3ef;
+      border: 1px solid #e1e9e3;
+      border-radius: 22px;
+      padding: 27px 30px;
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 25px;
+      align-items: start;
+      margin: 8px 0 42px;
     }
 
     .argument-label {
-      color: var(--be-green);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
+      color: var(--green);
+      font-size: .74rem;
+      letter-spacing: .11em;
       text-transform: uppercase;
-      margin-bottom: 13px;
+      font-weight: 800;
+      padding-top: 5px;
     }
 
-    .argument-card h2 {
-      color: var(--be-ink);
-      font-size: 25px;
-      line-height: 1.3;
-      max-width: 790px;
-      margin: 0 0 14px;
-    }
-
-    .argument-card p {
-      color: #4d5c52;
-      font-size: 15px;
-      line-height: 1.8;
-      max-width: 840px;
+    .argument-panel p {
+      font-size: 1.08rem;
+      line-height: 1.7;
       margin: 0;
+      max-width: 820px;
     }
 
-    .section-block {
-      margin: 0 0 50px;
-      scroll-margin-top: 25px;
+    .notes-layout {
+      display: grid;
+      grid-template-columns: 205px minmax(0, 1fr);
+      gap: 42px;
+      align-items: start;
+      padding-bottom: 70px;
     }
 
-    .section-heading {
+    .notes-sidebar {
+      position: sticky;
+      top: 24px;
+      padding: 18px 0;
+    }
+
+    .sidebar-label {
+      font-size: .7rem;
+      letter-spacing: .12em;
+      color: #87938c;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin: 0 0 13px 12px;
+    }
+
+    .notes-sidebar a {
+      display: block;
+      text-decoration: none;
+      color: #68766e;
+      padding: 9px 12px;
+      border-radius: 9px;
+      font-size: .88rem;
+      line-height: 1.35;
+      margin: 2px 0;
+    }
+
+    .notes-sidebar a:hover,
+    .notes-sidebar a.active {
+      background: var(--green-pale);
+      color: var(--green);
+    }
+
+    main { min-width: 0; }
+
+    .week-section {
+      margin: 0 0 58px;
+      scroll-margin-top: 24px;
+    }
+
+    .week-heading {
       display: flex;
       align-items: baseline;
-      gap: 12px;
-      margin-bottom: 20px;
+      gap: 13px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 14px;
+      margin-bottom: 23px;
     }
 
     .section-number {
-      color: #8ba391;
-      font-size: 11px;
+      color: #9ba79f;
+      font-size: .78rem;
       font-weight: 800;
+      letter-spacing: .08em;
     }
 
-    .section-heading h2 {
-      color: var(--be-ink);
-      font-size: 24px;
-      letter-spacing: -.4px;
+    .week-heading h2 {
+      font-size: 1.55rem;
+      letter-spacing: -.035em;
       margin: 0;
     }
 
-    .reading-main p {
-      color: #4d5852;
-      font-size: 15px;
-      line-height: 1.85;
-      max-width: 82ch;
-      margin: 15px 0;
+    .section-lead {
+      font-size: 1.02rem;
+      line-height: 1.75;
+      color: #5e6d64;
+      max-width: 850px;
+      margin: 0 0 24px;
     }
 
-    .reading-main strong { color: #34443a; }
-
-    .reading-main h3 {
-      color: var(--be-ink);
-      font-size: 17px;
-      margin: 27px 0 10px;
+    .reading-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      padding: 23px 25px;
+      margin: 0 0 16px;
     }
 
-    .reading-main ul {
-      padding-left: 20px;
-      margin: 12px 0;
+    .reading-card h3 {
+      font-size: 1.08rem;
+      margin: 0 0 10px;
+      letter-spacing: -.02em;
     }
 
-    .reading-main li {
-      color: #4d5852;
-      font-size: 14px;
-      line-height: 1.8;
-      margin: 8px 0;
+    .reading-card p {
+      color: #5f6c64;
+      line-height: 1.7;
+      margin: 0;
     }
-
-    /* Concept cards */
 
     .concept-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 11px;
-      margin: 20px 0;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px;
     }
 
     .concept-card {
-      border: 1px solid var(--be-line);
-      border-radius: 15px;
       background: white;
-      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 19px 20px;
     }
 
-    .concept-index {
-      color: #91a397;
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-
-    .concept-card h3 {
-      font-size: 15px;
-      margin: 8px 0 7px;
+    .concept-card .term {
+      font-weight: 780;
+      margin-bottom: 7px;
+      font-size: .98rem;
     }
 
     .concept-card p {
-      font-size: 13px;
-      line-height: 1.75;
+      color: #68756d;
+      font-size: .91rem;
+      line-height: 1.65;
       margin: 0;
     }
 
-    /* Three historical phases */
-
-    .phase-intro {
-      color: var(--be-muted);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 1.2px;
-      margin: 22px 0 12px;
-    }
-
-    .phase-list {
-      border: 1px solid var(--be-line);
+    .framework {
       border-radius: 18px;
-      overflow: hidden;
-      margin: 15px 0 22px;
-    }
-
-    .phase-item {
-      padding: 22px;
-      border-bottom: 1px solid var(--be-line);
-      background: white;
-    }
-
-    .phase-item:last-child { border-bottom: 0; }
-
-    .phase-item.current { background: #f7f9f7; }
-
-    .phase-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-
-    .phase-period {
-      color: var(--be-green);
-      font-size: 10px;
-      font-weight: 850;
-      letter-spacing: .8px;
-    }
-
-    .phase-dynamic {
-      color: var(--be-muted);
-      font-size: 9px;
-      font-weight: 750;
-      letter-spacing: .7px;
-      text-transform: uppercase;
-    }
-
-    .phase-item h3 {
-      font-size: 18px;
-      margin: 0 0 8px;
-    }
-
-    .phase-item p {
-      font-size: 13px;
-      line-height: 1.75;
-      margin: 0;
-    }
-
-    .tactic-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-top: 14px;
-    }
-
-    .tactic-list span {
-      background: var(--be-green-light);
-      color: var(--be-green);
-      padding: 6px 9px;
-      border-radius: 7px;
-      font-size: 10px;
-      font-weight: 700;
-    }
-
-    .phase-item.current .tactic-list span {
-      background: var(--be-blue);
-      color: var(--be-blue-dark);
-    }
-
-    /* Framework */
-
-    .framework-panel {
-      background: #f6f8f6;
-      border: 1px solid var(--be-line);
-      border-radius: 18px;
-      padding: 22px;
+      background: #f4f7f5;
+      padding: 23px;
       margin: 22px 0;
-    }
-
-    .framework-label {
-      color: var(--be-muted);
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 1.2px;
-      margin-bottom: 14px;
     }
 
     .framework-flow {
       display: grid;
-      grid-template-columns: 1fr 35px 1fr 35px 1fr;
-      align-items: stretch;
-      gap: 6px;
-    }
-
-    .framework-step {
-      background: white;
-      border: 1px solid var(--be-line);
-      border-radius: 12px;
-      padding: 15px 12px;
-    }
-
-    .framework-step small {
-      display: block;
-      color: var(--be-green);
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: .7px;
-      margin-bottom: 7px;
-    }
-
-    .framework-step strong {
-      display: block;
-      color: var(--be-ink);
-      font-size: 12px;
-      line-height: 1.5;
-    }
-
-    .framework-step p {
-      font-size: 11px;
-      line-height: 1.6;
-      margin: 7px 0 0;
-    }
-
-    .framework-arrow {
-      display: flex;
+      grid-template-columns: 1fr 32px 1fr 32px 1fr;
       align-items: center;
-      justify-content: center;
-      color: #91a397;
-      font-size: 19px;
+      gap: 8px;
     }
 
-    .framework-caption {
-      color: var(--be-muted);
-      font-size: 11px;
-      line-height: 1.65;
-      margin: 15px 0 0 !important;
+    .framework-node {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 16px 13px;
+      text-align: center;
     }
 
-    /* Tactics */
-
-    .tactic-section {
-      border-top: 1px solid var(--be-line);
-      padding-top: 18px;
-      margin-top: 20px;
-    }
-
-    .tactic-section h3 {
-      margin: 0 0 7px;
-      font-size: 16px;
-    }
-
-    .tactic-section p {
-      font-size: 13px;
-      margin: 0;
-    }
-
-    .tactic-example {
-      background: #f6f8f6;
-      border-radius: 12px;
-      padding: 13px 15px;
-      margin-top: 12px;
-    }
-
-    .tactic-example strong {
+    .framework-node strong {
       display: block;
-      color: var(--be-green);
-      font-size: 10px;
-      letter-spacing: .5px;
+      font-size: .94rem;
       margin-bottom: 5px;
     }
 
-    .tactic-example p {
-      font-size: 12px;
-      margin: 0;
-    }
-
-    /* Integration and disintegration */
-
-    .direction-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin: 20px 0;
-    }
-
-    .direction-card {
-      border: 1px solid var(--be-line);
-      border-radius: 16px;
-      padding: 19px;
-      background: white;
-    }
-
-    .direction-card.eu { background: #f5f8fc; }
-
-    .direction-card.russia { background: #f8f6f4; }
-
-    .direction-card small {
+    .framework-node span {
+      color: var(--muted);
+      font-size: .79rem;
+      line-height: 1.45;
       display: block;
-      color: var(--be-muted);
-      font-size: 9px;
-      font-weight: 850;
-      letter-spacing: .9px;
-      margin-bottom: 8px;
     }
 
-    .direction-card h3 {
-      font-size: 17px;
-      margin: 0 0 9px;
+    .framework-arrow {
+      color: #91a096;
+      text-align: center;
+      font-size: 1.25rem;
     }
 
-    .direction-card p {
-      font-size: 12px;
-      line-height: 1.75;
-      margin: 0;
+    .framework-caption {
+      color: var(--muted);
+      font-size: .82rem;
+      line-height: 1.55;
+      margin: 16px 0 0;
+      text-align: center;
     }
 
-    /* Analytical distinction */
+    /* Section 04: tactical map */
 
-    .distinction {
+    .tactics-overview {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 12px;
-      margin: 20px 0;
+      margin: 25px 0 28px;
     }
 
-    .distinction-card {
-      padding: 17px;
+    .phase-marker {
+      padding: 17px 18px;
       border-radius: 14px;
-      background: var(--be-green-light);
+      border: 1px solid var(--border);
+      background: white;
+      min-width: 0;
     }
 
-    .distinction-card:last-child {
-      background: var(--be-blue);
-    }
-
-    .distinction-card strong {
+    .phase-marker .phase-date {
       display: block;
-      font-size: 12px;
+      font-size: .72rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      font-weight: 800;
       margin-bottom: 7px;
     }
 
-    .distinction-card p {
-      font-size: 12px;
-      line-height: 1.7;
-      margin: 0;
-    }
-
-    /* Key implications */
-
-    .implication-list {
-      border-top: 1px solid var(--be-line);
-      margin-top: 20px;
-    }
-
-    .implication-item {
-      display: grid;
-      grid-template-columns: 35px 1fr;
-      gap: 13px;
-      padding: 17px 0;
-      border-bottom: 1px solid var(--be-line);
-    }
-
-    .implication-number {
-      color: #91a397;
-      font-size: 11px;
-      font-weight: 850;
-      padding-top: 2px;
-    }
-
-    .implication-item h3 {
-      font-size: 14px;
-      margin: 0 0 5px;
-    }
-
-    .implication-item p {
-      font-size: 13px;
-      line-height: 1.75;
-      margin: 0;
-    }
-
-    .caution-card {
-      background: #fff8e9;
-      border: 1px solid #f0e6ca;
-      border-radius: 15px;
-      padding: 18px 20px;
-      margin: 22px 0;
-    }
-
-    .caution-card strong {
+    .phase-marker strong {
       display: block;
-      color: #806b3f;
-      font-size: 11px;
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .phase-marker span:last-child {
+      color: #758078;
+      font-size: .82rem;
+      line-height: 1.45;
+      display: block;
+    }
+
+    .phase-marker.cooperation {
+      background: #f3f6f3;
+      border-color: #dfe8e1;
+    }
+    .phase-marker.cooperation .phase-date { color: var(--green); }
+
+    .phase-marker.competition {
+      background: #f2f5fa;
+      border-color: #e0e7f2;
+    }
+    .phase-marker.competition .phase-date { color: var(--blue); }
+
+    .phase-marker.conflict {
+      background: #f8f2eb;
+      border-color: #eee3d5;
+    }
+    .phase-marker.conflict .phase-date { color: var(--amber); }
+
+    .tactical-phase {
+      border: 1px solid var(--border);
+      border-radius: 19px;
+      background: white;
+      overflow: hidden;
+      margin: 0 0 20px;
+    }
+
+    .phase-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 19px 23px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .phase-header-left {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .phase-index {
+      width: 34px;
+      height: 34px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      font-size: .8rem;
+      font-weight: 850;
+      flex: 0 0 auto;
+    }
+
+    .cooperation .phase-index {
+      background: var(--green-pale);
+      color: var(--green);
+    }
+
+    .competition .phase-index {
+      background: var(--blue-pale);
+      color: var(--blue);
+    }
+
+    .conflict .phase-index {
+      background: var(--amber-pale);
+      color: var(--amber);
+    }
+
+    .phase-header h3 {
+      margin: 0 0 3px;
+      font-size: 1.1rem;
+      letter-spacing: -.02em;
+    }
+
+    .phase-header p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .83rem;
+    }
+
+    .phase-dynamic {
+      color: #78847d;
+      font-size: .76rem;
+      font-weight: 750;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      text-align: right;
+    }
+
+    .tactic-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tactic {
+      padding: 22px 23px 23px;
+      min-width: 0;
+    }
+
+    .tactic:nth-child(odd):not(:last-child) {
+      border-right: 1px solid var(--border);
+    }
+
+    .tactic:nth-child(n+3) {
+      border-top: 1px solid var(--border);
+    }
+
+    .tactic-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 11px;
+    }
+
+    .tactic-name {
+      font-size: 1.02rem;
+      font-weight: 800;
+      letter-spacing: -.025em;
+    }
+
+    .tactic-tag {
+      color: #7d8981;
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .tactic-definition {
+      color: #657269;
+      font-size: .9rem;
+      line-height: 1.62;
+      margin: 0 0 17px;
+      min-height: 47px;
+    }
+
+    .tactic-example {
+      background: #f7f9f7;
+      border-radius: 11px;
+      padding: 13px 15px;
+      margin-bottom: 13px;
+    }
+
+    .tactic-example .mini-label,
+    .tactic-function .mini-label {
+      display: block;
+      color: #8a968e;
+      font-size: .65rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-weight: 850;
       margin-bottom: 6px;
     }
 
-    .caution-card p {
-      color: #746447;
-      font-size: 13px;
+    .tactic-example p,
+    .tactic-function p {
+      font-size: .85rem;
+      line-height: 1.58;
+      color: #56645b;
       margin: 0;
     }
 
-    .takeaway {
-      background: var(--be-green-light);
-      border-radius: 18px;
-      padding: 22px 24px;
-      margin: 32px 0;
+    .tactic-function {
+      padding-left: 12px;
+      border-left: 2px solid #dce5de;
     }
 
-    .takeaway-label {
-      color: var(--be-green);
-      font-size: 9px;
-      font-weight: 850;
-      letter-spacing: 1.2px;
+    .tactic-function p {
+      color: #43564a;
+      font-weight: 550;
+    }
+
+    .cooperation .tactic-function { border-color: #b9cdbd; }
+    .competition .tactic-function { border-color: #c3d0e3; }
+    .conflict .tactic-function { border-color: #e2ceb0; }
+
+    .phase-takeaway {
+      padding: 15px 22px;
+      background: #fafbfa;
+      border-top: 1px solid var(--border);
+      color: #59675e;
+      font-size: .88rem;
+      line-height: 1.6;
+    }
+
+    .phase-takeaway strong { color: var(--ink); }
+
+    .tactics-synthesis {
+      background: #263b31;
+      color: white;
+      border-radius: 17px;
+      padding: 23px 25px;
+      margin: 25px 0 10px;
+    }
+
+    .tactics-synthesis .synthesis-label {
+      color: #b9cbbf;
+      font-size: .7rem;
       text-transform: uppercase;
+      letter-spacing: .12em;
+      font-weight: 800;
+      margin-bottom: 9px;
+    }
+
+    .tactics-synthesis p {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin: 0;
+      color: #edf3ef;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin: 18px 0;
+    }
+
+    .info-panel {
+      border-radius: 15px;
+      padding: 20px;
+      background: #f5f7f5;
+      border: 1px solid var(--border);
+    }
+
+    .info-panel h3 {
+      margin: 0 0 9px;
+      font-size: 1rem;
+    }
+
+    .info-panel p {
+      color: #66736b;
+      line-height: 1.65;
+      font-size: .9rem;
+      margin: 0;
+    }
+
+    .timeline {
+      border-left: 2px solid #dce5de;
+      margin: 25px 0 10px 9px;
+      padding-left: 24px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 23px;
+    }
+
+    .timeline-item:last-child { padding-bottom: 0; }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -31px;
+      top: 5px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--green);
+      border: 3px solid #fafbfa;
+      box-shadow: 0 0 0 1px #cbd8ce;
+    }
+
+    .timeline-date {
+      color: var(--green);
+      font-size: .75rem;
+      font-weight: 850;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: #68756d;
+      line-height: 1.65;
+      font-size: .9rem;
+    }
+
+    .takeaway {
+      background: #eef3ef;
+      border: 1px solid #e0e8e2;
+      border-radius: 18px;
+      padding: 25px 27px;
+      margin-top: 20px;
+    }
+
+    .takeaway h3 {
+      margin: 0 0 9px;
+      font-size: 1.05rem;
     }
 
     .takeaway p {
-      color: #405a49;
-      font-size: 15px;
-      line-height: 1.8;
-      margin: 9px 0 0;
-    }
-
-    .source-details {
-      border-top: 1px solid var(--be-line);
-      padding-top: 17px;
-      margin-top: 30px;
-    }
-
-    .source-details p {
-      color: var(--muted);
-      font-size: 11px;
+      margin: 0;
       line-height: 1.7;
+      color: #536359;
     }
 
-    .page-navigation {
+    footer {
       display: flex;
       justify-content: space-between;
-      gap: 15px;
+      gap: 20px;
+      padding: 25px 0 35px;
       border-top: 1px solid var(--border);
-      padding-top: 20px;
-      margin: 38px 0 20px;
+      color: #8a968e;
+      font-size: .78rem;
+      letter-spacing: .06em;
     }
 
-    .page-navigation a {
-      color: var(--be-green);
-      font-size: 12px;
+    footer a {
+      color: var(--green);
+      text-decoration: none;
       font-weight: 700;
+      letter-spacing: 0;
     }
 
-    @media(max-width: 700px) {
+    @media (max-width: 850px) {
+      .notes-layout {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .notes-sidebar {
+        position: static;
+        display: flex;
+        overflow-x: auto;
+        gap: 4px;
+        padding: 5px 0 14px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .sidebar-label { display: none; }
+      .notes-sidebar a { white-space: nowrap; }
+      .argument-panel { grid-template-columns: 1fr; gap: 9px; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(100% - 30px, 1160px); }
+      .page-intro { padding-top: 42px; }
+      .concept-grid,
+      .two-column,
+      .tactic-grid,
+      .tactics-overview {
+        grid-template-columns: 1fr;
+      }
+
+      .tactic:nth-child(odd):not(:last-child) {
+        border-right: 0;
+      }
+
+      .tactic + .tactic {
+        border-top: 1px solid var(--border);
+      }
+
+      .phase-header {
+        align-items: flex-start;
+      }
+
+      .phase-dynamic { display: none; }
+
       .framework-flow {
         grid-template-columns: 1fr;
-        gap: 5px;
       }
 
       .framework-arrow {
         transform: rotate(90deg);
-        height: 19px;
-      }
-    }
-
-    @media(max-width: 560px) {
-      .concept-grid,
-      .direction-grid,
-      .distinction {
-        grid-template-columns: 1fr;
       }
 
-      .reading-header { margin-top: 30px; }
-
-      .argument-card { padding: 22px; }
-
-      .argument-card h2 { font-size: 21px; }
-
-      .argument-card p { font-size: 14px; }
-
-      .section-heading h2 { font-size: 19px; }
-
-      .phase-item { padding: 17px; }
-
-      .phase-top {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 5px;
-      }
-
-      .page-navigation { flex-direction: column; }
+      .argument-panel { padding: 22px; }
+      footer { flex-direction: column; }
     }
   </style>
 </head>
@@ -628,798 +714,667 @@
     </nav>
   </header>
 
-  <main class="container">
-
-    <header class="reading-header">
-      <p class="reading-kicker">Democracy & Geopolitics / Moldova / Geopolitical inbetweenness</p>
-
-      <h1>Furthest away from Russia and ever closer to the EU?</h1>
-
-      <p class="reading-subtitle">
-        Moldova hedging its bets on alternating alignments and
-        (differentiated) dis/integration
+  <div class="container">
+    <header class="page-intro">
+      <div class="eyebrow">Democracy & Geopolitics · Reading notes</div>
+      <h1>Moldova: hedging its bets</h1>
+      <p class="subtitle">
+        How an in-between state navigates great-power rivalry through alternating
+        alignments, strategic manoeuvring, and differentiated integration with the EU
+        and disintegration from Russia.
       </p>
-
-      <div class="reading-meta">
-        <span><strong>Dorina Baltag & Amy Eaglestone</strong></span>
+      <div class="source-line">
+        <span>Dorina Baltag & Amy Eaglestone</span>
         <span>2025</span>
-        <span><em>European Security</em>, 34(4), 624–645</span>
-        <span>
-          <a href="https://doi.org/10.1080/09662839.2025.2583337"
-             target="_blank" rel="noopener">Read the article</a>
-        </span>
-      </div>
-
-      <div class="reading-tags">
-        <span>Geostrategic in-between</span>
-        <span>Hedging</span>
-        <span>Local agency</span>
-        <span>EU–Russia rivalry</span>
-        <span>Differentiated integration</span>
+        <span>European Security, 34(4), 624–645</span>
+        <a href="https://doi.org/10.1080/09662839.2025.2583337" target="_blank" rel="noopener">Read article ↗</a>
       </div>
     </header>
 
-    <article class="reading-main">
+    <div class="argument-panel">
+      <div class="argument-label">Argument in one minute</div>
+      <p>
+        Moldova is not simply trapped between Russia and the EU. Its geopolitical
+        position creates constraints, but also opportunities for domestic actors to
+        manoeuvre. Baltag and Eaglestone conceptualise this agency through
+        <strong>hedging</strong>: a repertoire of tactics that changes as EU–Russia
+        relations move from cooperation, to competition, and then conflict. Moldova's
+        trajectory is consequently not a linear westward shift, but a changing pattern
+        of alignment, selective integration, and resistance to Russian influence.
+      </p>
+    </div>
 
-      <section class="argument-card">
-        <div class="argument-label">The argument in one minute</div>
-        <h2>Moldova is not simply trapped between Russia and the EU. It actively uses its in-between position to manoeuvre within their rivalry.</h2>
-        <p>
-          Baltag and Eaglestone argue that Moldova's foreign policy is best
-          understood through the combination of geostrategic in-betweenness
-          and hedging. Its position between competing power centres creates
-          vulnerabilities, but also opportunities for local agency. Across
-          three decades, Moldovan elites have adopted different strategies
-          as EU–Russia relations shifted from cooperation to competition
-          and then conflict. Since 2021, Moldova has moved decisively
-          towards Europe, but domestic polarisation, Russian interference,
-          economic vulnerabilities and unresolved territorial questions
-          continue to complicate this trajectory.
-        </p>
-      </section>
+    <div class="notes-layout">
+      <aside class="notes-sidebar">
+        <div class="sidebar-label">On this page</div>
+        <a href="#research">01 · Research problem</a>
+        <a href="#concepts">02 · Key concepts</a>
+        <a href="#framework">03 · Analytical framework</a>
+        <a href="#tactics" class="active">04 · Hedging tactics</a>
+        <a href="#pivot">05 · The European pivot</a>
+        <a href="#integration">06 · Differentiated integration</a>
+        <a href="#implications">07 · Implications</a>
+        <a href="#takeaway">08 · Takeaway</a>
+      </aside>
 
-      <section class="section-block">
-        <div class="section-heading">
-          <span class="section-number">01</span>
-          <h2>The research problem: agency in an in-between position</h2>
-        </div>
+      <main>
+        <section class="week-section" id="research">
+          <div class="week-heading">
+            <span class="section-number">01</span>
+            <h2>The research problem</h2>
+          </div>
 
-        <p>
-          Eastern European states situated between the EU and Russia are
-          frequently portrayed as peripheral actors caught between
-          competing geopolitical powers. This structural perspective
-          emphasizes their vulnerability and limited autonomy, often
-          treating them as objects of external influence rather than
-          independent political actors.
-        </p>
+          <p class="section-lead">
+            The article asks how states positioned between competing geopolitical
+            powers navigate changing external pressures. Moldova is a revealing case:
+            its relationship with Russia and the EU has shifted considerably since
+            independence, while its domestic political actors have repeatedly attempted
+            to preserve room for manoeuvre.
+          </p>
 
-        <p>
-          The authors challenge this tendency. Moldova is certainly
-          constrained by its location, historical dependencies, limited
-          resources and exposure to external pressure. Yet its political
-          elites are not passive. They have adapted their foreign and
-          security policies, selectively engaged with both power centres
-          and used geopolitical competition to pursue national interests.
-        </p>
-
-        <p>
-          The central research question is therefore:
-          <strong>How, and how effectively, has Moldova deployed hedging
-          geostrategies in response to changing EU–Russia rivalry?</strong>
-        </p>
-
-        <p>
-          The article uses a qualitative case-study design, drawing
-          substantially on 40 semi-structured elite and expert interviews
-          conducted in three waves: 2013, 2020 and 2024. These are
-          supplemented by documentary evidence, reports, opinion polls
-          and policy sources.
-        </p>
-      </section>
-
-      <section class="section-block">
-        <div class="section-heading">
-          <span class="section-number">02</span>
-          <h2>The analytical framework</h2>
-        </div>
-
-        <p>
-          The authors combine two complementary concepts to explain
-          how Moldova navigates its geopolitical position. The first
-          captures the structural condition of being situated between
-          competing powers. The second captures the strategies used
-          by domestic actors to manage that condition.
-        </p>
-
-        <div class="concept-grid">
-          <div class="concept-card">
-            <div class="concept-index">STRUCTURAL CONDITION</div>
-            <h3>Geopolitical in-between</h3>
+          <div class="reading-card">
+            <h3>Research question</h3>
             <p>
-              The externally shaped position of a state caught between
-              competing geopolitical powers. It produces vulnerabilities
-              through geography, historical dependencies, limited resources
-              and external strategic pressure.
+              How has Moldova used its geopolitical and geostrategic in-betweenness to
+              navigate the changing dynamics of EU–Russia relations, and what does
+              this mean for its trajectories of integration with the EU and
+              disintegration from Russia?
             </p>
           </div>
 
-          <div class="concept-card">
-            <div class="concept-index">AGENCY AND STRATEGY</div>
-            <h3>Geostrategic in-between</h3>
-            <p>
-              The ability of an in-between state to leverage its position
-              to create room for manoeuvre through selective engagement,
-              institutional adaptation and domestic coalition-building.
-            </p>
-          </div>
-
-          <div class="concept-card">
-            <div class="concept-index">STRATEGIC REPERTOIRE</div>
-            <h3>Hedging</h3>
-            <p>
-              A deliberate middle-ground strategy that avoids firm
-              alignment with a single power bloc, combining cooperation
-              and competition to manage uncertainty and preserve flexibility.
-            </p>
-          </div>
-
-          <div class="concept-card">
-            <div class="concept-index">INTEGRATION TRAJECTORY</div>
-            <h3>Differentiated (dis)integration</h3>
-            <p>
-              Uneven and politically contingent processes of integration
-              with the EU and disintegration from Russia. Economic,
-              political, technological and security relations need not
-              move at the same pace.
-            </p>
-          </div>
-        </div>
-
-        <div class="framework-panel">
-          <div class="framework-label">HOW THE TWO-PART FRAMEWORK WORKS</div>
-
-          <div class="framework-flow">
-            <div class="framework-step">
-              <small>01 / STRUCTURE</small>
-              <strong>Geostrategic in-between</strong>
+          <div class="two-column">
+            <div class="info-panel">
+              <h3>Empirical approach</h3>
               <p>
-                Moldova's position between Russia and the EU creates
-                constraints and opportunities.
+                The authors draw on 40 semi-structured elite and expert interviews
+                conducted in 2013, 2020, and 2024, alongside documentary evidence,
+                public opinion data, and existing research.
               </p>
             </div>
-
-            <div class="framework-arrow">→</div>
-
-            <div class="framework-step">
-              <small>02 / AGENCY</small>
-              <strong>Hedging strategies</strong>
+            <div class="info-panel">
+              <h3>Why Moldova?</h3>
               <p>
-                Domestic actors adapt, balance, cooperate, resist
-                and exploit changing power relations.
-              </p>
-            </div>
-
-            <div class="framework-arrow">→</div>
-
-            <div class="framework-step">
-              <small>03 / CONSEQUENCES</small>
-              <strong>(Dis)integration trajectories</strong>
-              <p>
-                Choices shape the pace and direction of relations
-                with the EU and Russia.
+                Moldova's position between the EU and Russia makes it especially
+                exposed to competing political, economic, and security pressures.
+                Transnistria, energy dependence, and domestic political divisions
+                intensify this condition.
               </p>
             </div>
           </div>
+        </section>
 
-          <p class="framework-caption">
-            The key analytical move is to connect structural constraint
-            with local agency. In-betweenness is not simply a condition
-            imposed on Moldova; it is also a position that domestic
-            actors can strategically navigate.
-          </p>
-        </div>
-
-        <h3>Hedging beyond balancing and bandwagoning</h3>
-
-        <p>
-          Conventional accounts often frame small-state foreign policy
-          as a choice between balancing against a threatening power
-          or bandwagoning with a stronger one. Hedging moves beyond
-          this binary. It allows a state to combine cooperative and
-          competitive behaviour towards multiple powers, preserving
-          flexibility when the future distribution of power is uncertain.
-        </p>
-
-        <p>
-          Hedging is therefore not necessarily a sign of indecision.
-          It can be a deliberate strategy for managing risk, securing
-          economic benefits and avoiding excessive dependence on
-          either side.
-        </p>
-      </section>
-
-      <section class="section-block">
-        <div class="section-heading">
-          <span class="section-number">03</span>
-          <h2>Three phases of EU–Russia relations</h2>
-        </div>
-
-        <p>
-          The article organises Moldova's foreign-policy trajectory
-          around three changing dynamics in EU–Russia relations.
-          Each phase generates a different strategic environment
-          and a different repertoire of hedging tactics.
-        </p>
-
-        <div class="phase-intro">MOLDOVA'S GEOSTRATEGIC TRAJECTORY, 1990s–2024</div>
-
-        <div class="phase-list">
-
-          <div class="phase-item">
-            <div class="phase-top">
-              <span class="phase-period">1990s–EARLY 2000s</span>
-              <span class="phase-dynamic">EU–RUSSIA COOPERATION</span>
-            </div>
-
-            <h3>Managing in-betweenness</h3>
-
-            <p>
-              Moldova accepted external power projections from both
-              Russia and the EU. Its foreign policy sought to preserve
-              sovereignty and access to both relationships without
-              provoking direct confrontation. The Communist Party's
-              alignment with Russia under Vladimir Voronin also
-              reflected this environment.
-            </p>
-
-            <div class="tactic-list">
-              <span>Strategic silence</span>
-              <span>Manifest emulation</span>
-              <span>Bandwagoning</span>
-            </div>
+        <section class="week-section" id="concepts">
+          <div class="week-heading">
+            <span class="section-number">02</span>
+            <h2>Key concepts</h2>
           </div>
 
-          <div class="phase-item">
-            <div class="phase-top">
-              <span class="phase-period">2003–2021</span>
-              <span class="phase-dynamic">EU–RUSSIA COMPETITION</span>
-            </div>
-
-            <h3>Leveraging geopolitical rivalry</h3>
-
-            <p>
-              As the EU and Russia increasingly sought exclusive
-              spheres of influence, Moldova used its position to
-              extract concessions and maintain relationships with
-              both. Its elites pursued multivectorism and wedging,
-              sometimes weakening Russian influence while retaining
-              economic and political links with Moscow.
-            </p>
-
-            <div class="tactic-list">
-              <span>Wedging</span>
-              <span>Multivectorism</span>
-            </div>
-          </div>
-
-          <div class="phase-item current">
-            <div class="phase-top">
-              <span class="phase-period">POST-2021</span>
-              <span class="phase-dynamic">EU–RUSSIA CONFLICT</span>
-            </div>
-
-            <h3>Strategic pivot towards Europe</h3>
-
-            <p>
-              The PAS government's European orientation, reinforced
-              by Russia's full-scale invasion of Ukraine in February
-              2022, marks a more assertive rejection of Russian influence.
-              Moldova has pursued EU alignment, energy diversification
-              and stronger security cooperation while undertaking
-              domestic reforms connected to accession.
-            </p>
-
-            <div class="tactic-list">
-              <span>Contestation</span>
-              <span>Realignment</span>
-              <span>Hard balancing</span>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <section class="section-block">
-        <div class="section-heading">
-          <span class="section-number">04</span>
-          <h2>The hedging tactics in practice</h2>
-        </div>
-
-        <p>
-          The authors identify a range of tactics through which
-          Moldova has navigated its in-between position. These
-          are not interchangeable labels: each describes a
-          particular way of managing external pressure and
-          maintaining strategic flexibility.
-        </p>
-
-        <div class="tactic-section">
-          <h3>Strategic silence</h3>
-          <p>
-            Avoiding direct confrontation with a powerful external
-            actor on a sensitive issue. Silence can preserve room
-            for manoeuvre and prevent escalation, even when the
-            underlying disagreement remains unresolved.
-          </p>
-          <div class="tactic-example">
-            <strong>MOLDOVAN EXAMPLE</strong>
-            <p>
-              Moldova's muted demands for the withdrawal of Russian
-              troops from Transnistria during the earlier period
-              helped avoid direct confrontation with Moscow.
-            </p>
-          </div>
-        </div>
-
-        <div class="tactic-section">
-          <h3>Manifest emulation</h3>
-          <p>
-            Symbolically adopting the language, institutions or
-            practices associated with a power centre without
-            necessarily undertaking the deeper reforms or
-            commitments that would constitute full alignment.
-          </p>
-          <div class="tactic-example">
-            <strong>MOLDOVAN EXAMPLE</strong>
-            <p>
-              The 1998 Partnership and Cooperation Agreement with
-              the EU and participation in European programmes
-              signalled European orientation while limiting
-              the immediate costs of deeper reform.
-            </p>
-          </div>
-        </div>
-
-        <div class="tactic-section">
-          <h3>Bandwagoning</h3>
-          <p>
-            Aligning with a stronger power to secure short-term
-            benefits or protection. In the article, this is
-            understood as one element of Moldova's broader
-            historical repertoire rather than a permanent
-            strategic commitment.
-          </p>
-          <div class="tactic-example">
-            <strong>MOLDOVAN EXAMPLE</strong>
-            <p>
-              The Communist Party's alignment with Russia after
-              coming to power in 2001, including consideration
-              of the Belarus–Russia Union.
-            </p>
-          </div>
-        </div>
-
-        <div class="tactic-section">
-          <h3>Wedging</h3>
-          <p>
-            Exploiting divisions or disagreements between competing
-            powers to prevent one side from establishing exclusive
-            influence. It can create opportunities for concessions
-            and expand a state's strategic room for manoeuvre.
-          </p>
-          <div class="tactic-example">
-            <strong>MOLDOVAN EXAMPLE</strong>
-            <p>
-              Moldova's rejection of the Kozak Memorandum in 2003,
-              amid domestic and Western pressure, and the extension
-              of DCFTA arrangements to Transnistria.
-            </p>
-          </div>
-        </div>
-
-        <div class="tactic-section">
-          <h3>Multivectorism</h3>
-          <p>
-            Maintaining relationships with multiple geopolitical
-            centres rather than committing exclusively to one.
-            It allows a state to maximise benefits from competing
-            relationships, although it can also generate
-            contradictory commitments and dependencies.
-          </p>
-          <div class="tactic-example">
-            <strong>MOLDOVAN EXAMPLE</strong>
-            <p>
-              The Alliance for European Integration governments
-              combined public pro-European rhetoric with continued
-              reliance on Russian financial networks. Igor Dodon's
-              cooperation with Russia alongside the continued
-              implementation of the DCFTA also illustrates
-              this approach.
-            </p>
-          </div>
-        </div>
-
-        <div class="tactic-section">
-          <h3>Contestation</h3>
-          <p>
-            Actively challenging external power projection and
-            rejecting forms of influence considered incompatible
-            with national interests. This represents a more
-            assertive response than simply managing or avoiding
-            pressure.
-          </p>
-          <div class="tactic-example">
-            <strong>MOLDOVAN EXAMPLE</strong>
-            <p>
-              The post-2021 government's rejection of Russian
-              influence, alignment with EU sanctions regimes
-              and stronger cooperation with Ukraine and Romania.
-            </p>
-          </div>
-        </div>
-
-        <div class="tactic-section">
-          <h3>Hard balancing</h3>
-          <p>
-            Strengthening capabilities and external partnerships
-            to reduce dependence on, and vulnerability to,
-            a threatening power.
-          </p>
-          <div class="tactic-example">
-            <strong>MOLDOVAN EXAMPLE</strong>
-            <p>
-              Energy diversification away from Russian supplies,
-              including imports from Romania, and increased
-              European support for defence and security capabilities.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-block">
-        <div class="section-heading">
-          <span class="section-number">05</span>
-          <h2>The strategic pivot after 2021</h2>
-        </div>
-
-        <p>
-          The post-2021 period represents a significant change
-          in Moldova's foreign and security policy. The PAS
-          government under Maia Sandu has pursued a clearer
-          European orientation, while Russia's invasion of
-          Ukraine has fundamentally altered the regional
-          security environment.
-        </p>
-
-        <h3>Energy and security diversification</h3>
-
-        <p>
-          Moldova has worked to reduce its dependence on Russian
-          energy supplies, strengthened energy resilience and
-          secured continued European macro-financial assistance
-          and investment. The country has also developed its
-          defence capabilities with European support, including
-          through the EU's Common Security and Defence Policy
-          engagement.
-        </p>
-
-        <h3>Closer European and regional cooperation</h3>
-
-        <p>
-          Moldova's cooperation with Ukraine and Romania has
-          intensified. Hosting the second European Political
-          Community summit in June 2023 also reinforced its
-          diplomatic visibility and geopolitical significance.
-        </p>
-
-        <p>
-          The country is therefore no longer merely a territory
-          over which external powers compete. The authors
-          emphasise its growing <strong>actorness</strong>:
-          its capacity to shape regional developments and
-          pursue strategic objectives of its own.
-        </p>
-
-        <div class="direction-grid">
-          <div class="direction-card eu">
-            <small>EUROPEAN ALIGNMENT</small>
-            <h3>Integration with the EU</h3>
-            <p>
-              Accession-oriented reforms, economic and financial
-              assistance, energy cooperation, sanctions alignment
-              and stronger security partnerships.
-            </p>
-          </div>
-
-          <div class="direction-card russia">
-            <small>RUSSIAN DIS-ALIGNMENT</small>
-            <h3>Disintegration from Russia</h3>
-            <p>
-              Withdrawal from Russian-led integration projects,
-              energy diversification, reduced political alignment
-              and resistance to Russian interference.
-            </p>
-          </div>
-        </div>
-
-        <p>
-          These developments are connected but not identical.
-          Integration with the EU and disintegration from Russia
-          proceed across different policy areas and at different
-          speeds. The authors therefore resist treating
-          geopolitical realignment as a single, uniform process.
-        </p>
-      </section>
-
-      <section class="section-block">
-        <div class="section-heading">
-          <span class="section-number">06</span>
-          <h2>Differentiated (dis)integration</h2>
-        </div>
-
-        <p>
-          A central contribution of the article is its treatment
-          of integration and disintegration as uneven processes.
-          Moldova's European trajectory does not require every
-          policy domain to advance at the same pace. Economic,
-          technological, political and security integration
-          can develop differently according to domestic capacity
-          and geopolitical circumstances.
-        </p>
-
-        <p>
-          Initially, Moldova prioritised economic and technological
-          cooperation with the EU through the Association Agreement
-          and Deep and Comprehensive Free Trade Area (DCFTA),
-          while delaying stronger political alignment. This
-          reflected a pragmatic hedging strategy: gaining economic
-          benefits while limiting the political and reform costs
-          of deeper integration.
-        </p>
-
-        <p>
-          The post-2021 trajectory is more politically assertive.
-          The government has moved towards deeper European
-          integration while distancing the country from
-          Russia-led projects such as the Commonwealth of
-          Independent States and the Eurasian integration
-          framework.
-        </p>
-
-        <div class="distinction">
-          <div class="distinction-card">
-            <strong>Differentiated integration</strong>
-            <p>
-              Uneven participation in the EU's economic,
-              technological, political and security structures.
-              Integration can deepen in certain domains before
-              others.
-            </p>
-          </div>
-
-          <div class="distinction-card">
-            <strong>Differentiated disintegration</strong>
-            <p>
-              Uneven withdrawal or distancing from Russian-led
-              structures and dependencies. Disengagement can
-              progress at different rates across policy areas.
-            </p>
-          </div>
-        </div>
-
-        <h3>The risk of differentiated disintegration from Europe</h3>
-
-        <p>
-          The authors warn that Moldova's European trajectory
-          is not irreversible. A future pro-Russian government
-          could prioritise the economic benefits of EU market
-          access while rejecting deeper political integration
-          and the standards associated with EU membership.
-        </p>
-
-        <p>
-          This would amount to a form of selective engagement:
-          retaining certain economic benefits while distancing
-          the country from the political and normative
-          commitments of European integration.
-        </p>
-      </section>
-
-      <section class="section-block">
-        <div class="section-heading">
-          <span class="section-number">07</span>
-          <h2>Domestic constraints and the limits of the European pivot</h2>
-        </div>
-
-        <p>
-          A strategic reorientation towards Europe does not
-          automatically resolve Moldova's domestic vulnerabilities.
-          The authors identify several conditions that complicate
-          the consolidation of the country's European trajectory.
-        </p>
-
-        <h3>Political and societal polarisation</h3>
-
-        <p>
-          Moldova remains divided across political, linguistic,
-          regional and geopolitical lines. These divisions
-          provide opportunities for actors opposed to European
-          integration and make the construction of durable
-          public support for reform more difficult.
-        </p>
-
-        <h3>Russian interference and hybrid pressure</h3>
-
-        <p>
-          Russian influence operates through more than
-          conventional diplomatic or military pressure.
-          Disinformation, political networks and interference
-          in electoral processes contribute to domestic
-          instability and challenge the legitimacy of
-          Moldova's European orientation.
-        </p>
-
-        <h3>Economic vulnerabilities and weak governance</h3>
-
-        <p>
-          Inflation, unemployment, corruption and limited
-          institutional capacity remain important concerns.
-          These vulnerabilities can undermine public confidence
-          in the government's strategic direction and complicate
-          the reforms required for EU accession.
-        </p>
-
-        <h3>Transnistria and Gagauzia</h3>
-
-        <p>
-          The unresolved status of Transnistria and the political
-          dynamics in Gagauzia continue to complicate Moldova's
-          geopolitical positioning. These territories and their
-          relationships with external actors create additional
-          constraints on national integration and security policy.
-        </p>
-
-        <h3>The diaspora as a source of agency</h3>
-
-        <p>
-          The Moldovan diaspora is an important counterweight
-          to domestic vulnerabilities. Through remittances,
-          political participation and transnational networks,
-          diaspora communities contribute to the country's
-          European aspirations.
-        </p>
-
-        <p>
-          The authors highlight the diaspora's influence on
-          electoral outcomes and the 2024 EU referendum.
-          More than 82% of diaspora voters supported Maia Sandu
-          and the European referendum, helping counterbalance
-          opposition among domestic voters.
-        </p>
-
-        <div class="caution-card">
-          <strong>Strategic realignment is not the same as consolidated alignment</strong>
-          <p>
-            Moldova's pro-European turn is significant, but its
-            durability depends on domestic reforms, economic
-            resilience and the ability to maintain public support.
-            External alignment alone cannot guarantee successful
-            integration.
-          </p>
-        </div>
-      </section>
-
-      <section class="section-block">
-        <div class="section-heading">
-          <span class="section-number">08</span>
-          <h2>Theoretical and policy implications</h2>
-        </div>
-
-        <p>
-          The Moldovan case offers broader lessons for small
-          states navigating great-power competition. The authors
-          identify three particularly important implications.
-        </p>
-
-        <div class="implication-list">
-
-          <div class="implication-item">
-            <span class="implication-number">01</span>
-            <div>
-              <h3>Hedging requires a long-term strategic vision</h3>
+          <div class="concept-grid">
+            <div class="concept-card">
+              <div class="term">Geopolitical in-betweenness</div>
               <p>
-                Hedging can be pragmatic and effective in the short
-                term, but without a coherent long-term direction
-                it risks becoming reactive policymaking. Flexibility
-                needs to serve identifiable national objectives.
+                A structural position in which a state is situated between competing
+                geopolitical powers and exposed to their overlapping or conflicting
+                interests. It creates vulnerability and constraint.
+              </p>
+            </div>
+
+            <div class="concept-card">
+              <div class="term">Geostrategic in-betweenness</div>
+              <p>
+                The capacity of domestic actors to leverage that position through
+                selective engagement, institutional adaptation, and coalition-building.
+                It highlights the opportunities for agency within structural constraint.
+              </p>
+            </div>
+
+            <div class="concept-card">
+              <div class="term">Hedging</div>
+              <p>
+                An overarching strategy of avoiding an exclusive commitment to one
+                power. A state combines different forms of cooperation, alignment,
+                and resistance to manage uncertainty and maximise its room for manoeuvre.
+              </p>
+            </div>
+
+            <div class="concept-card">
+              <div class="term">Differentiated (dis)integration</div>
+              <p>
+                Integration and disintegration do not necessarily occur uniformly.
+                States may deepen economic or institutional ties in some areas while
+                delaying, resisting, or reversing alignment in others.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="week-section" id="framework">
+          <div class="week-heading">
+            <span class="section-number">03</span>
+            <h2>The analytical framework</h2>
+          </div>
+
+          <p class="section-lead">
+            The authors connect structural position to political agency. In-betweenness
+            does not determine a state's behaviour: domestic actors interpret external
+            pressures and deploy different tactics in response.
+          </p>
+
+          <div class="framework">
+            <div class="framework-flow">
+              <div class="framework-node">
+                <strong>Geopolitical structure</strong>
+                <span>Competing EU and Russian power projections</span>
+              </div>
+              <div class="framework-arrow">→</div>
+              <div class="framework-node">
+                <strong>Local agency</strong>
+                <span>Political elites, institutions, civil society, and diaspora</span>
+              </div>
+              <div class="framework-arrow">→</div>
+              <div class="framework-node">
+                <strong>Hedging tactics</strong>
+                <span>Selective alignment, resistance, and manoeuvring</span>
+              </div>
+            </div>
+            <p class="framework-caption">
+              Structural constraint creates the conditions for action; domestic actors
+              determine how those conditions are strategically navigated.
+            </p>
+          </div>
+
+          <div class="reading-card">
+            <h3>Local agency matters</h3>
+            <p>
+              Political elites, parties, presidents, ministers, and senior officials
+              act as gatekeepers in the adoption of external norms. They can filter,
+              facilitate, or obstruct their implementation. Civil society organisations,
+              diaspora associations, media, and grassroots movements also shape
+              domestic preferences and influence the direction of foreign policy.
+            </p>
+          </div>
+        </section>
+
+        <section class="week-section" id="tactics">
+          <div class="week-heading">
+            <span class="section-number">04</span>
+            <h2>Hedging tactics in practice</h2>
+          </div>
+
+          <p class="section-lead">
+            The article's central empirical contribution is its account of how
+            Moldova's hedging tactics change alongside the relationship between the
+            EU and Russia. Rather than treating hedging as one fixed foreign-policy
+            position, the authors identify different tactics across three geopolitical
+            phases.
+          </p>
+
+          <div class="tactics-overview">
+            <div class="phase-marker cooperation">
+              <span class="phase-date">1990s–early 2000s</span>
+              <strong>Cooperation</strong>
+              <span>Managing dependence while cautiously exploring EU engagement</span>
+            </div>
+            <div class="phase-marker competition">
+              <span class="phase-date">2003–2021</span>
+              <strong>Competition</strong>
+              <span>Using rivalry to extract benefits and preserve room for manoeuvre</span>
+            </div>
+            <div class="phase-marker conflict">
+              <span class="phase-date">Post-2021</span>
+              <strong>Conflict</strong>
+              <span>Moving towards European alignment and actively countering Russia</span>
+            </div>
+          </div>
+
+          <!-- PHASE ONE -->
+          <article class="tactical-phase cooperation">
+            <div class="phase-header">
+              <div class="phase-header-left">
+                <div class="phase-index">01</div>
+                <div>
+                  <h3>Cooperation: managing vulnerability</h3>
+                  <p>1990s–early 2000s · Three tactics</p>
+                </div>
+              </div>
+              <div class="phase-dynamic">EU–Russia cooperation</div>
+            </div>
+
+            <div class="tactic-grid">
+              <div class="tactic">
+                <div class="tactic-topline">
+                  <span class="tactic-name">Strategic silence</span>
+                  <span class="tactic-tag">Restraint</span>
+                </div>
+                <p class="tactic-definition">
+                  Avoiding direct confrontation with a more powerful actor on
+                  politically sensitive issues.
+                </p>
+                <div class="tactic-example">
+                  <span class="mini-label">Moldovan example</span>
+                  <p>
+                    Moldova muted demands for the withdrawal of Russian troops
+                    stationed in Transnistria, avoiding a direct challenge to Moscow.
+                  </p>
+                </div>
+                <div class="tactic-function">
+                  <span class="mini-label">Strategic purpose</span>
+                  <p>Preserve sovereignty and room for manoeuvre without provoking Russia.</p>
+                </div>
+              </div>
+
+              <div class="tactic">
+                <div class="tactic-topline">
+                  <span class="tactic-name">Manifest emulation</span>
+                  <span class="tactic-tag">Symbolic alignment</span>
+                </div>
+                <p class="tactic-definition">
+                  Publicly adopting or signalling the practices and orientation of
+                  another power without necessarily undertaking deep domestic change.
+                </p>
+                <div class="tactic-example">
+                  <span class="mini-label">Moldovan example</span>
+                  <p>
+                    Moldova signed the EU Partnership and Cooperation Agreement (PCA)
+                    in 1998 and engaged with EU programmes, but without the resources
+                    or reforms required for substantial alignment.
+                  </p>
+                </div>
+                <div class="tactic-function">
+                  <span class="mini-label">Strategic purpose</span>
+                  <p>Signal European orientation while keeping the costs of reform limited.</p>
+                </div>
+              </div>
+
+              <div class="tactic">
+                <div class="tactic-topline">
+                  <span class="tactic-name">Bandwagoning</span>
+                  <span class="tactic-tag">Alignment</span>
+                </div>
+                <p class="tactic-definition">
+                  Aligning with a dominant or influential power to obtain political,
+                  economic, or security benefits.
+                </p>
+                <div class="tactic-example">
+                  <span class="mini-label">Moldovan example</span>
+                  <p>
+                    The Party of Communists' 2001 electoral victory under Vladimir
+                    Voronin brought closer relations with Russia. The government
+                    considered integration into the Belarus–Russia Union and negotiated
+                    directly with Moscow over Transnistria.
+                  </p>
+                </div>
+                <div class="tactic-function">
+                  <span class="mini-label">Strategic purpose</span>
+                  <p>Secure Russian political and economic support through closer alignment.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="phase-takeaway">
+              <strong>What this phase reveals:</strong> Moldova's early hedging was
+              cautious. It managed its dependence on Russia while tentatively opening
+              channels towards the EU, without committing fully to either side.
+            </div>
+          </article>
+
+          <!-- PHASE TWO -->
+          <article class="tactical-phase competition">
+            <div class="phase-header">
+              <div class="phase-header-left">
+                <div class="phase-index">02</div>
+                <div>
+                  <h3>Competition: exploiting geopolitical rivalry</h3>
+                  <p>2003–2021 · Two tactics</p>
+                </div>
+              </div>
+              <div class="phase-dynamic">EU–Russia competition</div>
+            </div>
+
+            <div class="tactic-grid">
+              <div class="tactic">
+                <div class="tactic-topline">
+                  <span class="tactic-name">Wedging</span>
+                  <span class="tactic-tag">Playing powers apart</span>
+                </div>
+                <p class="tactic-definition">
+                  Exploiting divisions between competing powers to gain concessions
+                  or prevent one side from consolidating influence.
+                </p>
+                <div class="tactic-example">
+                  <span class="mini-label">Moldovan example</span>
+                  <p>
+                    Voronin's 2003 refusal to sign Russia's Kozak Memorandum, which
+                    proposed federalising Moldova and entrenching Russian leverage,
+                    followed domestic and international pressure. Later, extending
+                    DCFTA terms to Transnistria offered an EU-backed alternative
+                    to Russian influence.
+                  </p>
+                </div>
+                <div class="tactic-function">
+                  <span class="mini-label">Strategic purpose</span>
+                  <p>Use EU–Russia divisions to resist Russian leverage and obtain concessions.</p>
+                </div>
+              </div>
+
+              <div class="tactic">
+                <div class="tactic-topline">
+                  <span class="tactic-name">Multivectorism</span>
+                  <span class="tactic-tag">Multiple alignments</span>
+                </div>
+                <p class="tactic-definition">
+                  Maintaining relationships with competing powers simultaneously,
+                  shifting between them to maximise benefits and avoid exclusive dependence.
+                </p>
+                <div class="tactic-example">
+                  <span class="mini-label">Moldovan example</span>
+                  <p>
+                    The Alliance for European Integration (AIE) used pro-EU rhetoric
+                    while oligarchic networks remained connected to Russian financial
+                    interests (2010–15). Igor Dodon also pursued cooperation with
+                    Russia while Moldova retained its DCFTA with the EU.
+                  </p>
+                </div>
+                <div class="tactic-function">
+                  <span class="mini-label">Strategic purpose</span>
+                  <p>Balance competing relationships and maximise short-term benefits while limiting risks.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="phase-takeaway">
+              <strong>What this phase reveals:</strong> As EU–Russia rivalry intensified,
+              Moldova's tactics became more assertive and adaptive. Domestic elites
+              attempted to turn geopolitical competition into political and economic
+              advantages, although these manoeuvres did not necessarily produce a
+              coherent long-term strategy.
+            </div>
+          </article>
+
+          <!-- PHASE THREE -->
+          <article class="tactical-phase conflict">
+            <div class="phase-header">
+              <div class="phase-header-left">
+                <div class="phase-index">03</div>
+                <div>
+                  <h3>Conflict: contesting Russian influence</h3>
+                  <p>Post-2021 · Two tactics</p>
+                </div>
+              </div>
+              <div class="phase-dynamic">EU–Russia conflict</div>
+            </div>
+
+            <div class="tactic-grid">
+              <div class="tactic">
+                <div class="tactic-topline">
+                  <span class="tactic-name">Contestation</span>
+                  <span class="tactic-tag">Active resistance</span>
+                </div>
+                <p class="tactic-definition">
+                  Actively challenging the influence and power projection of a
+                  competing actor, rather than accommodating it.
+                </p>
+                <div class="tactic-example">
+                  <span class="mini-label">Moldovan example</span>
+                  <p>
+                    Moldova aligned with EU sanctions regimes, rejected Dodon's
+                    pro-Russian political rhetoric, and reoriented diplomatic and
+                    strategic relationships towards Ukraine and Romania.
+                  </p>
+                </div>
+                <div class="tactic-function">
+                  <span class="mini-label">Strategic purpose</span>
+                  <p>Signal a more assertive break with Russian influence and strengthen European alignment.</p>
+                </div>
+              </div>
+
+              <div class="tactic">
+                <div class="tactic-topline">
+                  <span class="tactic-name">Hard balancing</span>
+                  <span class="tactic-tag">Reducing dependence</span>
+                </div>
+                <p class="tactic-definition">
+                  Building capabilities and partnerships to reduce the leverage
+                  that a threatening power can exercise.
+                </p>
+                <div class="tactic-example">
+                  <span class="mini-label">Moldovan example</span>
+                  <p>
+                    Following the 2022 energy crisis, Moldova diversified energy
+                    supplies, including imports from Romania. It also received
+                    security-related support through the EU Partnership Mission
+                    (EUPM) and European Peace Facility (EPF).
+                  </p>
+                </div>
+                <div class="tactic-function">
+                  <span class="mini-label">Strategic purpose</span>
+                  <p>Reduce Russian leverage in critical energy and security sectors.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="phase-takeaway">
+              <strong>What this phase reveals:</strong> The relationship has shifted
+              from managing competing ties to actively countering Russian power
+              projection. Moldova's hedging repertoire now includes more direct
+              alignment with the EU and measures to reduce strategic dependence on Russia.
+            </div>
+          </article>
+
+          <div class="tactics-synthesis">
+            <div class="synthesis-label">The evolution of hedging</div>
+            <p>
+              <strong>Restraint → Manoeuvring → Resistance.</strong> Moldova's tactics
+              evolve with the geopolitical environment: initially accommodating both
+              powers, then exploiting their competition, and finally contesting
+              Russian influence while deepening its European alignment. Hedging is
+              therefore not synonymous with neutrality or simple oscillation between
+              East and West. It is a changing repertoire of strategies through which
+              domestic actors seek to preserve agency under external pressure.
+            </p>
+          </div>
+        </section>
+
+        <section class="week-section" id="pivot">
+          <div class="week-heading">
+            <span class="section-number">05</span>
+            <h2>The European pivot</h2>
+          </div>
+
+          <p class="section-lead">
+            Since 2021, Moldova's foreign-policy orientation has shifted significantly.
+            The PAS government under Maia Sandu has pursued a more explicit European
+            trajectory, accelerated by Russia's full-scale invasion of Ukraine in 2022.
+          </p>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">2021</div>
+              <h3>PAS comes to power</h3>
+              <p>
+                The electoral victory of the Party of Action and Solidarity creates
+                the political basis for a more decisive pro-European direction.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">2022</div>
+              <h3>War and energy vulnerability</h3>
+              <p>
+                Russia's invasion of Ukraine intensifies Moldova's security concerns
+                and exposes the risks of dependence on Russian energy. Diversification
+                becomes a central strategic priority.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">2023</div>
+              <h3>European Political Community summit</h3>
+              <p>
+                Hosting the European Political Community summit in June 2023
+                demonstrates Moldova's growing diplomatic visibility and closer
+                engagement with European partners.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">2024</div>
+              <h3>European integration becomes a domestic political battleground</h3>
+              <p>
+                The EU referendum and presidential election reveal the importance
+                of domestic polarisation, Russian interference, and diaspora
+                mobilisation in determining Moldova's European trajectory.
               </p>
             </div>
           </div>
 
-          <div class="implication-item">
-            <span class="implication-number">02</span>
-            <div>
-              <h3>Domestic reforms are essential</h3>
+          <div class="reading-card">
+            <h3>The diaspora as a counterweight</h3>
+            <p>
+              The diaspora has become an important transnational actor in Moldova's
+              political trajectory. Remittances amounted to USD 1.592 billion in
+              2022, while diaspora mobilisation has influenced electoral outcomes
+              and supported reform. In 2024, more than 82% of diaspora voters
+              supported Maia Sandu and the EU referendum, counterbalancing domestic
+              opposition to European integration.
+            </p>
+          </div>
+        </section>
+
+        <section class="week-section" id="integration">
+          <div class="week-heading">
+            <span class="section-number">06</span>
+            <h2>Differentiated integration and disintegration</h2>
+          </div>
+
+          <p class="section-lead">
+            Moldova's changing foreign-policy orientation also produces uneven
+            patterns of integration. The country can deepen economic and technological
+            cooperation with the EU without immediately achieving equivalent political
+            or security integration.
+          </p>
+
+          <div class="two-column">
+            <div class="info-panel">
+              <h3>Integration with the EU</h3>
               <p>
-                External alignment must translate into tangible
-                benefits for citizens. Governance reforms,
-                institutional capacity and economic improvements
-                are necessary to consolidate public support
-                for strategic choices.
+                Moldova initially prioritised economic and technological cooperation
+                through the Association Agreement and DCFTA, while delaying stronger
+                political alignment. More recently, the process has become increasingly
+                political, particularly following Russia's invasion of Ukraine and
+                Moldova's pursuit of EU accession.
+              </p>
+            </div>
+            <div class="info-panel">
+              <h3>Disintegration from Russia</h3>
+              <p>
+                Moldova has moved away from Russian-led political and economic
+                projects, while reducing energy dependence and aligning more closely
+                with European partners. This de-alignment has been accompanied by
+                Russian interference and domestic contestation.
               </p>
             </div>
           </div>
 
-          <div class="implication-item">
-            <span class="implication-number">03</span>
-            <div>
-              <h3>Transnational actors reinforce local agency</h3>
-              <p>
-                Diaspora networks contribute financial resources,
-                political support and social connections.
-                Their role can strengthen resilience against
-                external pressure and reinforce European
-                integration.
-              </p>
-            </div>
+          <div class="reading-card">
+            <h3>The risk of differentiated disintegration</h3>
+            <p>
+              A future pro-Russian government could seek to retain the economic
+              benefits of the EU single market while rejecting deeper political
+              integration and EU standards. The authors warn that Moldova could
+              therefore relapse into multivectorism: maintaining economic integration
+              with the EU alongside renewed political alignment with Russia.
+            </p>
           </div>
 
-        </div>
+          <div class="reading-card">
+            <h3>Integration is inherently political</h3>
+            <p>
+              The Moldovan case challenges the assumption that differentiated
+              integration is simply a technical process involving different speeds
+              of convergence. Domestic politics, geopolitical pressures, institutional
+              capacity, and strategic priorities all shape the form and depth of
+              integration.
+            </p>
+          </div>
+        </section>
 
-        <p>
-          More broadly, the article challenges deterministic
-          understandings of small-state behaviour. Structural
-          constraints matter, but they do not fully determine
-          foreign-policy outcomes. Domestic actors can exploit
-          geopolitical competition, adapt their strategies
-          and create opportunities for greater autonomy.
-        </p>
-      </section>
+        <section class="week-section" id="implications">
+          <div class="week-heading">
+            <span class="section-number">07</span>
+            <h2>Theoretical implications</h2>
+          </div>
 
-      <section class="takeaway">
-        <div class="takeaway-label">The central takeaway</div>
-        <p>
-          Moldova's experience demonstrates that geopolitical
-          in-betweenness is simultaneously a constraint and
-          a potential strategic resource. Through hedging,
-          domestic actors have navigated changing EU–Russia
-          relations, moving from cautious accommodation and
-          multivectorism towards a more assertive European
-          alignment. Yet the durability of this pivot depends
-          on more than external geopolitical circumstances.
-          Domestic reform, societal support, economic resilience
-          and the management of unresolved territorial questions
-          will determine whether Moldova can translate its
-          strategic reorientation into lasting autonomy and
-          European integration.
-        </p>
-      </section>
+          <div class="reading-card">
+            <h3>1. In-betweenness is both constraint and opportunity</h3>
+            <p>
+              Moldova's geopolitical position exposes it to external pressure, but
+              it also creates opportunities for domestic actors to exploit competition
+              between great powers. The state is not merely acted upon: it can exercise
+              agency within structural constraints.
+            </p>
+          </div>
 
-      <div class="source-details">
-        <p>
-          <strong>Full reference</strong><br>
-          Baltag, D., & Eaglestone, A. (2025). Furthest away from
-          Russia and ever closer to the EU? Moldova hedging its
-          bets on alternating alignments and (differentiated)
-          dis/integration. <em>European Security, 34</em>(4),
-          624–645.
-          <a href="https://doi.org/10.1080/09662839.2025.2583337"
-             target="_blank" rel="noopener">https://doi.org/10.1080/09662839.2025.2583337</a>
-        </p>
-      </div>
+          <div class="reading-card">
+            <h3>2. Hedging is more than balancing or bandwagoning</h3>
+            <p>
+              The article expands the understanding of hedging by identifying a
+              repertoire of tactics that changes across geopolitical contexts.
+              Strategic silence, manifest emulation, bandwagoning, wedging,
+              multivectorism, contestation, and hard balancing capture different
+              ways of navigating in-betweenness.
+            </p>
+          </div>
 
-      <div class="page-navigation">
-        <a href="../notes.html">← Back to notes library</a>
-        <a href="knott-2018.html">Previous: Knott (2018) →</a>
-      </div>
+          <div class="reading-card">
+            <h3>3. Domestic actors shape geopolitical alignment</h3>
+            <p>
+              Political elites, institutions, civil society, and transnational actors
+              influence how external pressures are interpreted and translated into
+              policy. Alignment is therefore not simply imposed from outside; it is
+              mediated through domestic political processes.
+            </p>
+          </div>
 
-    </article>
+          <div class="reading-card">
+            <h3>4. Hedging requires a long-term strategic vision</h3>
+            <p>
+              Although hedging can produce short-term benefits, reactive manoeuvring
+              can undermine consistency. The authors emphasise the importance of
+              domestic reforms, tangible benefits for citizens, and the contribution
+              of transnational actors such as the diaspora.
+            </p>
+          </div>
+        </section>
+
+        <section class="week-section" id="takeaway">
+          <div class="week-heading">
+            <span class="section-number">08</span>
+            <h2>Overall takeaway</h2>
+          </div>
+
+          <div class="takeaway">
+            <h3>Moldova is an agent within geopolitical in-betweenness, not merely its victim.</h3>
+            <p>
+              Baltag and Eaglestone show how Moldova's strategies have evolved in
+              response to changing EU–Russia relations. Its early caution gave way
+              to more active manoeuvring during the period of competition, followed
+              by a decisive European pivot under conditions of conflict. Yet this
+              trajectory remains politically contingent. Domestic polarisation,
+              economic vulnerabilities, Russian interference, and unresolved
+              territorial questions continue to constrain Moldova's choices. The
+              central insight is that geopolitical position matters, but domestic
+              agency determines how that position is navigated.
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
 
     <footer>
       <a href="../notes.html">← Back to notes</a>
       <span>DEMOCRACY & GEOPOLITICS</span>
     </footer>
-
-  </main>
+  </div>
 </body>
 </html>
